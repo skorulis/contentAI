@@ -1,0 +1,629 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA3A564426D9F44F00F9FE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3A563026D9F44E00F9FE9A /* Assets.xcassets */; };
+		FA3A564526D9F44F00F9FE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3A563026D9F44E00F9FE9A /* Assets.xcassets */; };
+		FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565326D9F49800F9FE9A /* HTTPLogger.swift */; };
+		FA3A566126D9F49900F9FE9A /* HTTPLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565326D9F49800F9FE9A /* HTTPLogger.swift */; };
+		FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565426D9F49800F9FE9A /* HTTPRequest.swift */; };
+		FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565426D9F49800F9FE9A /* HTTPRequest.swift */; };
+		FA3A566626D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565626D9F49800F9FE9A /* HTTPJSONRequest.swift */; };
+		FA3A566726D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565626D9F49800F9FE9A /* HTTPJSONRequest.swift */; };
+		FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565726D9F49900F9FE9A /* HTTPStatusError.swift */; };
+		FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565726D9F49900F9FE9A /* HTTPStatusError.swift */; };
+		FA3A566A26D9F49900F9FE9A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565826D9F49900F9FE9A /* HTTPClient.swift */; };
+		FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565826D9F49900F9FE9A /* HTTPClient.swift */; };
+		FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */; };
+		FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */; };
+		FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */; };
+		FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */; };
+		FA3A567426D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */; };
+		FA3A567526D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */; };
+		FA3A567826D9F80700F9FE9A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567726D9F80700F9FE9A /* Project.swift */; };
+		FA3A567926D9F80700F9FE9A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567726D9F80700F9FE9A /* Project.swift */; };
+		FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
+		FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
+		FA3A568226D9FA1C00F9FE9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */; };
+		FA3A568326D9FA1C00F9FE9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */; };
+		FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568426D9FA3200F9FE9A /* IOC.swift */; };
+		FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568426D9FA3200F9FE9A /* IOC.swift */; };
+		FA3A568A26D9FCD500F9FE9A /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = FA3A568926D9FCD500F9FE9A /* SwinjectAutoregistration */; };
+		FA3A568C26D9FCD800F9FE9A /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = FA3A568B26D9FCD800F9FE9A /* SwinjectAutoregistration */; };
+		FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */; };
+		FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA3A563026D9F44E00F9FE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA3A563526D9F44E00F9FE9A /* Magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3A563B26D9F44F00F9FE9A /* Magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magic.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA3A565326D9F49800F9FE9A /* HTTPLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPLogger.swift; sourceTree = "<group>"; };
+		FA3A565426D9F49800F9FE9A /* HTTPRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPRequest.swift; sourceTree = "<group>"; };
+		FA3A565626D9F49800F9FE9A /* HTTPJSONRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPJSONRequest.swift; sourceTree = "<group>"; };
+		FA3A565726D9F49900F9FE9A /* HTTPStatusError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusError.swift; sourceTree = "<group>"; };
+		FA3A565826D9F49900F9FE9A /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
+		FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponseValidator.swift; sourceTree = "<group>"; };
+		FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
+		FA3A567326D9F74100F9FE9A /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		FA3A567726D9F80700F9FE9A /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicApp.swift; sourceTree = "<group>"; };
+		FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA3A568426D9FA3200F9FE9A /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
+		FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFactory.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA3A563226D9F44E00F9FE9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3A568C26D9FCD800F9FE9A /* SwinjectAutoregistration in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA3A563826D9F44F00F9FE9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3A568A26D9FCD500F9FE9A /* SwinjectAutoregistration in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA3A562526D9F44C00F9FE9A = {
+			isa = PBXGroup;
+			children = (
+				FA3A562A26D9F44C00F9FE9A /* Shared */,
+				FA3A563626D9F44E00F9FE9A /* Products */,
+				FA3A568826D9FCD500F9FE9A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FA3A562A26D9F44C00F9FE9A /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A566E26D9F6AD00F9FE9A /* Database */,
+				FA3A564E26D9F49800F9FE9A /* Network */,
+				FA3A567C26D9FA1C00F9FE9A /* Scene */,
+				FA3A567A26D9F9E700F9FE9A /* Services */,
+				FA3A563026D9F44E00F9FE9A /* Assets.xcassets */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		FA3A563626D9F44E00F9FE9A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A563526D9F44E00F9FE9A /* Magic.app */,
+				FA3A563B26D9F44F00F9FE9A /* Magic.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA3A564E26D9F49800F9FE9A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A565326D9F49800F9FE9A /* HTTPLogger.swift */,
+				FA3A565426D9F49800F9FE9A /* HTTPRequest.swift */,
+				FA3A565626D9F49800F9FE9A /* HTTPJSONRequest.swift */,
+				FA3A565726D9F49900F9FE9A /* HTTPStatusError.swift */,
+				FA3A565826D9F49900F9FE9A /* HTTPClient.swift */,
+				FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FA3A566E26D9F6AD00F9FE9A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A567626D9F7FB00F9FE9A /* Entities */,
+				FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */,
+				FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		FA3A567626D9F7FB00F9FE9A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A567726D9F80700F9FE9A /* Project.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		FA3A567A26D9F9E700F9FE9A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A567B26D9F9E700F9FE9A /* Root */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		FA3A567B26D9F9E700F9FE9A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */,
+				FA3A568426D9FA3200F9FE9A /* IOC.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		FA3A567C26D9FA1C00F9FE9A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A567D26D9FA1C00F9FE9A /* Root */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		FA3A567D26D9FA1C00F9FE9A /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */,
+				FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		FA3A568826D9FCD500F9FE9A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA3A563426D9F44E00F9FE9A /* Magic (iOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA3A564826D9F44F00F9FE9A /* Build configuration list for PBXNativeTarget "Magic (iOS)" */;
+			buildPhases = (
+				FA3A563126D9F44E00F9FE9A /* Sources */,
+				FA3A563226D9F44E00F9FE9A /* Frameworks */,
+				FA3A563326D9F44E00F9FE9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Magic (iOS)";
+			packageProductDependencies = (
+				FA3A568B26D9FCD800F9FE9A /* SwinjectAutoregistration */,
+			);
+			productName = "Magic (iOS)";
+			productReference = FA3A563526D9F44E00F9FE9A /* Magic.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA3A563A26D9F44F00F9FE9A /* Magic (macOS) */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA3A564B26D9F44F00F9FE9A /* Build configuration list for PBXNativeTarget "Magic (macOS)" */;
+			buildPhases = (
+				FA3A563726D9F44F00F9FE9A /* Sources */,
+				FA3A563826D9F44F00F9FE9A /* Frameworks */,
+				FA3A563926D9F44F00F9FE9A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Magic (macOS)";
+			packageProductDependencies = (
+				FA3A568926D9FCD500F9FE9A /* SwinjectAutoregistration */,
+			);
+			productName = "Magic (macOS)";
+			productReference = FA3A563B26D9F44F00F9FE9A /* Magic.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA3A562626D9F44C00F9FE9A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					FA3A563426D9F44E00F9FE9A = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					FA3A563A26D9F44F00F9FE9A = {
+						CreatedOnToolsVersion = 13.0;
+					};
+				};
+			};
+			buildConfigurationList = FA3A562926D9F44C00F9FE9A /* Build configuration list for PBXProject "Magic" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA3A562526D9F44C00F9FE9A;
+			packageReferences = (
+				FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
+			);
+			productRefGroup = FA3A563626D9F44E00F9FE9A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA3A563426D9F44E00F9FE9A /* Magic (iOS) */,
+				FA3A563A26D9F44F00F9FE9A /* Magic (macOS) */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA3A563326D9F44E00F9FE9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3A564426D9F44F00F9FE9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA3A563926D9F44F00F9FE9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3A564526D9F44F00F9FE9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA3A563126D9F44E00F9FE9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3A566626D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
+				FA3A568226D9FA1C00F9FE9A /* ContentView.swift in Sources */,
+				FA3A566A26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
+				FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
+				FA3A567426D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */,
+				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
+				FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */,
+				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
+				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
+				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
+				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA3A567826D9F80700F9FE9A /* Project.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA3A563726D9F44F00F9FE9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3A566726D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
+				FA3A568326D9FA1C00F9FE9A /* ContentView.swift in Sources */,
+				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
+				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FA3A566126D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
+				FA3A567526D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */,
+				FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
+				FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */,
+				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
+				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
+				FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
+				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA3A567926D9F80700F9FE9A /* Project.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		FA3A564626D9F44F00F9FE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA3A564726D9F44F00F9FE9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		FA3A564926D9F44F00F9FE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.Magic;
+				PRODUCT_NAME = Magic;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA3A564A26D9F44F00F9FE9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.Magic;
+				PRODUCT_NAME = Magic;
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FA3A564C26D9F44F00F9FE9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.Magic;
+				PRODUCT_NAME = Magic;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		FA3A564D26D9F44F00F9FE9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SELECTED_FILES = readonly;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.Magic;
+				PRODUCT_NAME = Magic;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA3A562926D9F44C00F9FE9A /* Build configuration list for PBXProject "Magic" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3A564626D9F44F00F9FE9A /* Debug */,
+				FA3A564726D9F44F00F9FE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA3A564826D9F44F00F9FE9A /* Build configuration list for PBXNativeTarget "Magic (iOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3A564926D9F44F00F9FE9A /* Debug */,
+				FA3A564A26D9F44F00F9FE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA3A564B26D9F44F00F9FE9A /* Build configuration list for PBXNativeTarget "Magic (macOS)" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA3A564C26D9F44F00F9FE9A /* Debug */,
+				FA3A564D26D9F44F00F9FE9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/SwinjectAutoregistration";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.7.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA3A568926D9FCD500F9FE9A /* SwinjectAutoregistration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			productName = SwinjectAutoregistration;
+		};
+		FA3A568B26D9FCD800F9FE9A /* SwinjectAutoregistration */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
+			productName = SwinjectAutoregistration;
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA3A567326D9F74100F9FE9A /* Shared.xcdatamodel */,
+			);
+			currentVersion = FA3A567326D9F74100F9FE9A /* Shared.xcdatamodel */;
+			path = Magic.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA3A562626D9F44C00F9FE9A /* Project object */;
+}
