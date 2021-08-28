@@ -9,9 +9,13 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
+    
+    @EnvironmentObject var factory: GenericFactory
 
     var body: some View {
-        EmptyView()
+        NavigationView {
+            ProjectListView(viewModel: factory.resolve())
+        }
     }
 
 }

@@ -13,7 +13,7 @@ class DatabaseService {
     let persistentContainer: NSPersistentContainer
     
     init() {
-        persistentContainer = NSPersistentContainer(name: "magic")
+        persistentContainer = NSPersistentContainer(name: "Magic")
         persistentContainer.persistentStoreDescriptions = [storeDescription]
         persistentContainer.loadPersistentStores { (_, error) in
                 if let error = error as NSError? {
@@ -53,7 +53,7 @@ class DatabaseService {
     var storeDescription: NSPersistentStoreDescription {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
-        let description = NSPersistentStoreDescription(url: documentsDirectory.appendingPathComponent("magic.sqlite"))
+        let description = NSPersistentStoreDescription(url: documentsDirectory.appendingPathComponent("Magic.sqlite"))
         description.type = NSSQLiteStoreType
         
         print("DATABASE: \(description.url?.absoluteString ?? "-")")

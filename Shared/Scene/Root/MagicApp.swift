@@ -13,6 +13,7 @@ struct MagicApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(IOC.shared.container.resolve(GenericFactory.self)!)
         }
     }
 }

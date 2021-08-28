@@ -37,6 +37,32 @@
 		FA3A568C26D9FCD800F9FE9A /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = FA3A568B26D9FCD800F9FE9A /* SwinjectAutoregistration */; };
 		FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */; };
 		FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */; };
+		FA3A569226D9FD8300F9FE9A /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */; };
+		FA3A569326D9FD8300F9FE9A /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */; };
+		FA3A569526D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */; };
+		FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */; };
+		FA3A569E26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */; };
+		FA3A569F26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */; };
+		FA3A56A026D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */; };
+		FA3A56A126D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */; };
+		FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */; };
+		FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */; };
+		FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */; };
+		FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */; };
+		FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */; };
+		FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */; };
+		FA3A56B026DA028A00F9FE9A /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */; };
+		FA3A56B126DA028A00F9FE9A /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */; };
+		FA3A56B226DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */; };
+		FA3A56B326DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */; };
+		FA3A56B626DA112600F9FE9A /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */; };
+		FA3A56B726DA112600F9FE9A /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */; };
+		FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
+		FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
+		FA3A56BC26DA1ECD00F9FE9A /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */; };
+		FA3A56BD26DA1ECD00F9FE9A /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */; };
+		FA3A56BF26DA1EEA00F9FE9A /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */; };
+		FA3A56C026DA1EEA00F9FE9A /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +82,19 @@
 		FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA3A568426D9FA3200F9FE9A /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFactory.swift; sourceTree = "<group>"; };
+		FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
+		FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
+		FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerPublisher.swift; sourceTree = "<group>"; };
+		FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectChangePublisher.swift; sourceTree = "<group>"; };
+		FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonService.swift; sourceTree = "<group>"; };
+		FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
+		FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewModel.swift; sourceTree = "<group>"; };
+		FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
+		FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
+		FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAccess.swift; sourceTree = "<group>"; };
+		FA3A56B826DA153600F9FE9A /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
+		FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
+		FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3A566E26D9F6AD00F9FE9A /* Database */,
+				FA3A569726D9FE2D00F9FE9A /* Infrstructure */,
 				FA3A564E26D9F49800F9FE9A /* Network */,
 				FA3A567C26D9FA1C00F9FE9A /* Scene */,
 				FA3A567A26D9F9E700F9FE9A /* Services */,
@@ -142,6 +182,7 @@
 		FA3A567A26D9F9E700F9FE9A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FA3A56B426DA110400F9FE9A /* DataAccess */,
 				FA3A567B26D9F9E700F9FE9A /* Root */,
 			);
 			path = Services;
@@ -150,8 +191,10 @@
 		FA3A567B26D9F9E700F9FE9A /* Root */ = {
 			isa = PBXGroup;
 			children = (
+				FA3A56B826DA153600F9FE9A /* ErrorService.swift */,
 				FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */,
 				FA3A568426D9FA3200F9FE9A /* IOC.swift */,
+				FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -159,6 +202,7 @@
 		FA3A567C26D9FA1C00F9FE9A /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				FA3A569026D9FD7C00F9FE9A /* Projects */,
 				FA3A567D26D9FA1C00F9FE9A /* Root */,
 			);
 			path = Scene;
@@ -178,6 +222,70 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FA3A569026D9FD7C00F9FE9A /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */,
+				FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */,
+				FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */,
+				FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */,
+				FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */,
+				FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		FA3A569726D9FE2D00F9FE9A /* Infrstructure */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A569826D9FE2D00F9FE9A /* CoreData */,
+				FA3A56AB26DA028A00F9FE9A /* SwiftUI */,
+			);
+			path = Infrstructure;
+			sourceTree = "<group>";
+		};
+		FA3A569826D9FE2D00F9FE9A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */,
+				FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FA3A56AB26DA028A00F9FE9A /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A56AC26DA028A00F9FE9A /* View */,
+				FA3A56AE26DA028A00F9FE9A /* Previews */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		FA3A56AC26DA028A00F9FE9A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA3A56AE26DA028A00F9FE9A /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */,
+			);
+			path = Previews;
+			sourceTree = "<group>";
+		};
+		FA3A56B426DA110400F9FE9A /* DataAccess */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */,
+			);
+			path = DataAccess;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -289,16 +397,29 @@
 			files = (
 				FA3A566626D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
 				FA3A568226D9FA1C00F9FE9A /* ContentView.swift in Sources */,
+				FA3A56BF26DA1EEA00F9FE9A /* ProjectViewModel.swift in Sources */,
 				FA3A566A26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FA3A569526D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
+				FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
+				FA3A56B626DA112600F9FE9A /* ProjectAccess.swift in Sources */,
 				FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
+				FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */,
+				FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */,
 				FA3A567426D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */,
+				FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
+				FA3A56A026D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */,
+				FA3A569226D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
 				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
+				FA3A56BC26DA1ECD00F9FE9A /* ProjectView.swift in Sources */,
 				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
+				FA3A56B026DA028A00F9FE9A /* NavigationLazyView.swift in Sources */,
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA3A569E26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */,
+				FA3A56B226DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A567826D9F80700F9FE9A /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -309,16 +430,29 @@
 			files = (
 				FA3A566726D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
 				FA3A568326D9FA1C00F9FE9A /* ContentView.swift in Sources */,
+				FA3A56C026DA1EEA00F9FE9A /* ProjectViewModel.swift in Sources */,
 				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
+				FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
+				FA3A56B726DA112600F9FE9A /* ProjectAccess.swift in Sources */,
 				FA3A566126D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
+				FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */,
+				FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */,
 				FA3A567526D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */,
+				FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
+				FA3A56A126D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */,
+				FA3A569326D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
 				FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
+				FA3A56BD26DA1ECD00F9FE9A /* ProjectView.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
+				FA3A56B126DA028A00F9FE9A /* NavigationLazyView.swift in Sources */,
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA3A569F26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */,
+				FA3A56B326DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A567926D9F80700F9FE9A /* Project.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
