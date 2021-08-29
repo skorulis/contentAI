@@ -21,8 +21,10 @@ public class ContentSource: NSManagedObject {
     @NSManaged public var url: String?
     @NSManaged public var username: String?
     @NSManaged public var password: String?
+    @NSManaged public var authData: Data?
     
     @NSManaged private var sourceTypeString: String
+    
     
     var sourceType: SourceType {
         get {

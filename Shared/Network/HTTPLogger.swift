@@ -31,7 +31,7 @@ struct HTTPLogger {
 ----REQUEST BEGIN----
 \(request.httpMethod ?? "-"): \(request.url?.absoluteString ?? "-")
 Body:\n\(dataText(data: request.httpBody, isJSON: isJSON))
-Headers:\n TODO
+Headers:\n\(headerString(request.allHTTPHeaderFields ?? [:]))
 ----REQUEST END------
 """
         )
@@ -55,6 +55,12 @@ HEADERS:\n TODO
 ---RESPONSE END----
 """
         )
+    }
+    
+    private func headerString(_ headers: [String: String]) -> String {
+        return headers.map { key, value in
+            return "\(key) = \(value)"
+        }.joined(separator: "\n")
     }
     
 }

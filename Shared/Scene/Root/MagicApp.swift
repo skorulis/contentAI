@@ -14,6 +14,10 @@ struct MagicApp: App {
         WindowGroup {
             ContentView()
                 .environmentObject(IOC.shared.container.resolve(GenericFactory.self)!)
+                .handlesExternalEvents(preferring: ["*"], allowing: ["*"])
+                .onOpenURL { url in
+                    IOC.shared.container.resolve(DeeplinkService.self)?.onDeeplink(url: url)
+                }
         }
     }
 }

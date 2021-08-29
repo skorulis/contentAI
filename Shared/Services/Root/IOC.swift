@@ -46,6 +46,8 @@ public final class IOC {
         container.autoregister(ErrorService.self, initializer: ErrorService.init)
         container.autoregister(MagicClient.self, initializer: MagicClient.init)
         container.autoregister(HTTPLogger.self, initializer: HTTPLogger.init)
+        container.autoregister(DeeplinkService.self, initializer: DeeplinkService.init)
+            .inObjectScope(.container)
     }
     
     private func setupViewModels() {

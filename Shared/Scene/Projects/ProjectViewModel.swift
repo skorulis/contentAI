@@ -18,20 +18,14 @@ final class ProjectViewModel: ObservableObject {
     init(project: ContentSource, client: MagicClient) {
         self.project = project
         self.client = client
-        test()
     }
     
 }
 
 extension ProjectViewModel {
-    
-    func test() {
-        let req = RedditEndoints.auth(username: RedditSecrets.clientId, password: RedditSecrets.secret)
-        self.client.execute(req: req)
-            .sink { result in
-                print(result)
-            }
-            .store(in: &subscribers)
+
+    var redditAuthURL: String {
+        let scopes = ["identity", "mysubreddits", "read", "vote"].joined(separator: "%20")
+        return "https://www.reddit.com/api/v1/authorize?client_id=\(RedditSecrets.clientId)&response_type=code&state=\(project.id)&redirect_uri=\(RedditEndpoints.redirect)&duration=permanent&scope=\(scopes)"
     }
-    
 }
