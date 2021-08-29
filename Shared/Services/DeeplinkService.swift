@@ -33,7 +33,7 @@ final class DeeplinkService {
     }
     
     func getRedditToken(id: String, code: String) {
-        let req = RedditEndpoints.auth(code: code)
+        let req = Reddit.Endpoints.auth(code: code)
         client.execute(req: req)
             .sink { [unowned self] result in
                 switch result {

@@ -40,7 +40,7 @@ extension ProjectViewModel {
 
     var redditAuthURL: String {
         let scopes = ["identity", "mysubreddits", "read", "vote"].joined(separator: "%20")
-        return "https://www.reddit.com/api/v1/authorize?client_id=\(RedditSecrets.clientId)&response_type=code&state=\(project.id)&redirect_uri=\(RedditEndpoints.redirect)&duration=permanent&scope=\(scopes)"
+        return "https://www.reddit.com/api/v1/authorize?client_id=\(RedditSecrets.clientId)&response_type=code&state=\(project.id)&redirect_uri=\(Reddit.Endpoints.redirect)&duration=permanent&scope=\(scopes)"
     }
     
     var hasAuth: Bool {
@@ -48,15 +48,15 @@ extension ProjectViewModel {
     }
     
     var needsReauth: Bool {
-        guard let auth: RedditEndpoints.RedditAuthResponse = project.authObject() else { return false }
+        guard let auth: Reddit.AuthResponse = project.authObject() else { return false }
         guard let expiry = auth.expiryTime, expiry < Date().timeIntervalSince1970 - 60 else { return false }
         return true
     }
     
     func reauthReddit() {
-        guard let auth: RedditEndpoints.RedditAuthResponse = project.authObject() else { return }
+        guard let auth: Reddit.AuthResponse = project.authObject() else { return }
         let token = auth.refresh_token!
-        let req = RedditEndpoints.refresh(token: token)
+        let req = Reddit.Endpoints.refresh(token: token)
         client.execute(req: req)
             .handleError(ErrorService.shared)
             .sink { [unowned self] response in
@@ -70,9 +70,9 @@ extension ProjectViewModel {
     }
     
     func fetchRedditData() {
-        guard let auth: RedditEndpoints.RedditAuthResponse = project.authObject() else { return }
+        guard let auth: Reddit.AuthResponse = project.authObject() else { return }
         let token = auth.access_token
-        let req = RedditEndpoints.getData(token: token)
+        let req = Reddit.Endpoints.getData(token: token)
         client.execute(req: req)
             .handleError(ErrorService.shared)
             .sink { [unowned self] response in

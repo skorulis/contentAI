@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19141.11" systemVersion="20G95" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ContentEntity" representedClassName="ContentEntity" syncable="YES">
+        <attribute name="created" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="ContentSource" representedClassName="ContentSource" syncable="YES">
         <attribute name="authData" optional="YES" attributeType="Binary"/>
         <attribute name="id" attributeType="String"/>
@@ -11,5 +18,6 @@
     </entity>
     <elements>
         <element name="ContentSource" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="ContentEntity" positionX="-63" positionY="36" width="128" height="104"/>
     </elements>
 </model>
