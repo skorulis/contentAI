@@ -14,17 +14,17 @@ final class ErrorService {
         print(error)
     }
     
+    
 }
 
-extension Publisher where Output == Void, Failure == Error {
+extension Publisher where Failure == Error {
     
-    /*func sink(_ errorService: ErrorService) -> AnyCancellable {
-        return sink { (result) in
-            switch result {
-            case .success: break
-            case .failure(let error): errorService.handle(error: error)
-            }
+    func handleError(_ handler: ErrorService) -> AnyPublisher<Output, Never> {
+        return self.catch { error -> Empty<Output, Never> in
+            handler.handle(error: error)
+            return Empty(completeImmediately: true, outputType: Output.self, failureType: Never.self)
         }
-    }*/
+        .eraseToAnyPublisher()
+    }
     
 }

@@ -23,7 +23,11 @@ extension ProjectView: View {
         case .website:
             WebView(urlString: viewModel.project.url!)
         case .reddit:
-            WebView(urlString: viewModel.redditAuthURL)
+            if viewModel.hasAuth {
+                Text("Getting lcos")
+            } else {
+                WebView(urlString: viewModel.redditAuthURL)
+            }
         }
     }
     

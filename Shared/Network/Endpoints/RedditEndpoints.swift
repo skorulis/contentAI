@@ -31,6 +31,43 @@ enum RedditEndpoints {
         return req
     }
     
+    static func refresh(token: String) -> HTTPJSONRequest<RedditAuthResponse> {
+        let credentials = "\(RedditSecrets.clientId):\(RedditSecrets.secret)"
+        let encoded = Data(credentials.utf8).base64EncodedString()
+        
+        let params = [
+            URLQueryItem(name: "grant_type", value: "refresh_token"),
+            URLQueryItem(name: "refresh_token", value: token)
+        ]
+        
+        let url = "https://www.reddit.com/api/v1/access_token"
+        var req = HTTPJSONRequest<RedditAuthResponse>(endpoint: url, formParams: params)
+        req.method = "POST"
+        req.headers["Authorization"] = "Basic \(encoded)"
+        req.headers["User-Agent"] = userAgent
+        
+        return req
+    }
+    
+    static func getData(token: String) -> HTTPJSONRequest<EmptyResponse> {
+        let url = "https://www.reddit.com/hot"
+        
+        var req = HTTPJSONRequest<EmptyResponse>(endpoint: url)
+        req.headers["Authorization"] = "Bearer \(token)"
+        req.headers["User-Agent"] = userAgent
+        
+        return req
+    }
+    
+    static func getMe(token: String) -> HTTPJSONRequest<EmptyResponse> {
+        let url = "https://oauth.reddit.com/api/v1/me"
+        var req = HTTPJSONRequest<EmptyResponse>(endpoint: url)
+        req.headers["Authorization"] = "Bearer \(token)"
+        req.headers["User-Agent"] = userAgent
+        
+        return req
+    }
+    
 }
 
 extension RedditEndpoints {
@@ -40,6 +77,7 @@ extension RedditEndpoints {
         let token_type: String
         let expires_in: TimeInterval
         let scope: String
-        let refresh_token: String
+        var refresh_token: String?
+        var expiryTime: TimeInterval?
     }
 }

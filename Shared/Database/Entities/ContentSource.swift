@@ -25,7 +25,6 @@ public class ContentSource: NSManagedObject {
     
     @NSManaged private var sourceTypeString: String
     
-    
     var sourceType: SourceType {
         get {
             return SourceType(rawValue: sourceTypeString) ?? .website
@@ -34,7 +33,14 @@ public class ContentSource: NSManagedObject {
             sourceTypeString = newValue.rawValue
         }
     }
+    
+    func authObject<T: Decodable>() -> T? {
+        guard let data = authData else { return nil }
+        return try! JSONDecoder().decode(T.self, from: data)
+    }
 }
+
+// MARK: - Inner types
 
 extension ContentSource: Identifiable {
     

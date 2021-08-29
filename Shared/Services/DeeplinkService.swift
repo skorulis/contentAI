@@ -11,11 +11,13 @@ import Foundation
 final class DeeplinkService {
     
     private let client: MagicClient
+    private let access: ContentSourceAccess
     
     private var subscribers: Set<AnyCancellable> = []
     
-    init(client: MagicClient) {
+    init(client: MagicClient, access: ContentSourceAccess) {
         self.client = client
+        self.access = access
     }
     
     func onDeeplink(url: URL) {
@@ -30,12 +32,20 @@ final class DeeplinkService {
         }
     }
     
-    
     func getRedditToken(id: String, code: String) {
         let req = RedditEndpoints.auth(code: code)
         client.execute(req: req)
-            .sink { result in
-                print(result)
+            .sink { [unowned self] result in
+                switch result {
+                case .success(let auth):
+                    var newAuth = auth
+                    newAuth.expiryTime = Date(timeIntervalSinceNow: auth.expires_in).timeIntervalSince1970
+                    let project = try? self.access.get(id: id)
+                    project?.authData = try! JSONEncoder().encode(newAuth)
+                    self.access.database.saveToDisk()
+                case .failure(let error):
+                    ErrorService.shared.handle(error: error)
+                }
             }
             .store(in: &subscribers)
     }
