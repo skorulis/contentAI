@@ -121,8 +121,6 @@
 		FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		FA3A56C226DA3D5E00F9FE9A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		FA3A56C526DA3F5700F9FE9A /* Magic--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Magic--macOS--Info.plist"; sourceTree = "<group>"; };
-		FA3A56C626DA442500F9FE9A /* Magic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Magic.entitlements; sourceTree = "<group>"; };
 		FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
@@ -136,6 +134,8 @@
 		FAEE450726DB7CC000FCF0AC /* ContentEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentEntity.swift; sourceTree = "<group>"; };
 		FAEE450A26DB7DAC00FCF0AC /* ContentAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentAccess.swift; sourceTree = "<group>"; };
 		FAEE450D26DB7F0200FCF0AC /* Reddit.AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.AuthResponse.swift; sourceTree = "<group>"; };
+		FAEE451126DB83DC00FCF0AC /* Magic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Magic.entitlements; sourceTree = "<group>"; };
+		FAEE451226DB83DC00FCF0AC /* macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "macOS-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +161,7 @@
 		FA3A562526D9F44C00F9FE9A = {
 			isa = PBXGroup;
 			children = (
-				FA3A56C626DA442500F9FE9A /* Magic.entitlements */,
-				FA3A56C526DA3F5700F9FE9A /* Magic--macOS--Info.plist */,
+				FAEE451026DB83DC00FCF0AC /* Configs */,
 				FA3A562A26D9F44C00F9FE9A /* Shared */,
 				FA3A563626D9F44E00F9FE9A /* Products */,
 				FA3A568826D9FCD500F9FE9A /* Frameworks */,
@@ -399,6 +398,15 @@
 				FAEE450426DB7B6400FCF0AC /* ContentItem.swift */,
 			);
 			path = Generic;
+			sourceTree = "<group>";
+		};
+		FAEE451026DB83DC00FCF0AC /* Configs */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE451126DB83DC00FCF0AC /* Magic.entitlements */,
+				FAEE451226DB83DC00FCF0AC /* macOS-Info.plist */,
+			);
+			path = Configs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -776,7 +784,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Magic.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Configs/Magic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -786,7 +794,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Magic--macOS--Info.plist";
+				INFOPLIST_FILE = "Configs/macOS-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = Magic;
 				INFOPLIST_KEY_CFBundleName = Magic;
 				INFOPLIST_KEY_CFBundleVersion = 1;
@@ -810,7 +818,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Magic.entitlements;
+				CODE_SIGN_ENTITLEMENTS = Configs/Magic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -820,7 +828,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Magic--macOS--Info.plist";
+				INFOPLIST_FILE = "Configs/macOS-Info.plist";
 				INFOPLIST_KEY_CFBundleExecutable = Magic;
 				INFOPLIST_KEY_CFBundleName = Magic;
 				INFOPLIST_KEY_CFBundleVersion = 1;
