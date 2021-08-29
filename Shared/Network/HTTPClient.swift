@@ -11,7 +11,7 @@ import Foundation
 class HTTPClient {
     
     private let session: URLSession
-    private let baseURL: URL
+    private let baseURL: URL?
     private let logger: HTTPLogger
     
     private var subscriber: Set<AnyCancellable> = []
@@ -19,10 +19,15 @@ class HTTPClient {
     private let responseValidator = HTTPStatusValidator()
     
     init(
-        baseURL: String,
+        baseURL: String?,
         logger: HTTPLogger
     ) {
-        self.baseURL = URL(string: baseURL)!
+        if let baseURL = baseURL {
+            self.baseURL = URL(string: baseURL)!
+        } else {
+            self.baseURL = nil
+        }
+        
         self.logger = logger
         
         let config = URLSessionConfiguration.default
@@ -101,7 +106,13 @@ class HTTPClient {
 private extension HTTPClient {
     
     func toURLRequest<R: HTTPRequest>(req: R) -> URLRequest {
-        let url = baseURL.appendingPathComponent(req.endpoint)
+        var url: URL!
+        if let baseURL = baseURL {
+            url = baseURL.appendingPathComponent(req.endpoint)
+        } else {
+            url = URL(string: req.endpoint)!
+        }
+        
         var components = URLComponents(url: url, resolvingAgainstBaseURL: true)!
         if req.params.count > 0 {
             components.queryItems = req.params.map { URLQueryItem(name: $0.key, value: $0.value) }

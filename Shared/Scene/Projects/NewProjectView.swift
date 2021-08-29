@@ -24,8 +24,22 @@ extension NewProjectView: View {
     
     var body: some View {
         VStack {
+            Picker("SourceType", selection: $viewModel.type) {
+                ForEach(ContentSource.SourceType.allCases) { type in
+                    Text(type.rawValue)
+                        .tag(type)
+                }
+            }
+            .pickerStyle(.segmented)
             TextField("Name", text: $viewModel.name)
-            TextField("Source", text: $viewModel.source)
+            if viewModel.type.needsURL {
+                TextField("URL", text: $viewModel.source)
+            }
+            if viewModel.type.needsUserPass {
+                TextField("Username", text: $viewModel.username)
+                TextField("Password", text: $viewModel.password)
+            }
+            
             actions
         }
         .padding(.horizontal, 16)

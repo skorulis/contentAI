@@ -39,7 +39,7 @@ extension ProjectListView: View {
         }
     }
     
-    private func existing(project: Project) -> some View {
+    private func existing(project: ContentSource) -> some View {
         return NavigationLazyView(
             ProjectView(viewModel: factory.resolve(ProjectViewModel.self, argument: project))
         )

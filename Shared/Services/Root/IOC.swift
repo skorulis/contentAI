@@ -37,19 +37,21 @@ public final class IOC {
     }
     
     private func setupAccess() {
-        container.autoregister(ProjectAccess.self, initializer: ProjectAccess.init)
+        container.autoregister(ContentSourceAccess.self, initializer: ContentSourceAccess.init)
     }
     
     private func setupServices() {
         container.autoregister(DatabaseService.self, initializer: DatabaseService.init)
             .inObjectScope(.container)
         container.autoregister(ErrorService.self, initializer: ErrorService.init)
+        container.autoregister(MagicClient.self, initializer: MagicClient.init)
+        container.autoregister(HTTPLogger.self, initializer: HTTPLogger.init)
     }
     
     private func setupViewModels() {
         container.autoregister(ProjectListViewModel.self, initializer: ProjectListViewModel.init)
         container.autoregister(NewProjectViewModel.self, argument: NewProjectViewModel.Argument.self, initializer: NewProjectViewModel.init)
-        container.autoregister(ProjectViewModel.self, argument: Project.self, initializer: ProjectViewModel.init)
+        container.autoregister(ProjectViewModel.self, argument: ContentSource.self, initializer: ProjectViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {

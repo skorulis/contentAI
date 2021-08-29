@@ -10,18 +10,24 @@ import CoreData
 
 final class NewProjectViewModel: ObservableObject {
     
-    private let access: ProjectAccess?
+    private let access: ContentSourceAccess?
     
     @Published var id: String?
     @Published var source: String = ""
     @Published var name: String = ""
+    @Published var username: String = ""
+    @Published var password: String = ""
+    @Published var type: ContentSource.SourceType = .website
     
-    init(arg: Argument, access: ProjectAccess?) {
+    init(arg: Argument, access: ContentSourceAccess?) {
         self.id = arg.id
         self.access = access
         if let project = loadProject() {
-            self.source = project.source
+            self.source = project.url ?? ""
+            self.type = project.sourceType
             self.name = project.name
+            self.username = project.username ?? ""
+            self.password = project.password ?? ""
         }
     }
 }
@@ -40,7 +46,7 @@ extension NewProjectViewModel {
 
 extension NewProjectViewModel {
  
-    func loadProject() -> Project? {
+    func loadProject() -> ContentSource? {
         if let id = id, let project = try? access?.get(id: id) {
             return project
         } else {
@@ -53,14 +59,33 @@ extension NewProjectViewModel {
 // MARK: - Behaviors
 
 extension NewProjectViewModel {
+    
+    var isValid: Bool {
+        guard name.count > 0 else { return false }
+        
+        if type.needsURL && source.count == 0 {
+            return false
+        }
+        if type.needsURL && (username.count == 0 || password.count == 0) {
+            return false
+        }
+        return true
+    }
 
     func save() {
-        guard source.count > 0, name.count > 0 else { return }
+        guard isValid else { return }
         guard let context = access?.database.mainContext else { return }
         let entity = makeProject(context: context)
-        
-        entity.source = source
         entity.name = name
+        entity.sourceType = type
+        if type.needsURL {
+            entity.url = source
+        }
+        if type.needsUserPass {
+            entity.username = username
+            entity.password = password
+        }
+        
         self.id = entity.id
         access?.database.saveToDisk()
     }
@@ -72,11 +97,11 @@ extension NewProjectViewModel {
         access?.database.saveToDisk()
     }
     
-    private func makeProject(context: NSManagedObjectContext) -> Project {
+    private func makeProject(context: NSManagedObjectContext) -> ContentSource {
         if let project = loadProject() {
             return project
         }
-        let new = Project(context: context)
+        let new = ContentSource(context: context)
         new.id = UUID().uuidString
         return new
     }

@@ -44,3 +44,5 @@ extension HTTPRequest {
         return nil
     }
 }
+
+struct EmptyResponse: Decodable {} 

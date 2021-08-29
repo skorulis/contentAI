@@ -23,10 +23,8 @@
 		FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */; };
 		FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */; };
 		FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */; };
-		FA3A567426D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */; };
-		FA3A567526D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */; };
-		FA3A567826D9F80700F9FE9A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567726D9F80700F9FE9A /* Project.swift */; };
-		FA3A567926D9F80700F9FE9A /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567726D9F80700F9FE9A /* Project.swift */; };
+		FA3A567826D9F80700F9FE9A /* ContentSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567726D9F80700F9FE9A /* ContentSource.swift */; };
+		FA3A567926D9F80700F9FE9A /* ContentSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567726D9F80700F9FE9A /* ContentSource.swift */; };
 		FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
 		FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
 		FA3A568226D9FA1C00F9FE9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */; };
@@ -55,14 +53,26 @@
 		FA3A56B126DA028A00F9FE9A /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */; };
 		FA3A56B226DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */; };
 		FA3A56B326DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */; };
-		FA3A56B626DA112600F9FE9A /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */; };
-		FA3A56B726DA112600F9FE9A /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */; };
+		FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */; };
+		FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */; };
 		FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
 		FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
 		FA3A56BC26DA1ECD00F9FE9A /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */; };
 		FA3A56BD26DA1ECD00F9FE9A /* ProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */; };
 		FA3A56BF26DA1EEA00F9FE9A /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */; };
 		FA3A56C026DA1EEA00F9FE9A /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */; };
+		FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56C226DA3D5E00F9FE9A /* WebView.swift */; };
+		FA3A56C426DA3D5E00F9FE9A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56C226DA3D5E00F9FE9A /* WebView.swift */; };
+		FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
+		FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
+		FAEE44E526DB2C3400FCF0AC /* RedditSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E426DB2C3400FCF0AC /* RedditSecrets.swift */; };
+		FAEE44E626DB2C3400FCF0AC /* RedditSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E426DB2C3400FCF0AC /* RedditSecrets.swift */; };
+		FAEE44E926DB2CDE00FCF0AC /* RedditEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* RedditEndpoints.swift */; };
+		FAEE44EA26DB2CDE00FCF0AC /* RedditEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* RedditEndpoints.swift */; };
+		FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */; };
+		FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */; };
+		FAEE44F026DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */; };
+		FAEE44F126DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +86,7 @@
 		FA3A565826D9F49900F9FE9A /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponseValidator.swift; sourceTree = "<group>"; };
 		FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
-		FA3A567326D9F74100F9FE9A /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
-		FA3A567726D9F80700F9FE9A /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FA3A567726D9F80700F9FE9A /* ContentSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSource.swift; sourceTree = "<group>"; };
 		FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicApp.swift; sourceTree = "<group>"; };
 		FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA3A568426D9FA3200F9FE9A /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
@@ -91,10 +100,18 @@
 		FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewModel.swift; sourceTree = "<group>"; };
 		FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
-		FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAccess.swift; sourceTree = "<group>"; };
+		FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSourceAccess.swift; sourceTree = "<group>"; };
 		FA3A56B826DA153600F9FE9A /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
 		FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		FA3A56C226DA3D5E00F9FE9A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		FA3A56C526DA3F5700F9FE9A /* Magic--macOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Magic--macOS--Info.plist"; sourceTree = "<group>"; };
+		FA3A56C626DA442500F9FE9A /* Magic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Magic.entitlements; sourceTree = "<group>"; };
+		FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
+		FAEE44E426DB2C3400FCF0AC /* RedditSecrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RedditSecrets.swift; path = ../../../../../../Documents/RedditSecrets.swift; sourceTree = "<group>"; };
+		FAEE44E826DB2CDE00FCF0AC /* RedditEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditEndpoints.swift; sourceTree = "<group>"; };
+		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
+		FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +137,8 @@
 		FA3A562526D9F44C00F9FE9A = {
 			isa = PBXGroup;
 			children = (
+				FA3A56C626DA442500F9FE9A /* Magic.entitlements */,
+				FA3A56C526DA3F5700F9FE9A /* Magic--macOS--Info.plist */,
 				FA3A562A26D9F44C00F9FE9A /* Shared */,
 				FA3A563626D9F44E00F9FE9A /* Products */,
 				FA3A568826D9FCD500F9FE9A /* Frameworks */,
@@ -131,6 +150,7 @@
 			children = (
 				FA3A566E26D9F6AD00F9FE9A /* Database */,
 				FA3A569726D9FE2D00F9FE9A /* Infrstructure */,
+				FAEE44DF26DB2B6E00FCF0AC /* Model */,
 				FA3A564E26D9F49800F9FE9A /* Network */,
 				FA3A567C26D9FA1C00F9FE9A /* Scene */,
 				FA3A567A26D9F9E700F9FE9A /* Services */,
@@ -151,12 +171,14 @@
 		FA3A564E26D9F49800F9FE9A /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				FAEE44E726DB2CD500FCF0AC /* Endpoints */,
 				FA3A565326D9F49800F9FE9A /* HTTPLogger.swift */,
 				FA3A565426D9F49800F9FE9A /* HTTPRequest.swift */,
 				FA3A565626D9F49800F9FE9A /* HTTPJSONRequest.swift */,
 				FA3A565726D9F49900F9FE9A /* HTTPStatusError.swift */,
 				FA3A565826D9F49900F9FE9A /* HTTPClient.swift */,
 				FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */,
+				FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -165,8 +187,8 @@
 			isa = PBXGroup;
 			children = (
 				FA3A567626D9F7FB00F9FE9A /* Entities */,
-				FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */,
 				FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */,
+				FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -174,7 +196,7 @@
 		FA3A567626D9F7FB00F9FE9A /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				FA3A567726D9F80700F9FE9A /* Project.swift */,
+				FA3A567726D9F80700F9FE9A /* ContentSource.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -204,6 +226,7 @@
 			children = (
 				FA3A569026D9FD7C00F9FE9A /* Projects */,
 				FA3A567D26D9FA1C00F9FE9A /* Root */,
+				FA3A56C126DA3D5200F9FE9A /* Web */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -240,6 +263,7 @@
 		FA3A569726D9FE2D00F9FE9A /* Infrstructure */ = {
 			isa = PBXGroup;
 			children = (
+				FAEE44EE26DB2FAF00FCF0AC /* Combine */,
 				FA3A569826D9FE2D00F9FE9A /* CoreData */,
 				FA3A56AB26DA028A00F9FE9A /* SwiftUI */,
 			);
@@ -283,9 +307,50 @@
 		FA3A56B426DA110400F9FE9A /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
-				FA3A56B526DA112600F9FE9A /* ProjectAccess.swift */,
+				FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */,
 			);
 			path = DataAccess;
+			sourceTree = "<group>";
+		};
+		FA3A56C126DA3D5200F9FE9A /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				FA3A56C226DA3D5E00F9FE9A /* WebView.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		FAEE44DF26DB2B6E00FCF0AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE44E026DB2B6E00FCF0AC /* Secrets */,
+			);
+			name = Model;
+			path = Shared/Model;
+			sourceTree = SOURCE_ROOT;
+		};
+		FAEE44E026DB2B6E00FCF0AC /* Secrets */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE44E426DB2C3400FCF0AC /* RedditSecrets.swift */,
+			);
+			path = Secrets;
+			sourceTree = "<group>";
+		};
+		FAEE44E726DB2CD500FCF0AC /* Endpoints */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE44E826DB2CDE00FCF0AC /* RedditEndpoints.swift */,
+			);
+			path = Endpoints;
+			sourceTree = "<group>";
+		};
+		FAEE44EE26DB2FAF00FCF0AC /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */,
+			);
+			path = Combine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -402,25 +467,30 @@
 				FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
 				FA3A569526D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
 				FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
-				FA3A56B626DA112600F9FE9A /* ProjectAccess.swift in Sources */,
+				FAEE44E926DB2CDE00FCF0AC /* RedditEndpoints.swift in Sources */,
+				FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
 				FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */,
 				FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */,
-				FA3A567426D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */,
+				FAEE44E526DB2C3400FCF0AC /* RedditSecrets.swift in Sources */,
 				FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
 				FA3A56A026D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */,
 				FA3A569226D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
 				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */,
+				FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FA3A56BC26DA1ECD00F9FE9A /* ProjectView.swift in Sources */,
 				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FA3A56B026DA028A00F9FE9A /* NavigationLazyView.swift in Sources */,
+				FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA3A569E26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */,
+				FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */,
+				FAEE44F026DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */,
 				FA3A56B226DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */,
-				FA3A567826D9F80700F9FE9A /* Project.swift in Sources */,
+				FA3A567826D9F80700F9FE9A /* ContentSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,25 +505,30 @@
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
 				FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
 				FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
-				FA3A56B726DA112600F9FE9A /* ProjectAccess.swift in Sources */,
+				FAEE44EA26DB2CDE00FCF0AC /* RedditEndpoints.swift in Sources */,
+				FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FA3A566126D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
 				FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */,
 				FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */,
-				FA3A567526D9F74100F9FE9A /* Magic.xcdatamodeld in Sources */,
+				FAEE44E626DB2C3400FCF0AC /* RedditSecrets.swift in Sources */,
 				FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
 				FA3A56A126D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */,
 				FA3A569326D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
 				FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */,
+				FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FA3A56BD26DA1ECD00F9FE9A /* ProjectView.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FA3A56B126DA028A00F9FE9A /* NavigationLazyView.swift in Sources */,
+				FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA3A569F26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */,
+				FA3A56C426DA3D5E00F9FE9A /* WebView.swift in Sources */,
+				FAEE44F126DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */,
 				FA3A56B326DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */,
-				FA3A567926D9F80700F9FE9A /* Project.swift in Sources */,
+				FA3A567926D9F80700F9FE9A /* ContentSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -637,6 +712,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Magic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -646,6 +722,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Magic--macOS--Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = Magic;
+				INFOPLIST_KEY_CFBundleName = Magic;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -666,6 +746,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Magic.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -675,6 +756,10 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SELECTED_FILES = readonly;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Magic--macOS--Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = Magic;
+				INFOPLIST_KEY_CFBundleName = Magic;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -747,12 +832,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		FA3A567226D9F74100F9FE9A /* Magic.xcdatamodeld */ = {
+		FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				FA3A567326D9F74100F9FE9A /* Shared.xcdatamodel */,
+				FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */,
 			);
-			currentVersion = FA3A567326D9F74100F9FE9A /* Shared.xcdatamodel */;
+			currentVersion = FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */;
 			path = Magic.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

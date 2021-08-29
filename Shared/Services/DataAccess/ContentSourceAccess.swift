@@ -7,16 +7,16 @@
 
 import Foundation
 
-struct ProjectAccess {
+struct ContentSourceAccess {
     
     let database: DatabaseService
 }
 
-extension ProjectAccess {
+extension ContentSourceAccess {
     
-    func get(id: String) throws -> Project? {
+    func get(id: String) throws -> ContentSource? {
         assert(Thread.current.isMainThread)
-        let fetchRequest = Project.fetch()
+        let fetchRequest = ContentSource.fetch()
         fetchRequest.predicate = NSPredicate(format: "id == %@", id)
         let context = database.mainContext
         return try context.fetch(fetchRequest).first
