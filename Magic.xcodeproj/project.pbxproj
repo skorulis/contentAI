@@ -63,6 +63,12 @@
 		FA3A56C026DA1EEA00F9FE9A /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */; };
 		FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56C226DA3D5E00F9FE9A /* WebView.swift */; };
 		FA3A56C426DA3D5E00F9FE9A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56C226DA3D5E00F9FE9A /* WebView.swift */; };
+		FA3BE92926DC386C003A0F94 /* SourceServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92826DC386C003A0F94 /* SourceServiceRouter.swift */; };
+		FA3BE92A26DC386C003A0F94 /* SourceServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92826DC386C003A0F94 /* SourceServiceRouter.swift */; };
+		FA3BE92C26DC3875003A0F94 /* RedditSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */; };
+		FA3BE92D26DC3875003A0F94 /* RedditSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */; };
+		FA3BE92F26DCCC00003A0F94 /* PSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */; };
+		FA3BE93026DCCC00003A0F94 /* PSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */; };
 		FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
 		FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
 		FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
@@ -121,6 +127,9 @@
 		FA3A56BB26DA1ECD00F9FE9A /* ProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectView.swift; sourceTree = "<group>"; };
 		FA3A56BE26DA1EEA00F9FE9A /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		FA3A56C226DA3D5E00F9FE9A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		FA3BE92826DC386C003A0F94 /* SourceServiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceServiceRouter.swift; sourceTree = "<group>"; };
+		FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditSourceService.swift; sourceTree = "<group>"; };
+		FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSourceService.swift; sourceTree = "<group>"; };
 		FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
@@ -230,6 +239,7 @@
 			children = (
 				FA3A56B426DA110400F9FE9A /* DataAccess */,
 				FA3A567B26D9F9E700F9FE9A /* Root */,
+				FA3BE92726DC3844003A0F94 /* Source */,
 				FAEE44F226DB3CA700FCF0AC /* DeeplinkService.swift */,
 			);
 			path = Services;
@@ -344,6 +354,16 @@
 				FA3A56C226DA3D5E00F9FE9A /* WebView.swift */,
 			);
 			path = Web;
+			sourceTree = "<group>";
+		};
+		FA3BE92726DC3844003A0F94 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				FA3BE92826DC386C003A0F94 /* SourceServiceRouter.swift */,
+				FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */,
+				FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 		FAEE44DF26DB2B6E00FCF0AC /* Model */ = {
@@ -516,6 +536,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3BE92926DC386C003A0F94 /* SourceServiceRouter.swift in Sources */,
+				FA3BE92F26DCCC00003A0F94 /* PSourceService.swift in Sources */,
 				FA3A566626D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
 				FAEE450E26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */,
 				FA3A568226D9FA1C00F9FE9A /* ContentView.swift in Sources */,
@@ -530,6 +552,7 @@
 				FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
 				FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */,
+				FA3BE92C26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FAEE44FE26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
 				FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */,
 				FAEE44F326DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
@@ -562,6 +585,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3BE92A26DC386C003A0F94 /* SourceServiceRouter.swift in Sources */,
+				FA3BE93026DCCC00003A0F94 /* PSourceService.swift in Sources */,
 				FA3A566726D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
 				FAEE450F26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */,
 				FA3A568326D9FA1C00F9FE9A /* ContentView.swift in Sources */,
@@ -576,6 +601,7 @@
 				FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FA3A566126D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
 				FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */,
+				FA3BE92D26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FAEE44FF26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
 				FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */,
 				FAEE44F426DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,

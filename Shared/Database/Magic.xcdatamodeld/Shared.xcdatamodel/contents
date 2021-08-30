@@ -6,6 +6,7 @@
         <attribute name="thumbnail" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="sources" toMany="YES" deletionRule="Nullify" destinationEntity="ContentSource" inverseName="content" inverseEntity="ContentSource"/>
     </entity>
     <entity name="ContentSource" representedClassName="ContentSource" syncable="YES">
         <attribute name="authData" optional="YES" attributeType="Binary"/>
@@ -15,9 +16,10 @@
         <attribute name="sourceTypeString" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
         <attribute name="username" optional="YES" attributeType="String"/>
+        <relationship name="content" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContentEntity" inverseName="sources" inverseEntity="ContentEntity"/>
     </entity>
     <elements>
-        <element name="ContentSource" positionX="-63" positionY="-18" width="128" height="134"/>
-        <element name="ContentEntity" positionX="-63" positionY="36" width="128" height="104"/>
+        <element name="ContentEntity" positionX="-63" positionY="36" width="128" height="119"/>
+        <element name="ContentSource" positionX="-63" positionY="-18" width="128" height="149"/>
     </elements>
 </model>

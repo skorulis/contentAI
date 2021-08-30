@@ -20,6 +20,7 @@ public class ContentEntity: NSManagedObject {
     @NSManaged public var url: String?
     @NSManaged public var thumbnail: String?
     @NSManaged public var created: Double
+    @NSManaged public var sources: Set<ContentSource>
     
 }
 

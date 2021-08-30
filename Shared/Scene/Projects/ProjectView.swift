@@ -24,7 +24,7 @@ extension ProjectView: View {
             WebView(urlString: viewModel.project.url!)
         case .reddit:
             if viewModel.hasAuth {
-                Text("Getting lcos")
+                Text("Getting lcos \(viewModel.project.content.count)")
             } else {
                 WebView(urlString: viewModel.redditAuthURL)
             }

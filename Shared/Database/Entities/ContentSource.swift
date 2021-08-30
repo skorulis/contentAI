@@ -23,7 +23,10 @@ public class ContentSource: NSManagedObject {
     @NSManaged public var password: String?
     @NSManaged public var authData: Data?
     
+    @NSManaged public var content: Set<ContentEntity>
+    
     @NSManaged private var sourceTypeString: String
+    
     
     var sourceType: SourceType {
         get {

@@ -38,6 +38,7 @@ public final class IOC {
     
     private func setupAccess() {
         container.autoregister(ContentSourceAccess.self, initializer: ContentSourceAccess.init)
+        container.autoregister(ContentAccess.self, initializer: ContentAccess.init)
     }
     
     private func setupServices() {
@@ -48,6 +49,9 @@ public final class IOC {
         container.autoregister(HTTPLogger.self, initializer: HTTPLogger.init)
         container.autoregister(DeeplinkService.self, initializer: DeeplinkService.init)
             .inObjectScope(.container)
+        
+        container.autoregister(SourceServiceRouter.self, argument: ContentSource.self, initializer: SourceServiceRouter.init)
+        container.autoregister(RedditSourceService.self, argument: ContentSource.self, initializer: RedditSourceService.init)
     }
     
     private func setupViewModels() {
