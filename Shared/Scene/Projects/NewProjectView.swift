@@ -35,9 +35,8 @@ extension NewProjectView: View {
             if viewModel.type.needsURL {
                 TextField("URL", text: $viewModel.source)
             }
-            if viewModel.type.needsUserPass {
-                TextField("Username", text: $viewModel.username)
-                TextField("Password", text: $viewModel.password)
+            if viewModel.type == .reddit {
+                TextField("Subreddit", text: $viewModel.reddit.subreddit)
             }
             
             actions

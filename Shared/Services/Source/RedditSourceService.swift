@@ -53,8 +53,10 @@ final class RedditSourceService: PSourceService {
     
     func fetchRedditData() {
         guard let auth: Reddit.AuthResponse = source.authObject() else { return }
+        let config: Reddit.SourceConfig? = source.configObject()
+        let subreddit = config?.subreddit ?? ""
         let token = auth.access_token
-        let req = Reddit.Endpoints.getData(token: token)
+        let req = Reddit.Endpoints.getData(token: token, subreddit: subreddit)
         client.execute(req: req)
             .handleError(ErrorService.shared)
             .receive(on: DispatchQueue.global())

@@ -15,9 +15,9 @@ final class NewProjectViewModel: ObservableObject {
     @Published var id: String?
     @Published var source: String = ""
     @Published var name: String = ""
-    @Published var username: String = ""
-    @Published var password: String = ""
     @Published var type: ContentSource.SourceType = .website
+    
+    @Published var reddit: Reddit.SourceConfig = .init()
     
     init(arg: Argument, access: ContentSourceAccess?) {
         self.id = arg.id
@@ -26,8 +26,6 @@ final class NewProjectViewModel: ObservableObject {
             self.source = project.url ?? ""
             self.type = project.sourceType
             self.name = project.name
-            self.username = project.username ?? ""
-            self.password = project.password ?? ""
         }
     }
 }
@@ -66,9 +64,6 @@ extension NewProjectViewModel {
         if type.needsURL && source.count == 0 {
             return false
         }
-        if type.needsURL && (username.count == 0 || password.count == 0) {
-            return false
-        }
         return true
     }
 
@@ -81,9 +76,8 @@ extension NewProjectViewModel {
         if type.needsURL {
             entity.url = source
         }
-        if type.needsUserPass {
-            entity.username = username
-            entity.password = password
+        if type == .reddit {
+            entity.configData = try? JSONEncoder().encode(reddit)
         }
         
         self.id = entity.id

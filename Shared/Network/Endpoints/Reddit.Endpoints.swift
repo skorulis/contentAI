@@ -50,8 +50,12 @@ extension Reddit {
             return req
         }
         
-        static func getData(token: String) -> HTTPJSONRequest<ListingResponse> {
-            let url = "https://oauth.reddit.com/hot"
+        static func getData(token: String, subreddit: String) -> HTTPJSONRequest<ListingResponse> {
+            var url = "https://oauth.reddit.com/"
+            if subreddit.count > 0 {
+                url += "r/\(subreddit)/"
+            }
+            url += "hot"
             
             var req = HTTPJSONRequest<ListingResponse>(endpoint: url)
             req.headers["Authorization"] = "Bearer \(token)"

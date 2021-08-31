@@ -19,9 +19,8 @@ public class ContentSource: NSManagedObject {
     @NSManaged public var name: String
     
     @NSManaged public var url: String?
-    @NSManaged public var username: String?
-    @NSManaged public var password: String?
     @NSManaged public var authData: Data?
+    @NSManaged public var configData: Data?
     
     @NSManaged public var content: Set<ContentEntity>
     
@@ -41,6 +40,11 @@ public class ContentSource: NSManagedObject {
         guard let data = authData else { return nil }
         return try! JSONDecoder().decode(T.self, from: data)
     }
+    
+    func configObject<T: Decodable>() -> T? {
+        guard let data = configData else { return nil }
+        return try! JSONDecoder().decode(T.self, from: data)
+    }
 }
 
 // MARK: - Inner types
@@ -56,13 +60,6 @@ extension ContentSource: Identifiable {
         var needsURL: Bool {
             switch self {
             case .website: return true
-            default: return false
-            }
-        }
-        
-        var needsUserPass: Bool {
-            switch self {
-            case .reddit: return true
             default: return false
             }
         }
