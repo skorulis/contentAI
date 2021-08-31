@@ -9,14 +9,14 @@ import SwiftUI
 
 // MARK: - Memory footprint
 
-struct ProjectView {
+struct ContentSourceView {
     
-    @StateObject var viewModel: ProjectViewModel
+    @StateObject var viewModel: ContentSourceViewModel
 }
 
 // MARK: - Rendering
 
-extension ProjectView: View {
+extension ContentSourceView: View {
     
     var body: some View {
         switch viewModel.project.sourceType {
@@ -24,9 +24,18 @@ extension ProjectView: View {
             WebView(urlString: viewModel.project.url!)
         case .reddit:
             if viewModel.hasAuth {
-                Text("Getting lcos \(viewModel.project.content.count)")
+                contentList
+                //Text("Getting lcos \(viewModel.project.content.count)")
             } else {
                 WebView(urlString: viewModel.redditAuthURL)
+            }
+        }
+    }
+    
+    private var contentList: some View {
+        List {
+            ForEach(viewModel.availableContent) { item in
+                ContentSummaryView(item: item)
             }
         }
     }

@@ -24,24 +24,37 @@ extension ProjectListView: View {
     
     var body: some View {
         List {
-            ForEach(viewModel.projects) { proj in
-                NavigationLink(destination: existing(project: proj)) {
-                    Text(proj.name)
+            Section(header: Text("Sources")) {
+                ForEach(viewModel.projects) { proj in
+                    NavigationLink(destination: existing(project: proj)) {
+                        Text(proj.name)
+                    }
                 }
+                newSourceButton
             }
-            newButton
+
+            Section(header: Text("Accounts")) {
+                newAccountButton
+            }
+            
         }
     }
     
-    private var newButton: some View {
+    private var newSourceButton: some View {
         NavigationLink(destination: addProject) {
-            Text("New project")
+            Text("New source")
+        }
+    }
+    
+    private var newAccountButton: some View {
+        NavigationLink(destination: addProject) {
+            Text("New account")
         }
     }
     
     private func existing(project: ContentSource) -> some View {
         return NavigationLazyView(
-            ProjectView(viewModel: factory.resolve(ProjectViewModel.self, argument: project))
+            ContentSourceView(viewModel: factory.resolve(ContentSourceViewModel.self, argument: project))
         )
     }
     

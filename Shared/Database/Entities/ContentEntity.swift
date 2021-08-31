@@ -9,7 +9,7 @@ import Foundation
 import CoreData
 
 @objc(ContentEntity)
-public class ContentEntity: NSManagedObject {
+public class ContentEntity: NSManagedObject, PContent {
 
     @nonobjc class func fetch() -> NSFetchRequest<ContentEntity> {
         return NSFetchRequest<ContentEntity>(entityName: "ContentEntity")
