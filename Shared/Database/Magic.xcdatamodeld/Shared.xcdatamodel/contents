@@ -6,6 +6,7 @@
         <attribute name="thumbnail" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
         <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="labelEntities" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Label" inverseName="content" inverseEntity="Label"/>
         <relationship name="sources" toMany="YES" deletionRule="Nullify" destinationEntity="ContentSource" inverseName="content" inverseEntity="ContentSource"/>
     </entity>
     <entity name="ContentSource" representedClassName="ContentSource" syncable="YES">
@@ -17,8 +18,18 @@
         <attribute name="url" optional="YES" attributeType="String"/>
         <relationship name="content" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContentEntity" inverseName="sources" inverseEntity="ContentEntity"/>
     </entity>
+    <entity name="Label" representedClassName="Label" syncable="YES">
+        <attribute name="name" attributeType="String"/>
+        <relationship name="content" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ContentEntity" inverseName="labelEntities" inverseEntity="ContentEntity"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
     <elements>
-        <element name="ContentEntity" positionX="-63" positionY="36" width="128" height="119"/>
+        <element name="ContentEntity" positionX="-63" positionY="36" width="128" height="134"/>
         <element name="ContentSource" positionX="-63" positionY="-18" width="128" height="134"/>
+        <element name="Label" positionX="-54" positionY="63" width="128" height="59"/>
     </elements>
 </model>

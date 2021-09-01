@@ -62,12 +62,20 @@ final class RedditSourceService: PSourceService {
             .receive(on: DispatchQueue.global())
             .map { response -> [ContentItem] in
                 return response.data.children.map { listing in
+                    var labels: [String] = []
+                    switch listing.data.likes {
+                    case .some(true): labels.append("upvote")
+                    case .some(false): labels.append("downvote")
+                    default: break
+                    }
+                    
                     return ContentItem(
                         id: listing.data.id,
                         title: listing.data.title,
                         url: listing.data.url,
                         thumbnail: listing.data.thumbnail,
-                        created: listing.data.created
+                        created: listing.data.created,
+                        labels: labels
                     )
                 }
             }

@@ -39,6 +39,7 @@ public final class IOC {
     private func setupAccess() {
         container.autoregister(ContentSourceAccess.self, initializer: ContentSourceAccess.init)
         container.autoregister(ContentAccess.self, initializer: ContentAccess.init)
+        container.autoregister(LabelAccess.self, initializer: LabelAccess.init)
     }
     
     private func setupServices() {

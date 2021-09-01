@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  MainAppView.swift
 //  Shared
 //
 //  Created by Alexander Skorulis on 28/8/21.
@@ -8,7 +8,7 @@
 import SwiftUI
 import CoreData
 
-struct ContentView: View {
+struct MainAppView: View {
     
     @EnvironmentObject var factory: GenericFactory
 
@@ -22,6 +22,6 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainAppView()
     }
 }

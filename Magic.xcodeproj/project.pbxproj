@@ -33,8 +33,8 @@
 		FA3A567926D9F80700F9FE9A /* ContentSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567726D9F80700F9FE9A /* ContentSource.swift */; };
 		FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
 		FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
-		FA3A568226D9FA1C00F9FE9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */; };
-		FA3A568326D9FA1C00F9FE9A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */; };
+		FA3A568226D9FA1C00F9FE9A /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* MainAppView.swift */; };
+		FA3A568326D9FA1C00F9FE9A /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* MainAppView.swift */; };
 		FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568426D9FA3200F9FE9A /* IOC.swift */; };
 		FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568426D9FA3200F9FE9A /* IOC.swift */; };
 		FA3A568A26D9FCD500F9FE9A /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = FA3A568926D9FCD500F9FE9A /* SwinjectAutoregistration */; };
@@ -45,20 +45,12 @@
 		FA3A569326D9FD8300F9FE9A /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */; };
 		FA3A569526D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */; };
 		FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */; };
-		FA3A569E26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */; };
-		FA3A569F26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */; };
-		FA3A56A026D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */; };
-		FA3A56A126D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */; };
 		FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */; };
 		FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */; };
 		FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */; };
 		FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */; };
 		FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */; };
 		FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */; };
-		FA3A56B026DA028A00F9FE9A /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */; };
-		FA3A56B126DA028A00F9FE9A /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */; };
-		FA3A56B226DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */; };
-		FA3A56B326DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */; };
 		FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */; };
 		FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */; };
 		FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
@@ -81,8 +73,6 @@
 		FAEE44EA26DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
 		FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */; };
 		FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */; };
-		FAEE44F026DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */; };
-		FAEE44F126DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */; };
 		FAEE44F326DB3CA700FCF0AC /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F226DB3CA700FCF0AC /* DeeplinkService.swift */; };
 		FAEE44F426DB3CA700FCF0AC /* DeeplinkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F226DB3CA700FCF0AC /* DeeplinkService.swift */; };
 		FAEE44F826DB735800FCF0AC /* RedditSecrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44F726DB735800FCF0AC /* RedditSecrets.swift */; };
@@ -101,6 +91,20 @@
 		FAEE450C26DB7DAC00FCF0AC /* ContentAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE450A26DB7DAC00FCF0AC /* ContentAccess.swift */; };
 		FAEE450E26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE450D26DB7F0200FCF0AC /* Reddit.AuthResponse.swift */; };
 		FAEE450F26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE450D26DB7F0200FCF0AC /* Reddit.AuthResponse.swift */; };
+		FAFB037726DF7C7700AEE99B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB037626DF7C7700AEE99B /* Label.swift */; };
+		FAFB037826DF7C7700AEE99B /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB037626DF7C7700AEE99B /* Label.swift */; };
+		FAFB037A26DF7F2D00AEE99B /* LabelAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */; };
+		FAFB037B26DF7F2D00AEE99B /* LabelAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */; };
+		FAFB038A26DF88C300AEE99B /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038126DF88C300AEE99B /* Publisher+Extension.swift */; };
+		FAFB038B26DF88C300AEE99B /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038126DF88C300AEE99B /* Publisher+Extension.swift */; };
+		FAFB038C26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038326DF88C300AEE99B /* FetchedResultsControllerPublisher.swift */; };
+		FAFB038D26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038326DF88C300AEE99B /* FetchedResultsControllerPublisher.swift */; };
+		FAFB038E26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038426DF88C300AEE99B /* ManagedObjectChangePublisher.swift */; };
+		FAFB038F26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038426DF88C300AEE99B /* ManagedObjectChangePublisher.swift */; };
+		FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */; };
+		FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */; };
+		FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */; };
+		FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -119,18 +123,14 @@
 		FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		FA3A567726D9F80700F9FE9A /* ContentSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSource.swift; sourceTree = "<group>"; };
 		FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicApp.swift; sourceTree = "<group>"; };
-		FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA3A567F26D9FA1C00F9FE9A /* MainAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		FA3A568426D9FA3200F9FE9A /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFactory.swift; sourceTree = "<group>"; };
 		FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
 		FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
-		FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerPublisher.swift; sourceTree = "<group>"; };
-		FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectChangePublisher.swift; sourceTree = "<group>"; };
 		FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonService.swift; sourceTree = "<group>"; };
 		FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
 		FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewModel.swift; sourceTree = "<group>"; };
-		FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
-		FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSourceAccess.swift; sourceTree = "<group>"; };
 		FA3A56B826DA153600F9FE9A /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
 		FA3A56BB26DA1ECD00F9FE9A /* ContentSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSourceView.swift; sourceTree = "<group>"; };
@@ -142,7 +142,6 @@
 		FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
-		FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
 		FAEE44F226DB3CA700FCF0AC /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
 		FAEE44F726DB735800FCF0AC /* RedditSecrets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RedditSecrets.swift; sourceTree = "<group>"; };
 		FAEE44FA26DB746900FCF0AC /* Reddit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.swift; sourceTree = "<group>"; };
@@ -154,6 +153,13 @@
 		FAEE450D26DB7F0200FCF0AC /* Reddit.AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.AuthResponse.swift; sourceTree = "<group>"; };
 		FAEE451126DB83DC00FCF0AC /* Magic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Magic.entitlements; sourceTree = "<group>"; };
 		FAEE451226DB83DC00FCF0AC /* macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "macOS-Info.plist"; sourceTree = "<group>"; };
+		FAFB037626DF7C7700AEE99B /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAccess.swift; sourceTree = "<group>"; };
+		FAFB038126DF88C300AEE99B /* Publisher+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
+		FAFB038326DF88C300AEE99B /* FetchedResultsControllerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerPublisher.swift; sourceTree = "<group>"; };
+		FAFB038426DF88C300AEE99B /* ManagedObjectChangePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectChangePublisher.swift; sourceTree = "<group>"; };
+		FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
+		FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,7 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3A566E26D9F6AD00F9FE9A /* Database */,
-				FA3A569726D9FE2D00F9FE9A /* Infrstructure */,
+				FAFB037F26DF88C300AEE99B /* Infrastructure */,
 				FAEE44DF26DB2B6E00FCF0AC /* Model */,
 				FA3A564E26D9F49800F9FE9A /* Network */,
 				FA3A567C26D9FA1C00F9FE9A /* Scene */,
@@ -254,6 +260,7 @@
 			children = (
 				FA3A567726D9F80700F9FE9A /* ContentSource.swift */,
 				FAEE450726DB7CC000FCF0AC /* ContentEntity.swift */,
+				FAFB037626DF7C7700AEE99B /* Label.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -296,7 +303,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */,
-				FA3A567F26D9FA1C00F9FE9A /* ContentView.swift */,
+				FA3A567F26D9FA1C00F9FE9A /* MainAppView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -321,55 +328,12 @@
 			path = Projects;
 			sourceTree = "<group>";
 		};
-		FA3A569726D9FE2D00F9FE9A /* Infrstructure */ = {
-			isa = PBXGroup;
-			children = (
-				FAEE44EE26DB2FAF00FCF0AC /* Combine */,
-				FA3A569826D9FE2D00F9FE9A /* CoreData */,
-				FA3A56AB26DA028A00F9FE9A /* SwiftUI */,
-			);
-			path = Infrstructure;
-			sourceTree = "<group>";
-		};
-		FA3A569826D9FE2D00F9FE9A /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-				FA3A569A26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift */,
-				FA3A569B26D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift */,
-			);
-			path = CoreData;
-			sourceTree = "<group>";
-		};
-		FA3A56AB26DA028A00F9FE9A /* SwiftUI */ = {
-			isa = PBXGroup;
-			children = (
-				FA3A56AC26DA028A00F9FE9A /* View */,
-				FA3A56AE26DA028A00F9FE9A /* Previews */,
-			);
-			path = SwiftUI;
-			sourceTree = "<group>";
-		};
-		FA3A56AC26DA028A00F9FE9A /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FA3A56AD26DA028A00F9FE9A /* NavigationLazyView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FA3A56AE26DA028A00F9FE9A /* Previews */ = {
-			isa = PBXGroup;
-			children = (
-				FA3A56AF26DA028A00F9FE9A /* StatefulPreviewWrapper.swift */,
-			);
-			path = Previews;
-			sourceTree = "<group>";
-		};
 		FA3A56B426DA110400F9FE9A /* DataAccess */ = {
 			isa = PBXGroup;
 			children = (
 				FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */,
 				FAEE450A26DB7DAC00FCF0AC /* ContentAccess.swift */,
+				FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -411,14 +375,6 @@
 			path = Endpoints;
 			sourceTree = "<group>";
 		};
-		FAEE44EE26DB2FAF00FCF0AC /* Combine */ = {
-			isa = PBXGroup;
-			children = (
-				FAEE44EF26DB2FAF00FCF0AC /* Publisher+Extension.swift */,
-			);
-			path = Combine;
-			sourceTree = "<group>";
-		};
 		FAEE44F526DB735800FCF0AC /* Reddit */ = {
 			isa = PBXGroup;
 			children = (
@@ -455,6 +411,66 @@
 				FAEE451226DB83DC00FCF0AC /* macOS-Info.plist */,
 			);
 			path = Configs;
+			sourceTree = "<group>";
+		};
+		FAFB037F26DF88C300AEE99B /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB038026DF88C300AEE99B /* Combine */,
+				FAFB038226DF88C300AEE99B /* CoreData */,
+				FAFB039426DF88D600AEE99B /* Foundation */,
+				FAFB038526DF88C300AEE99B /* SwiftUI */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		FAFB038026DF88C300AEE99B /* Combine */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB038126DF88C300AEE99B /* Publisher+Extension.swift */,
+			);
+			path = Combine;
+			sourceTree = "<group>";
+		};
+		FAFB038226DF88C300AEE99B /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB038326DF88C300AEE99B /* FetchedResultsControllerPublisher.swift */,
+				FAFB038426DF88C300AEE99B /* ManagedObjectChangePublisher.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		FAFB038526DF88C300AEE99B /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB038626DF88C300AEE99B /* View */,
+				FAFB038826DF88C300AEE99B /* Previews */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
+		FAFB038626DF88C300AEE99B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FAFB038826DF88C300AEE99B /* Previews */ = {
+			isa = PBXGroup;
+			children = (
+				FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */,
+			);
+			path = Previews;
+			sourceTree = "<group>";
+		};
+		FAFB039426DF88D600AEE99B /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -568,16 +584,19 @@
 				FA3BE92F26DCCC00003A0F94 /* PSourceService.swift in Sources */,
 				FA3A566626D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
 				FAEE450E26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */,
-				FA3A568226D9FA1C00F9FE9A /* ContentView.swift in Sources */,
+				FA3A568226D9FA1C00F9FE9A /* MainAppView.swift in Sources */,
 				FAEE450826DB7CC000FCF0AC /* ContentEntity.swift in Sources */,
 				FA3A56BF26DA1EEA00F9FE9A /* ContentSourceViewModel.swift in Sources */,
 				FAEE44F826DB735800FCF0AC /* RedditSecrets.swift in Sources */,
 				FA3A566A26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FAFB038C26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
 				FA3A569526D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
 				FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
+				FAFB038E26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
 				FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
+				FAFB038A26DF88C300AEE99B /* Publisher+Extension.swift in Sources */,
 				FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
 				FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */,
 				FA3BE92C26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
@@ -585,7 +604,6 @@
 				FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */,
 				FAEE44F326DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
 				FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
-				FA3A56A026D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */,
 				FA3A569226D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
 				FAEE450526DB7B6400FCF0AC /* ContentItem.swift in Sources */,
 				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
@@ -595,18 +613,18 @@
 				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */,
 				FA3A56BC26DA1ECD00F9FE9A /* ContentSourceView.swift in Sources */,
+				FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
+				FAFB037A26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
+				FAFB037726DF7C7700AEE99B /* Label.swift in Sources */,
 				FAEE450126DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
-				FA3A56B026DA028A00F9FE9A /* NavigationLazyView.swift in Sources */,
+				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
-				FA3A569E26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */,
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
 				FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */,
-				FAEE44F026DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */,
-				FA3A56B226DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A567826D9F80700F9FE9A /* ContentSource.swift in Sources */,
 				FAEE450B26DB7DAC00FCF0AC /* ContentAccess.swift in Sources */,
 			);
@@ -621,15 +639,18 @@
 				FA3A566726D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
 				FA2116E326DE222400DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FAEE450F26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */,
-				FA3A568326D9FA1C00F9FE9A /* ContentView.swift in Sources */,
+				FA3A568326D9FA1C00F9FE9A /* MainAppView.swift in Sources */,
 				FAEE450926DB7CC000FCF0AC /* ContentEntity.swift in Sources */,
 				FA3A56C026DA1EEA00F9FE9A /* ContentSourceViewModel.swift in Sources */,
 				FAEE44F926DB735800FCF0AC /* RedditSecrets.swift in Sources */,
 				FA2116E226DE205300DE7BE7 /* PContent.swift in Sources */,
+				FAFB038D26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
 				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FAFB038F26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
 				FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
+				FAFB038B26DF88C300AEE99B /* Publisher+Extension.swift in Sources */,
 				FAEE44EA26DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
 				FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FA3A566126D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
@@ -639,7 +660,6 @@
 				FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */,
 				FAEE44F426DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
 				FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
-				FA3A56A126D9FE2D00F9FE9A /* ManagedObjectChangePublisher.swift in Sources */,
 				FA3A569326D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
 				FAEE450626DB7B6400FCF0AC /* ContentItem.swift in Sources */,
 				FA2116E626DE323000DE7BE7 /* Reddit.SourceConfig.swift in Sources */,
@@ -647,18 +667,18 @@
 				FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
+				FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A56BD26DA1ECD00F9FE9A /* ContentSourceView.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
+				FAFB037B26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
 				FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
+				FAFB037826DF7C7700AEE99B /* Label.swift in Sources */,
 				FAEE450226DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
-				FA3A56B126DA028A00F9FE9A /* NavigationLazyView.swift in Sources */,
+				FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
-				FA3A569F26D9FE2D00F9FE9A /* FetchedResultsControllerPublisher.swift in Sources */,
 				FAEE44FC26DB746900FCF0AC /* Reddit.swift in Sources */,
 				FA3A56C426DA3D5E00F9FE9A /* WebView.swift in Sources */,
-				FAEE44F126DB2FAF00FCF0AC /* Publisher+Extension.swift in Sources */,
-				FA3A56B326DA028A00F9FE9A /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A567926D9F80700F9FE9A /* ContentSource.swift in Sources */,
 				FAEE450C26DB7DAC00FCF0AC /* ContentAccess.swift in Sources */,
 			);

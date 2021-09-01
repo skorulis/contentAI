@@ -21,9 +21,7 @@ extension Reddit {
         let domain: String?
         let title: String
         let url: String
+        let likes: Bool?
         
-        var generic: ContentItem {
-            return ContentItem(id: id, title: title, url: url, thumbnail: thumbnail, created: created)
-        }
     }
 }

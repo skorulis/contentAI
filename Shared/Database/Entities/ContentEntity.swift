@@ -21,6 +21,11 @@ public class ContentEntity: NSManagedObject, PContent {
     @NSManaged public var thumbnail: String?
     @NSManaged public var created: Double
     @NSManaged public var sources: Set<ContentSource>
+    @NSManaged public var labelEntities: Set<Label>
+    
+    var labels: [String] {
+        return Array(labelEntities.map { $0.name })
+    }
     
 }
 

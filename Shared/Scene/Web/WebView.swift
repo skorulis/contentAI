@@ -81,7 +81,7 @@ extension WebView {
             let js = "document.documentElement.outerHTML.toString()"
             view.evaluateJavaScript(js,
                                        completionHandler: { (html: Any?, error: Error?) in
-                print(html)
+                //print(html)
             })
         }
         

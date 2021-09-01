@@ -37,7 +37,9 @@ struct ContentSummaryView_Previews: PreviewProvider {
             title: "123",
             url: nil,
             thumbnail: nil,
-            created: Date().timeIntervalSince1970)
+            created: Date().timeIntervalSince1970,
+            labels: []
+        )
         )
     }
 }

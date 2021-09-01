@@ -12,13 +12,23 @@ import Foundation
 struct ContentAccess {
     
     let database: DatabaseService
+    let labelAccess: LabelAccess
 }
 
 extension ContentAccess {
     
     func store(items: [ContentItem], source: ContentSource) {
         let context = database.childContext
+        var labels: Set<String> = []
+        items.forEach { meta in
+            meta.labels.forEach { name in
+                labels.insert(name)
+            }
+        }
+        
         context.perform {
+            let labelEntities = try! labelAccess.findOrCreate(labels: Array(labels), context: context)
+            let labelDict = Dictionary(grouping: labelEntities) { $0.name }.mapValues { $0[0] }
             let contextSource = context.object(with: source.objectID) as! ContentSource
             let ids = items.map { $0.id }
             let fetch = ContentEntity.fetch()
@@ -35,6 +45,11 @@ extension ContentAccess {
                 entity.thumbnail = item.thumbnail
                 entity.url = item.url
                 entity.sources.insert(contextSource)
+                
+                for label in item.labels {
+                    entity.labelEntities.insert(labelDict[label]!)
+                }
+                
             }
             try! context.save()
             self.database.saveToDisk()

@@ -55,7 +55,7 @@ extension Reddit {
             if subreddit.count > 0 {
                 url += "r/\(subreddit)/"
             }
-            url += "hot"
+            url += "new"
             
             var req = HTTPJSONRequest<ListingResponse>(endpoint: url)
             req.headers["Authorization"] = "Bearer \(token)"

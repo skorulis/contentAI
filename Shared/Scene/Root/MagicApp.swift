@@ -12,7 +12,7 @@ struct MagicApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainAppView()
                 .environmentObject(IOC.shared.container.resolve(GenericFactory.self)!)
                 .handlesExternalEvents(preferring: ["*"], allowing: ["*"])
                 .onOpenURL { url in
