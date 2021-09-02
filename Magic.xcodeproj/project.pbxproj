@@ -55,10 +55,6 @@
 		FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */; };
 		FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
 		FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
-		FA3A56BC26DA1ECD00F9FE9A /* ContentSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BB26DA1ECD00F9FE9A /* ContentSourceView.swift */; };
-		FA3A56BD26DA1ECD00F9FE9A /* ContentSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BB26DA1ECD00F9FE9A /* ContentSourceView.swift */; };
-		FA3A56BF26DA1EEA00F9FE9A /* ContentSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BE26DA1EEA00F9FE9A /* ContentSourceViewModel.swift */; };
-		FA3A56C026DA1EEA00F9FE9A /* ContentSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56BE26DA1EEA00F9FE9A /* ContentSourceViewModel.swift */; };
 		FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56C226DA3D5E00F9FE9A /* WebView.swift */; };
 		FA3A56C426DA3D5E00F9FE9A /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56C226DA3D5E00F9FE9A /* WebView.swift */; };
 		FA3BE92926DC386C003A0F94 /* SourceServiceRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92826DC386C003A0F94 /* SourceServiceRouter.swift */; };
@@ -67,6 +63,14 @@
 		FA3BE92D26DC3875003A0F94 /* RedditSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */; };
 		FA3BE92F26DCCC00003A0F94 /* PSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */; };
 		FA3BE93026DCCC00003A0F94 /* PSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */; };
+		FA5F9A4326E0BE4800C8F3B5 /* ContentSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4126E0BE4800C8F3B5 /* ContentSourceView.swift */; };
+		FA5F9A4426E0BE4800C8F3B5 /* ContentSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4126E0BE4800C8F3B5 /* ContentSourceView.swift */; };
+		FA5F9A4526E0BE4800C8F3B5 /* ContentSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */; };
+		FA5F9A4626E0BE4800C8F3B5 /* ContentSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */; };
+		FA5F9A4826E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */; };
+		FA5F9A4926E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */; };
+		FA5F9A4B26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */; };
+		FA5F9A4C26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */; };
 		FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
 		FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
 		FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
@@ -133,12 +137,14 @@
 		FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewModel.swift; sourceTree = "<group>"; };
 		FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSourceAccess.swift; sourceTree = "<group>"; };
 		FA3A56B826DA153600F9FE9A /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
-		FA3A56BB26DA1ECD00F9FE9A /* ContentSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSourceView.swift; sourceTree = "<group>"; };
-		FA3A56BE26DA1EEA00F9FE9A /* ContentSourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSourceViewModel.swift; sourceTree = "<group>"; };
 		FA3A56C226DA3D5E00F9FE9A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		FA3BE92826DC386C003A0F94 /* SourceServiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceServiceRouter.swift; sourceTree = "<group>"; };
 		FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditSourceService.swift; sourceTree = "<group>"; };
 		FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSourceService.swift; sourceTree = "<group>"; };
+		FA5F9A4126E0BE4800C8F3B5 /* ContentSourceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSourceView.swift; sourceTree = "<group>"; };
+		FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSourceViewModel.swift; sourceTree = "<group>"; };
+		FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
+		FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewModel.swift; sourceTree = "<group>"; };
 		FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
@@ -193,6 +199,10 @@
 			isa = PBXGroup;
 			children = (
 				FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */,
+				FA5F9A4126E0BE4800C8F3B5 /* ContentSourceView.swift */,
+				FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */,
+				FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */,
+				FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -322,8 +332,6 @@
 				FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */,
 				FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */,
 				FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */,
-				FA3A56BB26DA1ECD00F9FE9A /* ContentSourceView.swift */,
-				FA3A56BE26DA1EEA00F9FE9A /* ContentSourceViewModel.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -580,13 +588,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5F9A4526E0BE4800C8F3B5 /* ContentSourceViewModel.swift in Sources */,
 				FA3BE92926DC386C003A0F94 /* SourceServiceRouter.swift in Sources */,
 				FA3BE92F26DCCC00003A0F94 /* PSourceService.swift in Sources */,
 				FA3A566626D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
+				FA5F9A4326E0BE4800C8F3B5 /* ContentSourceView.swift in Sources */,
 				FAEE450E26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */,
 				FA3A568226D9FA1C00F9FE9A /* MainAppView.swift in Sources */,
 				FAEE450826DB7CC000FCF0AC /* ContentEntity.swift in Sources */,
-				FA3A56BF26DA1EEA00F9FE9A /* ContentSourceViewModel.swift in Sources */,
 				FAEE44F826DB735800FCF0AC /* RedditSecrets.swift in Sources */,
 				FA3A566A26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
@@ -595,6 +604,7 @@
 				FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
 				FAFB038E26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
+				FA5F9A4B26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */,
 				FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FAFB038A26DF88C300AEE99B /* Publisher+Extension.swift in Sources */,
 				FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
@@ -612,7 +622,6 @@
 				FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */,
-				FA3A56BC26DA1ECD00F9FE9A /* ContentSourceView.swift in Sources */,
 				FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
@@ -623,6 +632,7 @@
 				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA5F9A4826E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
 				FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */,
 				FA3A567826D9F80700F9FE9A /* ContentSource.swift in Sources */,
@@ -634,14 +644,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA5F9A4626E0BE4800C8F3B5 /* ContentSourceViewModel.swift in Sources */,
 				FA3BE92A26DC386C003A0F94 /* SourceServiceRouter.swift in Sources */,
 				FA3BE93026DCCC00003A0F94 /* PSourceService.swift in Sources */,
 				FA3A566726D9F49900F9FE9A /* HTTPJSONRequest.swift in Sources */,
+				FA5F9A4426E0BE4800C8F3B5 /* ContentSourceView.swift in Sources */,
 				FA2116E326DE222400DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FAEE450F26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */,
 				FA3A568326D9FA1C00F9FE9A /* MainAppView.swift in Sources */,
 				FAEE450926DB7CC000FCF0AC /* ContentEntity.swift in Sources */,
-				FA3A56C026DA1EEA00F9FE9A /* ContentSourceViewModel.swift in Sources */,
 				FAEE44F926DB735800FCF0AC /* RedditSecrets.swift in Sources */,
 				FA2116E226DE205300DE7BE7 /* PContent.swift in Sources */,
 				FAFB038D26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
@@ -649,6 +660,7 @@
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
 				FAFB038F26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
+				FA5F9A4C26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */,
 				FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
 				FAFB038B26DF88C300AEE99B /* Publisher+Extension.swift in Sources */,
 				FAEE44EA26DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
@@ -668,7 +680,6 @@
 				FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
-				FA3A56BD26DA1ECD00F9FE9A /* ContentSourceView.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FAFB037B26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
 				FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
@@ -677,6 +688,7 @@
 				FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA5F9A4926E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FC26DB746900FCF0AC /* Reddit.swift in Sources */,
 				FA3A56C426DA3D5E00F9FE9A /* WebView.swift in Sources */,
 				FA3A567926D9F80700F9FE9A /* ContentSource.swift in Sources */,

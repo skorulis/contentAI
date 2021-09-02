@@ -12,6 +12,8 @@ import SwiftUI
 struct ContentSourceView {
     
     @StateObject var viewModel: ContentSourceViewModel
+    
+    @EnvironmentObject var factory: GenericFactory
 }
 
 // MARK: - Rendering
@@ -31,20 +33,11 @@ extension ContentSourceView: View {
     @ViewBuilder
     private func detailContainer(content: PContent) -> some View {
         ZStack(alignment: .topLeading) {
-            detail(content: content)
+            ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content))
             Button(action: {viewModel.activeContent = nil}) {
                 Text("Back")
             }
             .keyboardShortcut(KeyEquivalent.leftArrow, modifiers: [])
-        }
-    }
-    
-    @ViewBuilder
-    private func detail(content: PContent) -> some View {
-        if let url = content.url {
-            WebView(urlString: url)
-        } else {
-            Text("Missing URL")
         }
     }
     
