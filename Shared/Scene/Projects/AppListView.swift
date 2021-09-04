@@ -34,12 +34,17 @@ extension AppListView: View {
     private var list: some View {
         List {
             Section(header: Text("Projects")) {
+                ForEach(viewModel.projects) { proj in
+                    NavigationLink(destination: existing(project: proj)) {
+                        Text(proj.name)
+                    }
+                }
                 newProjectButton
             }
             
             Section(header: Text("Sources")) {
-                ForEach(viewModel.projects) { proj in
-                    NavigationLink(destination: existing(project: proj)) {
+                ForEach(viewModel.sources) { proj in
+                    NavigationLink(destination: existing(source: proj)) {
                         Text(proj.name)
                     }
                 }
@@ -56,7 +61,7 @@ extension AppListView: View {
         ZStack {
             Color.clear
                 .sheet(isPresented: $isAddProjectOpen) {
-                    EditProjectView(viewModel: factory.resolve())
+                    EditProjectView(viewModel: factory.resolve(EditProjectViewModel.self, argument: EditProjectViewModel.Argument(project: nil)))
                 }
         }
     }
@@ -79,9 +84,15 @@ extension AppListView: View {
         }
     }
     
-    private func existing(project: ContentSource) -> some View {
+    private func existing(source: ContentSource) -> some View {
         return NavigationLazyView(
-            ContentSourceView(viewModel: factory.resolve(ContentSourceViewModel.self, argument: project))
+            ContentSourceView(viewModel: factory.resolve(ContentSourceViewModel.self, argument: source))
+        )
+    }
+    
+    private func existing(project: Project) -> some View {
+        return NavigationLazyView(
+            ProjectOutputView(viewModel: factory.resolve(ProjectOutputViewModel.self, argument: project))
         )
     }
     
@@ -107,7 +118,7 @@ extension AppListView {
 struct ProjectListView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let viewModel = AppListViewModel(access: nil)
+        let viewModel = AppListViewModel(sourceAccess: nil, projectAccess: nil)
         AppListView(viewModel: viewModel)
     }
 }

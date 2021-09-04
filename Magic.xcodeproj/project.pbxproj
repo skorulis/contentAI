@@ -117,6 +117,20 @@
 		FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */; };
 		FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */; };
 		FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */; };
+		FAFE57F926E3276700051A83 /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57F826E3276700051A83 /* ProjectAccess.swift */; };
+		FAFE57FA26E3276700051A83 /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57F826E3276700051A83 /* ProjectAccess.swift */; };
+		FAFE57FC26E32E5E00051A83 /* ProjectOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57FB26E32E5E00051A83 /* ProjectOutputView.swift */; };
+		FAFE57FD26E32E5E00051A83 /* ProjectOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57FB26E32E5E00051A83 /* ProjectOutputView.swift */; };
+		FAFE57FF26E32E7200051A83 /* ProjectOutputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57FE26E32E7200051A83 /* ProjectOutputViewModel.swift */; };
+		FAFE580026E32E7200051A83 /* ProjectOutputViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57FE26E32E7200051A83 /* ProjectOutputViewModel.swift */; };
+		FAFE580226E338A200051A83 /* ContentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580126E338A200051A83 /* ContentPickerView.swift */; };
+		FAFE580326E338A200051A83 /* ContentPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580126E338A200051A83 /* ContentPickerView.swift */; };
+		FAFE580526E33CDC00051A83 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580426E33CDC00051A83 /* NavigationBar.swift */; };
+		FAFE580626E33CDC00051A83 /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580426E33CDC00051A83 /* NavigationBar.swift */; };
+		FAFE580826E33E1900051A83 /* NavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580726E33E1900051A83 /* NavItem.swift */; };
+		FAFE580926E33E1900051A83 /* NavItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580726E33E1900051A83 /* NavItem.swift */; };
+		FAFE580B26E3401000051A83 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580A26E3401000051A83 /* IconButton.swift */; };
+		FAFE580C26E3401000051A83 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580A26E3401000051A83 /* IconButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +192,13 @@
 		FAFB038426DF88C300AEE99B /* ManagedObjectChangePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectChangePublisher.swift; sourceTree = "<group>"; };
 		FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
 		FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
+		FAFE57F826E3276700051A83 /* ProjectAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAccess.swift; sourceTree = "<group>"; };
+		FAFE57FB26E32E5E00051A83 /* ProjectOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOutputView.swift; sourceTree = "<group>"; };
+		FAFE57FE26E32E7200051A83 /* ProjectOutputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOutputViewModel.swift; sourceTree = "<group>"; };
+		FAFE580126E338A200051A83 /* ContentPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentPickerView.swift; sourceTree = "<group>"; };
+		FAFE580426E33CDC00051A83 /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
+		FAFE580726E33E1900051A83 /* NavItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavItem.swift; sourceTree = "<group>"; };
+		FAFE580A26E3401000051A83 /* IconButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -215,6 +236,7 @@
 				FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */,
 				FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */,
 				FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */,
+				FAFE580126E338A200051A83 /* ContentPickerView.swift */,
 			);
 			path = Content;
 			sourceTree = "<group>";
@@ -347,6 +369,8 @@
 				FA3A56A826DA022900F9FE9A /* NewSourceViewModel.swift */,
 				FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */,
 				FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */,
+				FAFE57FB26E32E5E00051A83 /* ProjectOutputView.swift */,
+				FAFE57FE26E32E7200051A83 /* ProjectOutputViewModel.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -357,6 +381,7 @@
 				FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */,
 				FAEE450A26DB7DAC00FCF0AC /* ContentAccess.swift */,
 				FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */,
+				FAFE57F826E3276700051A83 /* ProjectAccess.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -476,8 +501,11 @@
 		FAFB038626DF88C300AEE99B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				FAFE580A26E3401000051A83 /* IconButton.swift */,
 				FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */,
 				FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */,
+				FAFE580426E33CDC00051A83 /* NavigationBar.swift */,
+				FAFE580726E33E1900051A83 /* NavItem.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -618,6 +646,7 @@
 				FAFB038C26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
 				FA3A569526D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */,
 				FA3A56A926DA022900F9FE9A /* NewSourceViewModel.swift in Sources */,
+				FAFE57FC26E32E5E00051A83 /* ProjectOutputView.swift in Sources */,
 				FAFB038E26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
 				FA5F9A4B26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */,
@@ -627,6 +656,7 @@
 				FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */,
 				FA3BE92C26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FAEE44FE26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
+				FAFE57F926E3276700051A83 /* ProjectAccess.swift in Sources */,
 				FA3A56A626DA018F00F9FE9A /* NewSourceView.swift in Sources */,
 				FAEE44F326DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
 				FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
@@ -636,7 +666,10 @@
 				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FA2116E526DE315C00DE7BE7 /* Reddit.SourceConfig.swift in Sources */,
+				FAFE580826E33E1900051A83 /* NavItem.swift in Sources */,
 				FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
+				FAFE57FF26E32E7200051A83 /* ProjectOutputViewModel.swift in Sources */,
+				FAFE580226E338A200051A83 /* ContentPickerView.swift in Sources */,
 				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */,
 				FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */,
@@ -647,10 +680,12 @@
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FAFB037726DF7C7700AEE99B /* Label.swift in Sources */,
 				FAEE450126DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
+				FAFE580B26E3401000051A83 /* IconButton.swift in Sources */,
 				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */,
+				FAFE580526E33CDC00051A83 /* NavigationBar.swift in Sources */,
 				FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4826E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
@@ -678,6 +713,7 @@
 				FAFB038D26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
 				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FAFE57FD26E32E5E00051A83 /* ProjectOutputView.swift in Sources */,
 				FAFB038F26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FA3A569626D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */,
 				FA5F9A4C26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */,
@@ -687,6 +723,7 @@
 				FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FA3A566126D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
 				FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */,
+				FAFE57FA26E3276700051A83 /* ProjectAccess.swift in Sources */,
 				FA3BE92D26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FAEE44FF26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
 				FA3A56A726DA018F00F9FE9A /* NewSourceView.swift in Sources */,
@@ -696,7 +733,10 @@
 				FA3A569326D9FD8300F9FE9A /* AppListView.swift in Sources */,
 				FAEE450626DB7B6400FCF0AC /* ContentItem.swift in Sources */,
 				FA2116E626DE323000DE7BE7 /* Reddit.SourceConfig.swift in Sources */,
+				FAFE580926E33E1900051A83 /* NavItem.swift in Sources */,
 				FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
+				FAFE580026E32E7200051A83 /* ProjectOutputViewModel.swift in Sources */,
+				FAFE580326E338A200051A83 /* ContentPickerView.swift in Sources */,
 				FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA8CA8EF26E1795600BAF427 /* EditProjectViewModel.swift in Sources */,
@@ -707,10 +747,12 @@
 				FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FAFB037826DF7C7700AEE99B /* Label.swift in Sources */,
 				FAEE450226DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
+				FAFE580C26E3401000051A83 /* IconButton.swift in Sources */,
 				FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */,
+				FAFE580626E33CDC00051A83 /* NavigationBar.swift in Sources */,
 				FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4926E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FC26DB746900FCF0AC /* Reddit.swift in Sources */,

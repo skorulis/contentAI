@@ -40,6 +40,7 @@ public final class IOC {
         container.autoregister(ContentSourceAccess.self, initializer: ContentSourceAccess.init)
         container.autoregister(ContentAccess.self, initializer: ContentAccess.init)
         container.autoregister(LabelAccess.self, initializer: LabelAccess.init)
+        container.autoregister(ProjectAccess.self, initializer: ProjectAccess.init)
     }
     
     private func setupServices() {
@@ -60,7 +61,9 @@ public final class IOC {
         container.autoregister(NewSourceViewModel.self, argument: NewSourceViewModel.Argument.self, initializer: NewSourceViewModel.init)
         container.autoregister(ContentSourceViewModel.self, argument: ContentSource.self, initializer: ContentSourceViewModel.init)
         container.autoregister(ContentDetailViewModel.self, argument: PContent.self, initializer: ContentDetailViewModel.init)
-        container.autoregister(EditProjectViewModel.self, initializer: EditProjectViewModel.init)
+        
+        container.autoregister(EditProjectViewModel.self, argument: EditProjectViewModel.Argument.self, initializer: EditProjectViewModel.init)
+        container.autoregister(ProjectOutputViewModel.self, argument: Project.self, initializer: ProjectOutputViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {

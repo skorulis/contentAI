@@ -10,26 +10,29 @@ import CoreData
 
 final class AppListViewModel: ObservableObject {
     
-    let access: ContentSourceAccess?
+    let sourceAccess: ContentSourceAccess?
+    let projectAccess: ProjectAccess?
     
-    @Published var projects: [ContentSource] = []
+    @Published var sources: [ContentSource] = []
+    @Published var projects: [Project] = []
     
-    init(access: ContentSourceAccess?) {
-        self.access = access
+    init(sourceAccess: ContentSourceAccess?,
+         projectAccess: ProjectAccess?
+    ) {
+        self.sourceAccess = sourceAccess
+        self.projectAccess = projectAccess
         setupObservers()
     }
     
-    private lazy var projectPublisher: FetchedResultsControllerPublisher<ContentSource>? = {
-        guard let context = self.access?.database.mainContext else { return nil }
-        let req: NSFetchRequest<ContentSource> = ContentSource.fetch()
-        req.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        let frc = NSFetchedResultsController(fetchRequest: req, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        return FetchedResultsControllerPublisher(fetchedResultsController: frc)
-    }()
+    private lazy var sourcePublisher: FetchedResultsControllerPublisher<ContentSource>? = sourceAccess?.publisher()
+    
+    private lazy var projectPublisher: FetchedResultsControllerPublisher<Project>? = projectAccess?.puublisher()
     
     func setupObservers() {
+        sourcePublisher?.publisher
+            .assign(to: &$sources)
+        
         projectPublisher?.publisher
-            
             .assign(to: &$projects)
     }
     
