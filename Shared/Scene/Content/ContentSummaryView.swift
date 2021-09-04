@@ -13,6 +13,7 @@ import SwiftUI
 struct ContentSummaryView {
     
     let item: PContent
+    let action: () -> Void
     
 }
 
@@ -21,9 +22,17 @@ struct ContentSummaryView {
 extension ContentSummaryView: View {
     
     var body: some View {
-        HStack {
-            Text(item.title ?? "")
+        Button(action: action) {
+            HStack {
+                VStack(alignment: .leading) {
+                    Text(item.title ?? "")
+                    Text("\(item.labels.count) labels")
+                }
+                Spacer()
+            }
+            .contentShape(Rectangle())
         }
+        .buttonStyle(ListRowStyle())
     }
 }
 
@@ -40,7 +49,7 @@ struct ContentSummaryView_Previews: PreviewProvider {
             created: Date().timeIntervalSince1970,
             labels: []
         )
-        )
+        ) {}
     }
 }
 

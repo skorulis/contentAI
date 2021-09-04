@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-final class NewProjectViewModel: ObservableObject {
+final class NewSourceViewModel: ObservableObject {
     
     private let access: ContentSourceAccess?
     
@@ -32,7 +32,7 @@ final class NewProjectViewModel: ObservableObject {
 
 // MARK: - Inner types
 
-extension NewProjectViewModel {
+extension NewSourceViewModel {
     
     struct Argument {
         let id: String?
@@ -42,7 +42,7 @@ extension NewProjectViewModel {
 
 // MARK: - Inner logic
 
-extension NewProjectViewModel {
+extension NewSourceViewModel {
  
     func loadProject() -> ContentSource? {
         if let id = id, let project = try? access?.get(id: id) {
@@ -56,7 +56,7 @@ extension NewProjectViewModel {
 
 // MARK: - Behaviors
 
-extension NewProjectViewModel {
+extension NewSourceViewModel {
     
     var isValid: Bool {
         guard name.count > 0 else { return false }

@@ -59,8 +59,8 @@ extension ContentSourceView: View {
     private var contentList: some View {
         List {
             ForEach(viewModel.availableContent) { item in
-                Button(action: { clicked(item: item) }) {
-                    ContentSummaryView(item: item)
+                ContentSummaryView(item: item) {
+                    clicked(item: item)
                 }
             }
         }

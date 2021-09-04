@@ -56,10 +56,11 @@ public final class IOC {
     }
     
     private func setupViewModels() {
-        container.autoregister(ProjectListViewModel.self, initializer: ProjectListViewModel.init)
-        container.autoregister(NewProjectViewModel.self, argument: NewProjectViewModel.Argument.self, initializer: NewProjectViewModel.init)
+        container.autoregister(AppListViewModel.self, initializer: AppListViewModel.init)
+        container.autoregister(NewSourceViewModel.self, argument: NewSourceViewModel.Argument.self, initializer: NewSourceViewModel.init)
         container.autoregister(ContentSourceViewModel.self, argument: ContentSource.self, initializer: ContentSourceViewModel.init)
         container.autoregister(ContentDetailViewModel.self, argument: PContent.self, initializer: ContentDetailViewModel.init)
+        container.autoregister(EditProjectViewModel.self, initializer: EditProjectViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {

@@ -14,7 +14,7 @@ struct MainAppView: View {
 
     var body: some View {
         NavigationView {
-            ProjectListView(viewModel: factory.resolve())
+            AppListView(viewModel: factory.resolve())
         }
     }
 

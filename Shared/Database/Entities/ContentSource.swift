@@ -23,6 +23,7 @@ public class ContentSource: NSManagedObject {
     @NSManaged public var configData: Data?
     
     @NSManaged public var content: Set<ContentEntity>
+    @NSManaged public var projects: Set<ContentSource>
     
     @NSManaged private var sourceTypeString: String
     

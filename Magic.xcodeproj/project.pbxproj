@@ -41,16 +41,16 @@
 		FA3A568C26D9FCD800F9FE9A /* SwinjectAutoregistration in Frameworks */ = {isa = PBXBuildFile; productRef = FA3A568B26D9FCD800F9FE9A /* SwinjectAutoregistration */; };
 		FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */; };
 		FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */; };
-		FA3A569226D9FD8300F9FE9A /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */; };
-		FA3A569326D9FD8300F9FE9A /* ProjectListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */; };
-		FA3A569526D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */; };
-		FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */; };
+		FA3A569226D9FD8300F9FE9A /* AppListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569126D9FD8300F9FE9A /* AppListView.swift */; };
+		FA3A569326D9FD8300F9FE9A /* AppListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569126D9FD8300F9FE9A /* AppListView.swift */; };
+		FA3A569526D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* AppListViewModel.swift */; };
+		FA3A569626D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A569426D9FD8C00F9FE9A /* AppListViewModel.swift */; };
 		FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */; };
 		FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */; };
-		FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */; };
-		FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */; };
-		FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */; };
-		FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */; };
+		FA3A56A626DA018F00F9FE9A /* NewSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewSourceView.swift */; };
+		FA3A56A726DA018F00F9FE9A /* NewSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A526DA018F00F9FE9A /* NewSourceView.swift */; };
+		FA3A56A926DA022900F9FE9A /* NewSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewSourceViewModel.swift */; };
+		FA3A56AA26DA022900F9FE9A /* NewSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56A826DA022900F9FE9A /* NewSourceViewModel.swift */; };
 		FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */; };
 		FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */; };
 		FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A56B826DA153600F9FE9A /* ErrorService.swift */; };
@@ -71,6 +71,14 @@
 		FA5F9A4926E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */; };
 		FA5F9A4B26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */; };
 		FA5F9A4C26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */; };
+		FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */; };
+		FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */; };
+		FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
+		FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
+		FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
+		FA8CA8EF26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
+		FA8CA8F126E179E900BAF427 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8F026E179E900BAF427 /* Project.swift */; };
+		FA8CA8F226E179E900BAF427 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8F026E179E900BAF427 /* Project.swift */; };
 		FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
 		FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
 		FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
@@ -130,11 +138,11 @@
 		FA3A567F26D9FA1C00F9FE9A /* MainAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		FA3A568426D9FA3200F9FE9A /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
 		FA3A568D26D9FCF700F9FE9A /* GenericFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericFactory.swift; sourceTree = "<group>"; };
-		FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListView.swift; sourceTree = "<group>"; };
-		FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListViewModel.swift; sourceTree = "<group>"; };
+		FA3A569126D9FD8300F9FE9A /* AppListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListView.swift; sourceTree = "<group>"; };
+		FA3A569426D9FD8C00F9FE9A /* AppListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListViewModel.swift; sourceTree = "<group>"; };
 		FA3A56A226D9FFBF00F9FE9A /* SingletonService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingletonService.swift; sourceTree = "<group>"; };
-		FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectView.swift; sourceTree = "<group>"; };
-		FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewProjectViewModel.swift; sourceTree = "<group>"; };
+		FA3A56A526DA018F00F9FE9A /* NewSourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSourceView.swift; sourceTree = "<group>"; };
+		FA3A56A826DA022900F9FE9A /* NewSourceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSourceViewModel.swift; sourceTree = "<group>"; };
 		FA3A56B526DA112600F9FE9A /* ContentSourceAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSourceAccess.swift; sourceTree = "<group>"; };
 		FA3A56B826DA153600F9FE9A /* ErrorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorService.swift; sourceTree = "<group>"; };
 		FA3A56C226DA3D5E00F9FE9A /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -145,6 +153,10 @@
 		FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSourceViewModel.swift; sourceTree = "<group>"; };
 		FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewModel.swift; sourceTree = "<group>"; };
+		FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowStyle.swift; sourceTree = "<group>"; };
+		FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
+		FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewModel.swift; sourceTree = "<group>"; };
+		FA8CA8F026E179E900BAF427 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
@@ -271,6 +283,7 @@
 				FA3A567726D9F80700F9FE9A /* ContentSource.swift */,
 				FAEE450726DB7CC000FCF0AC /* ContentEntity.swift */,
 				FAFB037626DF7C7700AEE99B /* Label.swift */,
+				FA8CA8F026E179E900BAF427 /* Project.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -328,10 +341,12 @@
 		FA3A569026D9FD7C00F9FE9A /* Projects */ = {
 			isa = PBXGroup;
 			children = (
-				FA3A569126D9FD8300F9FE9A /* ProjectListView.swift */,
-				FA3A569426D9FD8C00F9FE9A /* ProjectListViewModel.swift */,
-				FA3A56A526DA018F00F9FE9A /* NewProjectView.swift */,
-				FA3A56A826DA022900F9FE9A /* NewProjectViewModel.swift */,
+				FA3A569126D9FD8300F9FE9A /* AppListView.swift */,
+				FA3A569426D9FD8C00F9FE9A /* AppListViewModel.swift */,
+				FA3A56A526DA018F00F9FE9A /* NewSourceView.swift */,
+				FA3A56A826DA022900F9FE9A /* NewSourceViewModel.swift */,
+				FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */,
+				FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */,
 			);
 			path = Projects;
 			sourceTree = "<group>";
@@ -462,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */,
+				FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -600,8 +616,8 @@
 				FA3A566A26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
 				FAFB038C26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
-				FA3A569526D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
-				FA3A56A926DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
+				FA3A569526D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */,
+				FA3A56A926DA022900F9FE9A /* NewSourceViewModel.swift in Sources */,
 				FAFB038E26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
 				FA5F9A4B26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */,
@@ -611,17 +627,19 @@
 				FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */,
 				FA3BE92C26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FAEE44FE26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
-				FA3A56A626DA018F00F9FE9A /* NewProjectView.swift in Sources */,
+				FA3A56A626DA018F00F9FE9A /* NewSourceView.swift in Sources */,
 				FAEE44F326DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
 				FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
-				FA3A569226D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
+				FA3A569226D9FD8300F9FE9A /* AppListView.swift in Sources */,
 				FAEE450526DB7B6400FCF0AC /* ContentItem.swift in Sources */,
+				FA8CA8F126E179E900BAF427 /* Project.swift in Sources */,
 				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FA2116E526DE315C00DE7BE7 /* Reddit.SourceConfig.swift in Sources */,
 				FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */,
+				FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */,
 				FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
@@ -632,6 +650,8 @@
 				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */,
+				FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4826E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
 				FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */,
@@ -659,9 +679,9 @@
 				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
 				FAFB038F26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
-				FA3A569626D9FD8C00F9FE9A /* ProjectListViewModel.swift in Sources */,
+				FA3A569626D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */,
 				FA5F9A4C26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */,
-				FA3A56AA26DA022900F9FE9A /* NewProjectViewModel.swift in Sources */,
+				FA3A56AA26DA022900F9FE9A /* NewSourceViewModel.swift in Sources */,
 				FAFB038B26DF88C300AEE99B /* Publisher+Extension.swift in Sources */,
 				FAEE44EA26DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
 				FA3A56B726DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
@@ -669,15 +689,17 @@
 				FA3A56BA26DA153600F9FE9A /* ErrorService.swift in Sources */,
 				FA3BE92D26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FAEE44FF26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
-				FA3A56A726DA018F00F9FE9A /* NewProjectView.swift in Sources */,
+				FA3A56A726DA018F00F9FE9A /* NewSourceView.swift in Sources */,
 				FAEE44F426DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
 				FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
-				FA3A569326D9FD8300F9FE9A /* ProjectListView.swift in Sources */,
+				FA8CA8F226E179E900BAF427 /* Project.swift in Sources */,
+				FA3A569326D9FD8300F9FE9A /* AppListView.swift in Sources */,
 				FAEE450626DB7B6400FCF0AC /* ContentItem.swift in Sources */,
 				FA2116E626DE323000DE7BE7 /* Reddit.SourceConfig.swift in Sources */,
 				FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
+				FA8CA8EF26E1795600BAF427 /* EditProjectViewModel.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
@@ -688,6 +710,8 @@
 				FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
+				FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */,
+				FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4926E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FC26DB746900FCF0AC /* Reddit.swift in Sources */,
 				FA3A56C426DA3D5E00F9FE9A /* WebView.swift in Sources */,

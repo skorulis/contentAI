@@ -10,9 +10,9 @@ import SwiftUI
 
 // MARK: - Memory footprint
 
-struct NewProjectView {
+struct NewSourceView {
     
-    @StateObject var viewModel: NewProjectViewModel
+    @StateObject var viewModel: NewSourceViewModel
     
     @EnvironmentObject var factory: GenericFactory
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -20,7 +20,7 @@ struct NewProjectView {
 
 // MARK: - Rendering
 
-extension NewProjectView: View {
+extension NewSourceView: View {
     
     var body: some View {
         VStack {
@@ -74,7 +74,7 @@ extension NewProjectView: View {
 
 // MARK: - Behaviours
 
-private extension NewProjectView {
+private extension NewSourceView {
     
     func save() {
         viewModel.save()
@@ -92,8 +92,8 @@ private extension NewProjectView {
 struct NewProjectView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let viewModel = NewProjectViewModel(arg: .init(id: nil), access: nil)
-        NewProjectView(viewModel: viewModel)
+        let viewModel = NewSourceViewModel(arg: .init(id: nil), access: nil)
+        NewSourceView(viewModel: viewModel)
     }
 }
 

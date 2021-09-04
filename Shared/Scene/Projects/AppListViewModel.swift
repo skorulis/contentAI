@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-final class ProjectListViewModel: ObservableObject {
+final class AppListViewModel: ObservableObject {
     
     let access: ContentSourceAccess?
     
@@ -37,6 +37,6 @@ final class ProjectListViewModel: ObservableObject {
 
 // MARK: - Behaviors
 
-extension ProjectListViewModel {
+extension AppListViewModel {
     
 }
