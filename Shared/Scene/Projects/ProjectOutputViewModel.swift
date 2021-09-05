@@ -17,7 +17,7 @@ final class ProjectOutputViewModel: ObservableObject {
     init(project: Project) {
         self.project = project
         
-        inputContent = Array(project.inputs).flatMap { Array($0.content) }
+        inputContent = [] //Array(project.inputs).flatMap { Array($0.content) }
     }
     
     

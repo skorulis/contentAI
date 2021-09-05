@@ -25,16 +25,13 @@ extension NewSourceView: View {
     var body: some View {
         VStack {
             Picker("SourceType", selection: $viewModel.type) {
-                ForEach(ContentSource.SourceType.allCases) { type in
+                ForEach(Source.SourceType.allCases) { type in
                     Text(type.rawValue)
                         .tag(type)
                 }
             }
             .pickerStyle(.segmented)
             TextField("Name", text: $viewModel.name)
-            if viewModel.type.needsURL {
-                TextField("URL", text: $viewModel.source)
-            }
             if viewModel.type == .reddit {
                 TextField("Subreddit", text: $viewModel.reddit.subreddit)
             }

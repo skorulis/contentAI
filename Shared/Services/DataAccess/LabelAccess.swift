@@ -20,26 +20,11 @@ struct LabelAccess {
 
 extension LabelAccess {
     
-    func findOrCreate(labels: [String], context: NSManagedObjectContext) throws -> [Label] {
-        let fetch = Label.fetch()
-        fetch.predicate = NSPredicate(format: "name IN %@", labels)
-        var labelEntities = try context.fetch(fetch)
-        let existingNames = labelEntities.map { $0.name }
-        let missing = labels.filter { !existingNames.contains($0) }
-        for name in missing {
-            let label = Label(context: context)
-            label.name = name
-            labelEntities.append(label)
-        }
-        
-        return labelEntities
-    }
-    
-    func findOrCreate2(labels: [String]) -> [Label2] {
+    func findOrCreate(labels: [String]) -> [Label] {
         return labels.map { label in
             let setter = LabelTable.setters(label: label)
             let id = try! db2.db.run(LabelTable.table.insert(or: .replace, setter))
-            return Label2(id: id, name: label)
+            return Label(id: id, name: label)
         }
     }
     

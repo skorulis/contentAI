@@ -56,14 +56,14 @@ public final class IOC {
         container.autoregister(DeeplinkService.self, initializer: DeeplinkService.init)
             .inObjectScope(.container)
         
-        container.autoregister(SourceServiceRouter.self, argument: ContentSource.self, initializer: SourceServiceRouter.init)
-        container.autoregister(RedditSourceService.self, argument: ContentSource.self, initializer: RedditSourceService.init)
+        container.autoregister(SourceServiceRouter.self, argument: Source.self, initializer: SourceServiceRouter.init)
+        container.autoregister(RedditSourceService.self, argument: Source.self, initializer: RedditSourceService.init)
     }
     
     private func setupViewModels() {
         container.autoregister(AppListViewModel.self, initializer: AppListViewModel.init)
         container.autoregister(NewSourceViewModel.self, argument: NewSourceViewModel.Argument.self, initializer: NewSourceViewModel.init)
-        container.autoregister(ContentSourceViewModel.self, argument: ContentSource.self, initializer: ContentSourceViewModel.init)
+        container.autoregister(ContentSourceViewModel.self, argument: Source.self, initializer: ContentSourceViewModel.init)
         container.autoregister(ContentDetailViewModel.self, argument: PContent.self, initializer: ContentDetailViewModel.init)
         
         container.autoregister(EditProjectViewModel.self, argument: EditProjectViewModel.Argument.self, initializer: EditProjectViewModel.init)

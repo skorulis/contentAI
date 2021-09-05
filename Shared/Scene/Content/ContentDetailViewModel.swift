@@ -38,18 +38,19 @@ extension ContentDetailViewModel {
 
     func addLabel() {
         guard labelText.count > 0 else { return }
-        guard let entity = content as? ContentEntity else { return }
-        let context = labelAccess.database.mainContext
-        let labels = try! labelAccess.findOrCreate(labels: [labelText], context: context)
-        entity.labelEntities.insert(labels[0])
-        labelAccess.database.saveToDisk()
+        //guard let entity = content as? ContentEntity else { return }
+        
+        // TODO: FIX
+        
         labelText = ""
     }
     
     func removeLabel(name: String) {
-        guard let entity = content as? ContentEntity else { return }
-        entity.labelEntities = entity.labelEntities.filter { $0.name != name }
-        labelAccess.database.saveToDisk()
+        //guard let entity = content as? ContentEntity else { return }
+        //entity.labelEntities = entity.labelEntities.filter { $0.name != name }
+        
+        // TODO: FIX
+        
         objectWillChange.send()
     }
 }

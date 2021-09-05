@@ -38,7 +38,13 @@ extension AccountsView: View {
     private var redditSection: some View {
         VStack {
             Text("Reddit")
-            if let auth = viewModel.access.redditAuth {
+            if viewModel.needsReauth {
+                Button {
+                    viewModel.reauthReddit()
+                } label: {
+                    Text("Reauthenticate")
+                }
+            } else if let auth = viewModel.access.redditAuth {
                 Text(auth.refresh_token ?? "")
             } else {
                 Button {
@@ -46,7 +52,6 @@ extension AccountsView: View {
                 } label: {
                     Text("Auth reddit")
                 }
-
             }
         }
     }

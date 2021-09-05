@@ -16,11 +16,11 @@ struct ProjectAccess {
 
 extension ProjectAccess {
     
-    func puublisher() -> FetchedResultsControllerPublisher<Project> {
+    /*func puublisher() -> FetchedResultsControllerPublisher<Project> {
         let context = database.mainContext
         let req: NSFetchRequest<Project> = Project.fetch()
         req.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
         let frc = NSFetchedResultsController(fetchRequest: req, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
         return FetchedResultsControllerPublisher(fetchedResultsController: frc)
-    }
+    }*/
 }

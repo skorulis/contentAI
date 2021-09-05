@@ -24,6 +24,12 @@ final class AccountsViewModel: ObservableObject {
     ) {
         self.access = access
         self.client = client
+        
+        access.objectWillChange
+            .sink { [unowned self] _ in
+                self.objectWillChange.send()
+            }
+            .store(in: &subscribers)
     }
     
     var hasAuth: Bool {

@@ -44,9 +44,7 @@ extension ContentSourceView: View {
     
     @ViewBuilder
     private var list: some View {
-        switch viewModel.project.sourceType {
-        case .website:
-            WebView(urlString: viewModel.project.url!)
+        switch viewModel.source.sourceType {
         case .reddit:
             contentList
         }

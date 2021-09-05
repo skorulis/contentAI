@@ -84,7 +84,7 @@ extension AppListView: View {
         }
     }
     
-    private func existing(source: ContentSource) -> some View {
+    private func existing(source: Source) -> some View {
         return NavigationLazyView(
             ContentSourceView(viewModel: factory.resolve(ContentSourceViewModel.self, argument: source))
         )

@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class AccountsAccess {
+final class AccountsAccess: ObservableObject {
     
     private let defaults = UserDefaults.standard
     
@@ -24,6 +24,7 @@ final class AccountsAccess {
             let data = try! JSONEncoder().encode(newValue)
             defaults.set(data, forKey: Self.redditKey)
             defaults.synchronize()
+            self.objectWillChange.send()
         }
     }
     

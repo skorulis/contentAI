@@ -13,7 +13,7 @@ final class AppListViewModel: ObservableObject {
     let sourceAccess: ContentSourceAccess?
     let projectAccess: ProjectAccess?
     
-    @Published var sources: [ContentSource] = []
+    @Published var sources: [Source] = []
     @Published var projects: [Project] = []
     
     init(sourceAccess: ContentSourceAccess?,
@@ -24,16 +24,19 @@ final class AppListViewModel: ObservableObject {
         setupObservers()
     }
     
-    private lazy var sourcePublisher: FetchedResultsControllerPublisher<ContentSource>? = sourceAccess?.publisher()
+    //private lazy var sourcePublisher: FetchedResultsControllerPublisher<ContentSource>? = sourceAccess?.publisher()
     
-    private lazy var projectPublisher: FetchedResultsControllerPublisher<Project>? = projectAccess?.puublisher()
+    //private lazy var projectPublisher: FetchedResultsControllerPublisher<Project>? = projectAccess?.puublisher()
     
     func setupObservers() {
-        sourcePublisher?.publisher
-            .assign(to: &$sources)
+        sources = sourceAccess?.all() ?? []
         
-        projectPublisher?.publisher
-            .assign(to: &$projects)
+        
+        //sourcePublisher?.publisher
+            //.assign(to: &$sources)
+        
+        //projectPublisher?.publisher
+          //  .assign(to: &$projects)
     }
     
 }

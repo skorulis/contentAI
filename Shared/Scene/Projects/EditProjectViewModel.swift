@@ -14,7 +14,7 @@ final class EditProjectViewModel: ObservableObject {
     private let sourceAccess: ContentSourceAccess?
     
     @Published var name: String = ""
-    @Published var inputs: Set<ContentSource> = []
+    @Published var inputs: [Source] = []
     
     
     
@@ -48,7 +48,7 @@ extension EditProjectViewModel {
 
 extension EditProjectViewModel {
     
-    var contentOptions: [ContentSource] {
+    var contentOptions: [Source] {
         return sourceAccess?.all() ?? []
     }
     
@@ -60,16 +60,16 @@ extension EditProjectViewModel {
 extension EditProjectViewModel {
     
     func save() {
-        guard name.count > 0 else { return }
+        /*guard name.count > 0 else { return }
         let context = projectAccess!.database.mainContext
         let proj = project ?? Project(context: context)
         proj.name = name
         proj.inputs = inputs
-        projectAccess?.database.saveToDisk()
+        projectAccess?.database.saveToDisk()*/
     }
     
-    func add(source: ContentSource) {
-        inputs.insert(source)
+    func add(source: Source) {
+        inputs.append(source)
     }
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ContentItem: PContent {
+struct ContentItem: PContent, Identifiable {
     
     public var id: String
     public var title: String?

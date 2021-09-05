@@ -10,31 +10,34 @@ import Combine
 
 final class ContentSourceViewModel: ObservableObject {
     
-    let project: ContentSource
+    let source: Source
     let client: MagicClient
     let access: ContentSourceAccess
+    let contentAccess: ContentAccess
     let sourceRouter: SourceServiceRouter
     
     private var subscribers: Set<AnyCancellable> = []
     
     @Published var activeContent: PContent?
     
-    init(project: ContentSource,
+    init(source: Source,
          client: MagicClient,
          access: ContentSourceAccess,
+         contentAccess: ContentAccess,
          factory: GenericFactory
     ) {
-        self.project = project
+        self.source = source
         self.client = client
         self.access = access
-        self.sourceRouter = factory.resolve(SourceServiceRouter.self, argument: project)
+        self.contentAccess = contentAccess
+        self.sourceRouter = factory.resolve(SourceServiceRouter.self, argument: source)
         
-        project.objectWillChange
+        /*project.objectWillChange
             .sink { [unowned self] _ in
                 self.objectWillChange.send()
             }
             .store(in: &subscribers)
-        
+        */
         loadMore()
         
     }
@@ -43,10 +46,8 @@ final class ContentSourceViewModel: ObservableObject {
 
 extension ContentSourceViewModel {
     
-    
-    
-    var availableContent: [ContentEntity] {
-        return Array(project.content)
+    var availableContent: [ContentItem] {
+        return contentAccess.all()
     }
 
     

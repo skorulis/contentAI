@@ -10,12 +10,12 @@ import Foundation
 
 final class RedditSourceService: PSourceService {
     
-    private let source: ContentSource
+    private let source: Source
     private let client: MagicClient
     private let access: ContentAccess
     private let accountAccess: AccountsAccess
     
-    init(source: ContentSource,
+    init(source: Source,
          client: MagicClient,
          access: ContentAccess,
          accountAccess: AccountsAccess

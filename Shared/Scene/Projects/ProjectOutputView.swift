@@ -87,8 +87,7 @@ extension ProjectOutputView {
 struct ProjectOutputView_Previews: PreviewProvider {
     
     static var previews: some View {
-        let project = Project()
-        project.name = "TEEST"
+        let project = Project(name: "TESET", inputs: [])
         let viewModel = ProjectOutputViewModel(project: project)
         return ProjectOutputView(viewModel: viewModel)
     }

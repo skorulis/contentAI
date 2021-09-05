@@ -11,12 +11,10 @@ final class SourceServiceRouter: PSourceService {
     
     let innerService: PSourceService?
     
-    init(source: ContentSource, factory: GenericFactory) {
+    init(source: Source, factory: GenericFactory) {
         switch source.sourceType {
         case .reddit:
             innerService = factory.resolve(RedditSourceService.self, argument: source)
-        case .website:
-            innerService = nil // Not yet implemented
         }
     }
     

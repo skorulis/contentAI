@@ -12,8 +12,8 @@ import SwiftUI
 
 struct ContentPickerView {
     
-    let items: [ContentSource]
-    let onSelected: (ContentSource) -> ()
+    let items: [Source]
+    let onSelected: (Source) -> ()
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
 }

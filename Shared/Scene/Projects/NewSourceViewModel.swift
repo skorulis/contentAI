@@ -12,10 +12,9 @@ final class NewSourceViewModel: ObservableObject {
     
     private let access: ContentSourceAccess?
     
-    @Published var id: String?
-    @Published var source: String = ""
+    @Published var id: Int64?
     @Published var name: String = ""
-    @Published var type: ContentSource.SourceType = .website
+    @Published var type: Source.SourceType = .reddit
     
     @Published var reddit: Reddit.SourceConfig = .init()
     
@@ -23,7 +22,6 @@ final class NewSourceViewModel: ObservableObject {
         self.id = arg.id
         self.access = access
         if let project = loadProject() {
-            self.source = project.url ?? ""
             self.type = project.sourceType
             self.name = project.name
         }
@@ -35,7 +33,7 @@ final class NewSourceViewModel: ObservableObject {
 extension NewSourceViewModel {
     
     struct Argument {
-        let id: String?
+        let id: Int64?
     }
     
 }
@@ -44,7 +42,7 @@ extension NewSourceViewModel {
 
 extension NewSourceViewModel {
  
-    func loadProject() -> ContentSource? {
+    func loadProject() -> Source? {
         if let id = id, let project = try? access?.get(id: id) {
             return project
         } else {
@@ -61,43 +59,28 @@ extension NewSourceViewModel {
     var isValid: Bool {
         guard name.count > 0 else { return false }
         
-        if type.needsURL && source.count == 0 {
-            return false
-        }
         return true
     }
 
     func save() {
         guard isValid else { return }
-        guard let context = access?.database.mainContext else { return }
-        let entity = makeProject(context: context)
-        entity.name = name
-        entity.sourceType = type
-        if type.needsURL {
-            entity.url = source
-        }
+        var entity = Source(
+            id: id ?? 0,
+            name: name,
+            sourceType: type,
+            config: nil)
+
         if type == .reddit {
-            entity.configData = try? JSONEncoder().encode(reddit)
+            entity.config = try? JSONEncoder().encode(reddit)
         }
+        entity = access!.save(source: entity)
         
         self.id = entity.id
-        access?.database.saveToDisk()
+        
     }
     
     func delete() {
-        guard let context = access?.database.mainContext else { return }
-        let project = loadProject()!
-        context.delete(project)
-        access?.database.saveToDisk()
-    }
-    
-    private func makeProject(context: NSManagedObjectContext) -> ContentSource {
-        if let project = loadProject() {
-            return project
-        }
-        let new = ContentSource(context: context)
-        new.id = UUID().uuidString
-        return new
+        access?.delete(id: self.id!)
     }
     
 }
