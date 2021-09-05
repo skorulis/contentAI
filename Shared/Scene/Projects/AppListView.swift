@@ -73,8 +73,8 @@ extension AppListView: View {
     }
     
     private var newAccountButton: some View {
-        NavigationLink(destination: addSourceView) {
-            Text("New account")
+        NavigationLink(destination: accounts) {
+            Text("Accounts")
         }
     }
     
@@ -100,6 +100,12 @@ extension AppListView: View {
         let arg = NewSourceViewModel.Argument(id: nil)
         return NavigationLazyView(
             NewSourceView(viewModel: factory.resolve(NewSourceViewModel.self, argument: arg))
+        )
+    }
+    
+    private var accounts: some View {
+        return NavigationLazyView(
+            AccountsView(viewModel: factory.resolve())
         )
     }
 }

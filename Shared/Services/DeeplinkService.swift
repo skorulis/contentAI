@@ -11,11 +11,11 @@ import Foundation
 final class DeeplinkService {
     
     private let client: MagicClient
-    private let access: ContentSourceAccess
+    private let access: AccountsAccess
     
     private var subscribers: Set<AnyCancellable> = []
     
-    init(client: MagicClient, access: ContentSourceAccess) {
+    init(client: MagicClient, access: AccountsAccess) {
         self.client = client
         self.access = access
     }
@@ -40,9 +40,7 @@ final class DeeplinkService {
                 case .success(let auth):
                     var newAuth = auth
                     newAuth.expiryTime = Date(timeIntervalSinceNow: auth.expires_in).timeIntervalSince1970
-                    let project = try? self.access.get(id: id)
-                    project?.authData = try! JSONEncoder().encode(newAuth)
-                    self.access.database.saveToDisk()
+                    self.access.redditAuth = newAuth
                 case .failure(let error):
                     ErrorService.shared.handle(error: error)
                 }

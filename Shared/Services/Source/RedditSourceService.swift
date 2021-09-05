@@ -13,46 +13,23 @@ final class RedditSourceService: PSourceService {
     private let source: ContentSource
     private let client: MagicClient
     private let access: ContentAccess
+    private let accountAccess: AccountsAccess
     
     init(source: ContentSource,
          client: MagicClient,
-         access: ContentAccess
+         access: ContentAccess,
+         accountAccess: AccountsAccess
     ) {
         self.client = client
         self.source = source
         self.access = access
+        self.accountAccess = accountAccess
     }
     
     private var subscribers: Set<AnyCancellable> = []
     
-    var hasAuth: Bool {
-        return source.authData != nil
-    }
-    
-    var needsReauth: Bool {
-        guard let auth: Reddit.AuthResponse = source.authObject() else { return false }
-        guard let expiry = auth.expiryTime, expiry < Date().timeIntervalSince1970 - 60 else { return false }
-        return true
-    }
-    
-    func reauthReddit() {
-        guard let auth: Reddit.AuthResponse = source.authObject() else { return }
-        let token = auth.refresh_token!
-        let req = Reddit.Endpoints.refresh(token: token)
-        client.execute(req: req)
-            .handleError(ErrorService.shared)
-            .sink { [unowned self] response in
-                var newAuth = response
-                newAuth.refresh_token = auth.refresh_token
-                newAuth.expiryTime = Date(timeIntervalSinceNow: auth.expires_in).timeIntervalSince1970
-                self.source.authData = try! JSONEncoder().encode(newAuth)
-                self.access.database.saveToDisk()
-            }
-            .store(in: &subscribers)
-    }
-    
     func fetchRedditData() {
-        guard let auth: Reddit.AuthResponse = source.authObject() else { return }
+        guard let auth: Reddit.AuthResponse = accountAccess.redditAuth else { return }
         let config: Reddit.SourceConfig? = source.configObject()
         let subreddit = config?.subreddit ?? ""
         let token = auth.access_token
@@ -87,11 +64,7 @@ final class RedditSourceService: PSourceService {
     }
     
     func loadMore() {
-        if needsReauth {
-            reauthReddit()
-        } else {
-            fetchRedditData()
-        }
+        fetchRedditData()
     }
     
 }

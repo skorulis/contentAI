@@ -10,7 +10,6 @@
         <relationship name="sources" toMany="YES" deletionRule="Nullify" destinationEntity="ContentSource" inverseName="content" inverseEntity="ContentSource"/>
     </entity>
     <entity name="ContentSource" representedClassName="ContentSource" syncable="YES">
-        <attribute name="authData" optional="YES" attributeType="Binary"/>
         <attribute name="configData" optional="YES" attributeType="Binary"/>
         <attribute name="id" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
@@ -34,7 +33,7 @@
     </entity>
     <elements>
         <element name="ContentEntity" positionX="-63" positionY="36" width="128" height="134"/>
-        <element name="ContentSource" positionX="-63" positionY="-18" width="128" height="149"/>
+        <element name="ContentSource" positionX="-63" positionY="-18" width="128" height="134"/>
         <element name="Label" positionX="-54" positionY="63" width="128" height="59"/>
         <element name="Project" positionX="-54" positionY="72" width="128" height="59"/>
     </elements>

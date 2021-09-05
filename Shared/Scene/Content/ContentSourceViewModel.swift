@@ -43,10 +43,7 @@ final class ContentSourceViewModel: ObservableObject {
 
 extension ContentSourceViewModel {
     
-    var redditAuthURL: String {
-        let scopes = ["identity", "mysubreddits", "read", "vote"].joined(separator: "%20")
-        return "https://www.reddit.com/api/v1/authorize?client_id=\(RedditSecrets.clientId)&response_type=code&state=\(project.id)&redirect_uri=\(Reddit.Endpoints.redirect)&duration=permanent&scope=\(scopes)"
-    }
+    
     
     var availableContent: [ContentEntity] {
         return Array(project.content)
@@ -57,9 +54,7 @@ extension ContentSourceViewModel {
         sourceRouter.loadMore()
     }
     
-    var hasAuth: Bool {
-        return project.authData != nil
-    }
+    
     
     
 }

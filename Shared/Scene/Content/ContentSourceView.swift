@@ -48,11 +48,7 @@ extension ContentSourceView: View {
         case .website:
             WebView(urlString: viewModel.project.url!)
         case .reddit:
-            if viewModel.hasAuth {
-                contentList
-            } else {
-                WebView(urlString: viewModel.redditAuthURL)
-            }
+            contentList
         }
     }
     
