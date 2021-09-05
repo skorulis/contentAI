@@ -31,7 +31,7 @@ extension AccountsView: View {
                 )
                 WebView(urlString: viewModel.redditAuthURL)
             }
-            .frame(width: 400, height: 400)
+            .frame(width: 500, height: 500)
         }
     }
     

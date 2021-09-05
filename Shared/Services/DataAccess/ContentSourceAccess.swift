@@ -7,6 +7,7 @@
 
 import CoreData
 import Foundation
+import SQLite
 
 struct ContentSourceAccess {
     
@@ -41,4 +42,25 @@ extension ContentSourceAccess {
         let req: NSFetchRequest<ContentSource> = ContentSource.fetch()
         return try! context.fetch(req)
     }
+}
+
+extension ContentSourceAccess {
+    
+    struct SourceTable {
+        static let table = Table("source")
+        static let id = Expression<Int64>("id")
+        static let name = Expression<String>("name")
+        static let sourceType = Expression<String>("source_type")
+        static let config = Expression<Data>("config")
+        
+        static func create(db: Connection) throws {
+            try db.run(table.create(ifNotExists: true) { t in
+                t.column(id, primaryKey: .autoincrement)
+                t.column(name)
+                t.column(sourceType)
+                t.column(config)
+            })
+        }
+    }
+    
 }

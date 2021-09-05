@@ -58,7 +58,7 @@ extension ContentAccess {
         }
         
         let setters: [[Setter]] = items.map { ContentTable.setters(item: $0) }
-        try? db2.db.run(ContentTable.table.insertMany(or: .ignore, setters))
+        _ = try? db2.db.run(ContentTable.table.insertMany(or: .ignore, setters))
     }
     
     
@@ -92,6 +92,39 @@ extension ContentAccess {
                 Self.thumbnail <- item.thumbnail,
                 Self.created <- item.created,
             ]
+        }
+    }
+    
+    struct ContentLabelTable {
+        static let table = Table("content_label")
+        static let content_id = Expression<String>("content_id")
+        static let label_id = Expression<Int64>("label_id")
+        
+        static func create(db: Connection) throws {
+            try db.run(table.create(ifNotExists: true) { t in
+                t.column(content_id)
+                t.column(label_id)
+                t.foreignKey(content_id, references: ContentTable.table, ContentTable.id, delete: .noAction)
+                t.foreignKey(label_id, references: LabelAccess.LabelTable.table, LabelAccess.LabelTable.id, delete: .noAction)
+            })
+        }
+    }
+    
+    struct ContentSourceTable {
+        static let table = Table("content_source")
+        static let content_id = Expression<String>("content_id")
+        static let source_id = Expression<Int64>("source_id")
+        
+        static func create(db: Connection) throws {
+            try db.run(table.create(ifNotExists: true) { t in
+                t.column(content_id)
+                t.column(source_id)
+                t.foreignKey(content_id, references: ContentAccess.ContentTable.table, ContentTable.id, delete: .noAction)
+                t.foreignKey(source_id,
+                             references: ContentSourceAccess.SourceTable.table,
+                             ContentSourceAccess.SourceTable.id, delete: .noAction
+                )
+            })
         }
     }
     

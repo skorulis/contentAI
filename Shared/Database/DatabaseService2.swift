@@ -16,6 +16,10 @@ final class DatabaseService2 {
         db = try! Connection(Self.dbPath)
         do {
             try ContentAccess.ContentTable.create(db: db)
+            try LabelAccess.LabelTable.create(db: db)
+            try ContentSourceAccess.SourceTable.create(db: db)
+            try ContentAccess.ContentLabelTable.create(db: db)
+            try ContentAccess.ContentSourceTable.create(db: db)
         } catch {
             print("Error \(error)")
         }
