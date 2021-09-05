@@ -15,8 +15,6 @@
 		FA10E5EA26E471E800325378 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FA10E5E926E471E800325378 /* SQLite */; };
 		FA10E5EC26E471F900325378 /* DatabaseService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EB26E471F900325378 /* DatabaseService2.swift */; };
 		FA10E5ED26E471F900325378 /* DatabaseService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EB26E471F900325378 /* DatabaseService2.swift */; };
-		FA10E5EF26E472FE00325378 /* ContentEntity2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EE26E472FE00325378 /* ContentEntity2.swift */; };
-		FA10E5F026E472FE00325378 /* ContentEntity2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EE26E472FE00325378 /* ContentEntity2.swift */; };
 		FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */; };
 		FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E026DE201400DE7BE7 /* PContent.swift */; };
 		FA2116E226DE205300DE7BE7 /* PContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E026DE201400DE7BE7 /* PContent.swift */; };
@@ -147,7 +145,6 @@
 		FA10E5E026E46A9C00325378 /* FilterOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOperator.swift; sourceTree = "<group>"; };
 		FA10E5E326E46ADC00325378 /* PContentSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PContentSource.swift; sourceTree = "<group>"; };
 		FA10E5EB26E471F900325378 /* DatabaseService2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService2.swift; sourceTree = "<group>"; };
-		FA10E5EE26E472FE00325378 /* ContentEntity2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentEntity2.swift; sourceTree = "<group>"; };
 		FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSummaryView.swift; sourceTree = "<group>"; };
 		FA2116E026DE201400DE7BE7 /* PContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PContent.swift; sourceTree = "<group>"; };
 		FA2116E426DE315C00DE7BE7 /* Reddit.SourceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.SourceConfig.swift; sourceTree = "<group>"; };
@@ -332,7 +329,6 @@
 				FAEE450726DB7CC000FCF0AC /* ContentEntity.swift */,
 				FAFB037626DF7C7700AEE99B /* Label.swift */,
 				FA8CA8F026E179E900BAF427 /* Project.swift */,
-				FA10E5EE26E472FE00325378 /* ContentEntity2.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -720,7 +716,6 @@
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */,
 				FAFE580526E33CDC00051A83 /* NavigationBar.swift in Sources */,
-				FA10E5EF26E472FE00325378 /* ContentEntity2.swift in Sources */,
 				FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4826E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
@@ -791,7 +786,6 @@
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */,
 				FAFE580626E33CDC00051A83 /* NavigationBar.swift in Sources */,
-				FA10E5F026E472FE00325378 /* ContentEntity2.swift in Sources */,
 				FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4926E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FC26DB746900FCF0AC /* Reddit.swift in Sources */,

@@ -9,20 +9,22 @@ import Foundation
 import SQLite
 
 final class DatabaseService2 {
+
+    let db: Connection
     
     init() {
+        db = try! Connection(Self.dbPath)
         do {
-            let db = try Connection(dbPath)
-            try ContentEntity2.create(db: db)
+            try ContentAccess.ContentTable.create(db: db)
         } catch {
             print("Error \(error)")
         }
-        
-        
     }
     
     
-    var dbPath: String {
+    
+    
+    static var dbPath: String {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         let documentsDirectory = paths[0]
         let url = documentsDirectory.appendingPathComponent("magic2.sqlite3")

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SQLite
 
 // MARK: - Memory access
 
@@ -55,7 +56,43 @@ extension ContentAccess {
             try! context.save()
             self.database.saveToDisk()
         }
+        
+        let setters: [[Setter]] = items.map { ContentTable.setters(item: $0) }
+        try? db2.db.run(ContentTable.table.insertMany(or: .ignore, setters))
     }
     
+    
+}
+
+extension ContentAccess {
+    
+    struct ContentTable {
+        static let table = Table("content")
+        static let id = Expression<String>("id")
+        static let title = Expression<String?>("title")
+        static let url = Expression<String?>("url")
+        static let thumbnail = Expression<String?>("thumbnail")
+        static let created = Expression<Double>("created")
+        
+        static func create(db: Connection) throws {
+            try db.run(table.create(ifNotExists: true) { t in
+                t.column(id, primaryKey: true)
+                t.column(title)
+                t.column(url)
+                t.column(thumbnail)
+                t.column(created)
+            })
+        }
+        
+        static func setters(item: ContentItem) -> [Setter] {
+            return [
+                Self.id <- item.id,
+                Self.title <- item.title,
+                Self.url <- item.url,
+                Self.thumbnail <- item.thumbnail,
+                Self.created <- item.created,
+            ]
+        }
+    }
     
 }
