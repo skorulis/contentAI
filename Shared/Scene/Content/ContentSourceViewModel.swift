@@ -47,7 +47,7 @@ final class ContentSourceViewModel: ObservableObject {
 extension ContentSourceViewModel {
     
     var availableContent: [ContentItem] {
-        return contentAccess.all()
+        return contentAccess.sourceItems(source: source)
     }
 
     

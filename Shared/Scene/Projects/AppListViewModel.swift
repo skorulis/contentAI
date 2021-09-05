@@ -6,14 +6,17 @@
 //
 
 import Foundation
-import CoreData
 
 final class AppListViewModel: ObservableObject {
     
     let sourceAccess: ContentSourceAccess?
     let projectAccess: ProjectAccess?
     
-    @Published var sources: [Source] = []
+    @Published var sources: [Source] = [] {
+        didSet {
+            print("TES")
+        }
+    }
     @Published var projects: [Project] = []
     
     init(sourceAccess: ContentSourceAccess?,
@@ -24,16 +27,11 @@ final class AppListViewModel: ObservableObject {
         setupObservers()
     }
     
-    //private lazy var sourcePublisher: FetchedResultsControllerPublisher<ContentSource>? = sourceAccess?.publisher()
-    
     //private lazy var projectPublisher: FetchedResultsControllerPublisher<Project>? = projectAccess?.puublisher()
     
     func setupObservers() {
-        sources = sourceAccess?.all() ?? []
-        
-        
-        //sourcePublisher?.publisher
-            //.assign(to: &$sources)
+        sourceAccess?.publisher
+            .assign(to: &$sources)
         
         //projectPublisher?.publisher
           //  .assign(to: &$projects)

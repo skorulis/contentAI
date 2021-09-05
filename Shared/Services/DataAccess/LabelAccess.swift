@@ -6,14 +6,12 @@
 //
 
 import Foundation
-import CoreData
 import SQLite
 
 // MARK: - Memory access
 
 struct LabelAccess {
     let database: DatabaseService
-    let db2: DatabaseService2
 }
 
 // MARK: - Inner logic
@@ -23,7 +21,7 @@ extension LabelAccess {
     func findOrCreate(labels: [String]) -> [Label] {
         return labels.map { label in
             let setter = LabelTable.setters(label: label)
-            let id = try! db2.db.run(LabelTable.table.insert(or: .replace, setter))
+            let id = try! database.db.run(LabelTable.table.insert(or: .replace, setter))
             return Label(id: id, name: label)
         }
     }

@@ -47,8 +47,6 @@
 		FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565826D9F49900F9FE9A /* HTTPClient.swift */; };
 		FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */; };
 		FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */; };
-		FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */; };
-		FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */; };
 		FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
 		FA3A568126D9FA1C00F9FE9A /* MagicApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */; };
 		FA3A568226D9FA1C00F9FE9A /* MainAppView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3A567F26D9FA1C00F9FE9A /* MainAppView.swift */; };
@@ -95,8 +93,6 @@
 		FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
 		FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
 		FA8CA8EF26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
-		FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
-		FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */; };
 		FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
 		FAEE44EA26DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
 		FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */; };
@@ -167,7 +163,6 @@
 		FA3A565726D9F49900F9FE9A /* HTTPStatusError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPStatusError.swift; sourceTree = "<group>"; };
 		FA3A565826D9F49900F9FE9A /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPResponseValidator.swift; sourceTree = "<group>"; };
-		FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		FA3A567E26D9FA1C00F9FE9A /* MagicApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicApp.swift; sourceTree = "<group>"; };
 		FA3A567F26D9FA1C00F9FE9A /* MainAppView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainAppView.swift; sourceTree = "<group>"; };
 		FA3A568426D9FA3200F9FE9A /* IOC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOC.swift; sourceTree = "<group>"; };
@@ -190,7 +185,6 @@
 		FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowStyle.swift; sourceTree = "<group>"; };
 		FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewModel.swift; sourceTree = "<group>"; };
-		FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
 		FAEE44F226DB3CA700FCF0AC /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
@@ -323,9 +317,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3A567626D9F7FB00F9FE9A /* Entities */,
-				FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */,
 				FA10E5EB26E471F900325378 /* DatabaseService2.swift */,
-				FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -723,8 +715,6 @@
 				FAEE450126DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
 				FAFE580B26E3401000051A83 /* IconButton.swift in Sources */,
 				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
-				FAEE44DD26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
-				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */,
 				FAFE580526E33CDC00051A83 /* NavigationBar.swift in Sources */,
 				FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
@@ -795,8 +785,6 @@
 				FAEE450226DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
 				FAFE580C26E3401000051A83 /* IconButton.swift in Sources */,
 				FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
-				FAEE44DE26DB22E600FCF0AC /* Magic.xcdatamodeld in Sources */,
-				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */,
 				FAFE580626E33CDC00051A83 /* NavigationBar.swift in Sources */,
 				FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
@@ -1123,19 +1111,6 @@
 			productName = SwinjectAutoregistration;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */,
-			);
-			currentVersion = FAEE44DC26DB22E600FCF0AC /* Shared.xcdatamodel */;
-			path = Magic.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FA3A562626D9F44C00F9FE9A /* Project object */;
 }

@@ -38,16 +38,19 @@ public final class IOC {
     
     private func setupAccess() {
         container.autoregister(AccountsAccess.self, initializer: AccountsAccess.init)
+            .inObjectScope(.container)
         container.autoregister(ContentSourceAccess.self, initializer: ContentSourceAccess.init)
+            .inObjectScope(.container)
         container.autoregister(ContentAccess.self, initializer: ContentAccess.init)
+            .inObjectScope(.container)
         container.autoregister(LabelAccess.self, initializer: LabelAccess.init)
+            .inObjectScope(.container)
         container.autoregister(ProjectAccess.self, initializer: ProjectAccess.init)
+            .inObjectScope(.container)
     }
     
     private func setupServices() {
         container.autoregister(DatabaseService.self, initializer: DatabaseService.init)
-            .inObjectScope(.container)
-        container.autoregister(DatabaseService2.self, initializer: DatabaseService2.init)
             .inObjectScope(.container)
         
         container.autoregister(ErrorService.self, initializer: ErrorService.init)

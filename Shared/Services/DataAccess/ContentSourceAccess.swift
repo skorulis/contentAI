@@ -5,14 +5,20 @@
 //  Created by Alexander Skorulis on 28/8/21.
 //
 
-import CoreData
+import Combine
 import Foundation
 import SQLite
 
 struct ContentSourceAccess {
     
-    let database: DatabaseService
-    let db2: DatabaseService2
+    let db: DatabaseService
+    
+    let publisher: CurrentValueSubject<[Source], Never> = .init([])
+    
+    init(db: DatabaseService) {
+        self.db = db
+        self.updatePublisher()
+    }
 }
 
 extension ContentSourceAccess {
@@ -21,7 +27,7 @@ extension ContentSourceAccess {
         assert(Thread.current.isMainThread)
         let query = SourceTable.table.filter(SourceTable.id == id)
         
-        for row in try db2.db.prepare(query) {
+        for row in try db.db.prepare(query) {
             return try SourceTable.extract(row: row)
         }
         return nil
@@ -29,13 +35,15 @@ extension ContentSourceAccess {
     
     func delete(id: Int64) {
         let query = SourceTable.table.filter(SourceTable.id == id)
-        try! db2.db.run(query.delete())
+        try! db.db.run(query.delete())
     }
     
     func save(source: Source) -> Source{
         let setters = SourceTable.setters(source: source)
         let query = SourceTable.table.insert(or: .replace, setters)
-        let id = try! db2.db.run(query)
+        let id = try! db.db.run(query)
+        
+        self.updatePublisher()
         
         return Source(
             id: id,
@@ -45,21 +53,13 @@ extension ContentSourceAccess {
         )
     }
     
-    /*func publisher() -> FetchedResultsControllerPublisher<ContentSource> {
-        return FetchedResultsControllerPublisher(fetchedResultsController: fetchController())
-    }
-    
-    func fetchController() -> NSFetchedResultsController<ContentSource> {
-        let context = database.mainContext
-        let req: NSFetchRequest<ContentSource> = ContentSource.fetch()
-        req.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        let frc = NSFetchedResultsController(fetchRequest: req, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        return frc
-    }*/
-    
     func all() -> [Source] {
         let query = SourceTable.table
-        return try! db2.db.prepare(query).map { try! SourceTable.extract(row: $0) }
+        return try! db.db.prepare(query).map { try! SourceTable.extract(row: $0) }
+    }
+    
+    func updatePublisher() {
+        self.publisher.value = all()
     }
 }
 

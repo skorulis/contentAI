@@ -12,8 +12,7 @@ import SQLite
 
 struct ContentAccess {
     
-    let database: DatabaseService
-    let db2: DatabaseService2
+    let db: DatabaseService
     let labelAccess: LabelAccess
 }
 
@@ -32,7 +31,7 @@ extension ContentAccess {
         let labelDict = Dictionary(grouping: labelEntities) { $0.name }.mapValues { $0[0] }
         
         let setters: [[Setter]] = items.map { ContentTable.setters(item: $0) }
-        _ = try? db2.db.run(ContentTable.table.insertMany(or: .ignore, setters))
+        _ = try? db.db.run(ContentTable.table.insertMany(or: .ignore, setters))
         
         // TODO: Insert labels
         
@@ -41,13 +40,24 @@ extension ContentAccess {
         // TODO: Insert source
         
         let sourceSetters = items.map { ContentSourceTable.setters(source: source, item: $0) }
-        _ = try! db2.db.run(ContentSourceTable.table.insertMany(or: .replace, sourceSetters))
+        _ = try! db.db.run(ContentSourceTable.table.insertMany(or: .replace, sourceSetters))
         
+    }
+    
+    func sourceItems(source: Source) -> [ContentItem] {
+        let query = ContentTable.table
+            .join(
+                ContentSourceTable.table,
+                on: ContentSourceTable.content_id == ContentTable.table[ContentTable.id]
+            )
+            .filter(ContentSourceTable.source_id == source.id)
+        
+        return try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
     }
     
     func all() -> [ContentItem] {
         let query = ContentTable.table
-        return try! db2.db.prepare(query).map { try! ContentTable.extract(row: $0) }
+        return try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
     }
     
 }

@@ -1,5 +1,5 @@
 //
-//  DatabaseService2.swift
+//  DatabaseService.swift
 //  Magic
 //
 //  Created by Alexander Skorulis on 5/9/21.
@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-final class DatabaseService2 {
+final class DatabaseService {
 
     let db: Connection
     
