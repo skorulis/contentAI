@@ -46,6 +46,9 @@ public final class IOC {
     private func setupServices() {
         container.autoregister(DatabaseService.self, initializer: DatabaseService.init)
             .inObjectScope(.container)
+        container.autoregister(DatabaseService2.self, initializer: DatabaseService2.init)
+            .inObjectScope(.container)
+        
         container.autoregister(ErrorService.self, initializer: ErrorService.init)
         container.autoregister(MagicClient.self, initializer: MagicClient.init)
         container.autoregister(HTTPLogger.self, initializer: HTTPLogger.init)

@@ -11,6 +11,7 @@ import Foundation
 struct ContentSourceAccess {
     
     let database: DatabaseService
+    let db2: DatabaseService2
 }
 
 extension ContentSourceAccess {

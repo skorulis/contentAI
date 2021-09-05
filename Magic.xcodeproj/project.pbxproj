@@ -11,6 +11,12 @@
 		FA10E5E226E46A9C00325378 /* FilterOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5E026E46A9C00325378 /* FilterOperator.swift */; };
 		FA10E5E426E46ADC00325378 /* PContentSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5E326E46ADC00325378 /* PContentSource.swift */; };
 		FA10E5E526E46ADC00325378 /* PContentSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5E326E46ADC00325378 /* PContentSource.swift */; };
+		FA10E5E826E471D100325378 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FA10E5E726E471D100325378 /* SQLite */; };
+		FA10E5EA26E471E800325378 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FA10E5E926E471E800325378 /* SQLite */; };
+		FA10E5EC26E471F900325378 /* DatabaseService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EB26E471F900325378 /* DatabaseService2.swift */; };
+		FA10E5ED26E471F900325378 /* DatabaseService2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EB26E471F900325378 /* DatabaseService2.swift */; };
+		FA10E5EF26E472FE00325378 /* ContentEntity2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EE26E472FE00325378 /* ContentEntity2.swift */; };
+		FA10E5F026E472FE00325378 /* ContentEntity2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EE26E472FE00325378 /* ContentEntity2.swift */; };
 		FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */; };
 		FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E026DE201400DE7BE7 /* PContent.swift */; };
 		FA2116E226DE205300DE7BE7 /* PContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E026DE201400DE7BE7 /* PContent.swift */; };
@@ -140,6 +146,8 @@
 /* Begin PBXFileReference section */
 		FA10E5E026E46A9C00325378 /* FilterOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOperator.swift; sourceTree = "<group>"; };
 		FA10E5E326E46ADC00325378 /* PContentSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PContentSource.swift; sourceTree = "<group>"; };
+		FA10E5EB26E471F900325378 /* DatabaseService2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService2.swift; sourceTree = "<group>"; };
+		FA10E5EE26E472FE00325378 /* ContentEntity2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentEntity2.swift; sourceTree = "<group>"; };
 		FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSummaryView.swift; sourceTree = "<group>"; };
 		FA2116E026DE201400DE7BE7 /* PContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PContent.swift; sourceTree = "<group>"; };
 		FA2116E426DE315C00DE7BE7 /* Reddit.SourceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.SourceConfig.swift; sourceTree = "<group>"; };
@@ -212,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA10E5EA26E471E800325378 /* SQLite in Frameworks */,
 				FA3A568C26D9FCD800F9FE9A /* SwinjectAutoregistration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -220,6 +229,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA10E5E826E471D100325378 /* SQLite in Frameworks */,
 				FA3A568A26D9FCD500F9FE9A /* SwinjectAutoregistration in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -310,6 +320,7 @@
 				FA3A567626D9F7FB00F9FE9A /* Entities */,
 				FA3A566F26D9F6E300F9FE9A /* DatabaseService.swift */,
 				FAEE44DB26DB22E600FCF0AC /* Magic.xcdatamodeld */,
+				FA10E5EB26E471F900325378 /* DatabaseService2.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -321,6 +332,7 @@
 				FAEE450726DB7CC000FCF0AC /* ContentEntity.swift */,
 				FAFB037626DF7C7700AEE99B /* Label.swift */,
 				FA8CA8F026E179E900BAF427 /* Project.swift */,
+				FA10E5EE26E472FE00325378 /* ContentEntity2.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -559,6 +571,7 @@
 			name = "Magic (iOS)";
 			packageProductDependencies = (
 				FA3A568B26D9FCD800F9FE9A /* SwinjectAutoregistration */,
+				FA10E5E926E471E800325378 /* SQLite */,
 			);
 			productName = "Magic (iOS)";
 			productReference = FA3A563526D9F44E00F9FE9A /* Magic.app */;
@@ -579,6 +592,7 @@
 			name = "Magic (macOS)";
 			packageProductDependencies = (
 				FA3A568926D9FCD500F9FE9A /* SwinjectAutoregistration */,
+				FA10E5E726E471D100325378 /* SQLite */,
 			);
 			productName = "Magic (macOS)";
 			productReference = FA3A563B26D9F44F00F9FE9A /* Magic.app */;
@@ -613,6 +627,7 @@
 			mainGroup = FA3A562526D9F44C00F9FE9A;
 			packageReferences = (
 				FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
+				FA10E5E626E471D100325378 /* XCRemoteSwiftPackageReference "SQLite" */,
 			);
 			productRefGroup = FA3A563626D9F44E00F9FE9A /* Products */;
 			projectDirPath = "";
@@ -678,6 +693,7 @@
 				FA3A56A626DA018F00F9FE9A /* NewSourceView.swift in Sources */,
 				FAEE44F326DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
 				FA3A56A326D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
+				FA10E5EC26E471F900325378 /* DatabaseService2.swift in Sources */,
 				FA3A569226D9FD8300F9FE9A /* AppListView.swift in Sources */,
 				FAEE450526DB7B6400FCF0AC /* ContentItem.swift in Sources */,
 				FA8CA8F126E179E900BAF427 /* Project.swift in Sources */,
@@ -704,6 +720,7 @@
 				FA3A567026D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */,
 				FAFE580526E33CDC00051A83 /* NavigationBar.swift in Sources */,
+				FA10E5EF26E472FE00325378 /* ContentEntity2.swift in Sources */,
 				FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4826E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
@@ -747,6 +764,7 @@
 				FA3BE92D26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FAEE44FF26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
 				FA3A56A726DA018F00F9FE9A /* NewSourceView.swift in Sources */,
+				FA10E5ED26E471F900325378 /* DatabaseService2.swift in Sources */,
 				FAEE44F426DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
 				FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
 				FA8CA8F226E179E900BAF427 /* Project.swift in Sources */,
@@ -773,6 +791,7 @@
 				FA3A567126D9F6E300F9FE9A /* DatabaseService.swift in Sources */,
 				FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */,
 				FAFE580626E33CDC00051A83 /* NavigationBar.swift in Sources */,
+				FA10E5F026E472FE00325378 /* ContentEntity2.swift in Sources */,
 				FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4926E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FC26DB746900FCF0AC /* Reddit.swift in Sources */,
@@ -1058,6 +1077,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		FA10E5E626E471D100325378 /* XCRemoteSwiftPackageReference "SQLite" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
 		FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Swinject/SwinjectAutoregistration";
@@ -1069,6 +1096,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		FA10E5E726E471D100325378 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA10E5E626E471D100325378 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
+		FA10E5E926E471E800325378 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA10E5E626E471D100325378 /* XCRemoteSwiftPackageReference "SQLite" */;
+			productName = SQLite;
+		};
 		FA3A568926D9FCD500F9FE9A /* SwinjectAutoregistration */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;

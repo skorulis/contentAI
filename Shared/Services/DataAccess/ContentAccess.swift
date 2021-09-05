@@ -12,6 +12,7 @@ import Foundation
 struct ContentAccess {
     
     let database: DatabaseService
+    let db2: DatabaseService2
     let labelAccess: LabelAccess
 }
 
