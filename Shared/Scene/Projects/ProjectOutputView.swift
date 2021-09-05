@@ -25,9 +25,15 @@ struct ProjectOutputView {
 extension ProjectOutputView: View {
     
     var body: some View {
-        VStack {
-            buttons
-            Text(viewModel.project.name)
+        ZStack {
+            VStack {
+                buttons
+                contentList
+                Text(viewModel.project.name)
+            }
+            if let active = viewModel.activeContent {
+                detailContainer(content: active)
+            }
         }
         .sheet(isPresented: $isEditing) {
             EditProjectView(viewModel: factory.resolve(EditProjectViewModel.self, argument: EditProjectViewModel.Argument(project: viewModel.project)))
@@ -42,7 +48,39 @@ extension ProjectOutputView: View {
             }
         }
     }
+    
+    private var contentList: some View {
+        List {
+            ForEach(viewModel.inputContent, id: \.self.id) { item in
+                ContentSummaryView(item: item) {
+                    clicked(item: item)
+                }
+            }
+        }
+    }
+    
+    @ViewBuilder
+    private func detailContainer(content: PContent) -> some View {
+        ZStack(alignment: .topLeading) {
+            ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content))
+            Button(action: {viewModel.activeContent = nil}) {
+                Text("Back")
+            }
+            .keyboardShortcut(KeyEquivalent.leftArrow, modifiers: [])
+        }
+    }
 }
+
+// MARK: - Behaviors
+                
+extension ProjectOutputView {
+    
+    func clicked(item: PContent) {
+        viewModel.activeContent = item
+    }
+    
+}
+
 
 // MARK: - Previews
 

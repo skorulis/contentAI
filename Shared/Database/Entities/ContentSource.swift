@@ -26,8 +26,7 @@ public class ContentSource: NSManagedObject {
     @NSManaged public var projects: Set<ContentSource>
     
     @NSManaged private var sourceTypeString: String
-    
-    
+     
     var sourceType: SourceType {
         get {
             return SourceType(rawValue: sourceTypeString) ?? .website
@@ -68,3 +67,12 @@ extension ContentSource: Identifiable {
     
 }
 
+// MARK: - Inner logic
+
+/*extension ContentSource: PContentSource {
+    
+    var publisher: Published<[PContent]> {
+        
+    }
+}
+*/

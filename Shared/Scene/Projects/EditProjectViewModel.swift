@@ -16,6 +16,8 @@ final class EditProjectViewModel: ObservableObject {
     @Published var name: String = ""
     @Published var inputs: Set<ContentSource> = []
     
+    
+    
     init(argument: Argument,
          projectAccess: ProjectAccess?,
          sourceAccess: ContentSourceAccess?
@@ -28,7 +30,6 @@ final class EditProjectViewModel: ObservableObject {
             name = project.name
             inputs = project.inputs
         }
-        
         
     }
     
@@ -50,6 +51,7 @@ extension EditProjectViewModel {
     var contentOptions: [ContentSource] {
         return sourceAccess?.all() ?? []
     }
+    
     
 }
 
