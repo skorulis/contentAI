@@ -10,16 +10,24 @@ import Foundation
 struct ProjectAccess {
     
     let database: DatabaseService
+    let sourceAccess: ContentSourceAccess
     
 }
 
 extension ProjectAccess {
     
-    /*func puublisher() -> FetchedResultsControllerPublisher<Project> {
-        let context = database.mainContext
-        let req: NSFetchRequest<Project> = Project.fetch()
-        req.sortDescriptors = [NSSortDescriptor(key: "name", ascending: true)]
-        let frc = NSFetchedResultsController(fetchRequest: req, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-        return FetchedResultsControllerPublisher(fetchedResultsController: frc)
-    }*/
+    var all: [Project] {
+        return [
+            dummyProject1
+        ]
+            .compactMap { $0 }
+    }
+    
+    var dummyProject1: Project? {
+        guard let source = try! sourceAccess.get(name: "C1") else {
+            return nil
+        }
+        return Project(name: "D1", inputs: [source])
+    }
+    
 }

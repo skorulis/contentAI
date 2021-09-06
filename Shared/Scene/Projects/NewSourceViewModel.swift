@@ -70,6 +70,7 @@ extension NewSourceViewModel {
             config: nil)
 
         if type == .reddit {
+            reddit.subreddit = reddit.subreddit.lowercased()
             entity.config = try? JSONEncoder().encode(reddit)
         }
         entity = access!.save(source: entity)

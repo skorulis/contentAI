@@ -60,6 +60,20 @@ extension ContentAccess {
         return try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
     }
     
+    func publisher(source: Source) -> QueryPublisher<ContentItem> {
+        let query = ContentTable.table
+            .join(
+                ContentSourceTable.table,
+                on: ContentSourceTable.content_id == ContentTable.table[ContentTable.id]
+            )
+            .filter(ContentSourceTable.source_id == source.id)
+        
+        
+        return QueryPublisher<ContentItem>(db: db.db, baseQuery: query) { row in
+            return try! ContentTable.extract(row: row)
+        }
+    }
+    
 }
 
 extension ContentAccess {

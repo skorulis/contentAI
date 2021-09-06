@@ -33,6 +33,15 @@ extension ContentSourceAccess {
         return nil
     }
     
+    func get(name: String) throws -> Source? {
+        let query = SourceTable.table.filter(SourceTable.name == name)
+        
+        for row in try db.db.prepare(query) {
+            return try SourceTable.extract(row: row)
+        }
+        return nil
+    }
+    
     func delete(id: Int64) {
         let query = SourceTable.table.filter(SourceTable.id == id)
         try! db.db.run(query.delete())

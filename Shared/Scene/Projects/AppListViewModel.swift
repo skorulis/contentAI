@@ -12,11 +12,7 @@ final class AppListViewModel: ObservableObject {
     let sourceAccess: ContentSourceAccess?
     let projectAccess: ProjectAccess?
     
-    @Published var sources: [Source] = [] {
-        didSet {
-            print("TES")
-        }
-    }
+    @Published var sources: [Source] = []
     @Published var projects: [Project] = []
     
     init(sourceAccess: ContentSourceAccess?,
@@ -32,6 +28,8 @@ final class AppListViewModel: ObservableObject {
     func setupObservers() {
         sourceAccess?.publisher
             .assign(to: &$sources)
+        
+        projects = projectAccess?.all ?? []
         
         //projectPublisher?.publisher
           //  .assign(to: &$projects)

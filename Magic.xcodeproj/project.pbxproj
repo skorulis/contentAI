@@ -27,6 +27,8 @@
 		FA10E60226E48C5700325378 /* Source.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E60026E48C5700325378 /* Source.swift */; };
 		FA10E60426E4A05900325378 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E60326E4A05900325378 /* Project.swift */; };
 		FA10E60526E4A05900325378 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E60326E4A05900325378 /* Project.swift */; };
+		FA10E60826E4BE1E00325378 /* QueryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E60726E4BE1E00325378 /* QueryPublisher.swift */; };
+		FA10E60926E4BE1E00325378 /* QueryPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E60726E4BE1E00325378 /* QueryPublisher.swift */; };
 		FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */; };
 		FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E026DE201400DE7BE7 /* PContent.swift */; };
 		FA2116E226DE205300DE7BE7 /* PContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E026DE201400DE7BE7 /* PContent.swift */; };
@@ -93,6 +95,7 @@
 		FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
 		FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
 		FA8CA8EF26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
+		FAE91B9B26E60A4B002858A8 /* SheetFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */; };
 		FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
 		FAEE44EA26DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
 		FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */; };
@@ -151,6 +154,7 @@
 		FA10E5FA26E487AE00325378 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		FA10E60026E48C5700325378 /* Source.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Source.swift; sourceTree = "<group>"; };
 		FA10E60326E4A05900325378 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		FA10E60726E4BE1E00325378 /* QueryPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryPublisher.swift; sourceTree = "<group>"; };
 		FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSummaryView.swift; sourceTree = "<group>"; };
 		FA2116E026DE201400DE7BE7 /* PContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PContent.swift; sourceTree = "<group>"; };
 		FA2116E426DE315C00DE7BE7 /* Reddit.SourceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.SourceConfig.swift; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 		FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowStyle.swift; sourceTree = "<group>"; };
 		FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewModel.swift; sourceTree = "<group>"; };
+		FAE91B9826E6066C002858A8 /* iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS-Info.plist"; sourceTree = "<group>"; };
+		FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetFrameModifier.swift; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
 		FAEE44F226DB3CA700FCF0AC /* DeeplinkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeeplinkService.swift; sourceTree = "<group>"; };
@@ -240,6 +246,14 @@
 				FA10E5E026E46A9C00325378 /* FilterOperator.swift */,
 			);
 			path = Operators;
+			sourceTree = "<group>";
+		};
+		FA10E60626E4BDE600325378 /* SQLite */ = {
+			isa = PBXGroup;
+			children = (
+				FA10E60726E4BE1E00325378 /* QueryPublisher.swift */,
+			);
+			path = SQLite;
 			sourceTree = "<group>";
 		};
 		FA2116DC26DD8B6400DE7BE7 /* Accounts */ = {
@@ -427,6 +441,14 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		FAE91B9926E60A3C002858A8 /* View Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */,
+			);
+			path = "View Modifier";
+			sourceTree = "<group>";
+		};
 		FAEE44DF26DB2B6E00FCF0AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -481,6 +503,7 @@
 			children = (
 				FAEE451126DB83DC00FCF0AC /* Magic.entitlements */,
 				FAEE451226DB83DC00FCF0AC /* macOS-Info.plist */,
+				FAE91B9826E6066C002858A8 /* iOS-Info.plist */,
 			);
 			path = Configs;
 			sourceTree = "<group>";
@@ -491,6 +514,7 @@
 				FAFB038026DF88C300AEE99B /* Combine */,
 				FAFB038226DF88C300AEE99B /* CoreData */,
 				FAFB039426DF88D600AEE99B /* Foundation */,
+				FA10E60626E4BDE600325378 /* SQLite */,
 				FAFB038526DF88C300AEE99B /* SwiftUI */,
 			);
 			path = Infrastructure;
@@ -516,6 +540,7 @@
 		FAFB038526DF88C300AEE99B /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				FAE91B9926E60A3C002858A8 /* View Modifier */,
 				FAFB038626DF88C300AEE99B /* View */,
 				FAFB038826DF88C300AEE99B /* Previews */,
 			);
@@ -710,6 +735,7 @@
 				FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
+				FA10E60826E4BE1E00325378 /* QueryPublisher.swift in Sources */,
 				FAFB037A26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FAEE450126DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
@@ -722,6 +748,7 @@
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
 				FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */,
 				FAEE450B26DB7DAC00FCF0AC /* ContentAccess.swift in Sources */,
+				FAE91B9B26E60A4B002858A8 /* SheetFrameModifier.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -780,6 +807,7 @@
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
+				FA10E60926E4BE1E00325378 /* QueryPublisher.swift in Sources */,
 				FAFB037B26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
 				FA3A566D26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FAEE450226DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
@@ -919,12 +947,16 @@
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Configs/iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = Magic;
+				INFOPLIST_KEY_CFBundleName = Magic;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -949,12 +981,16 @@
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Configs/iOS-Info.plist";
+				INFOPLIST_KEY_CFBundleExecutable = Magic;
+				INFOPLIST_KEY_CFBundleName = Magic;
+				INFOPLIST_KEY_CFBundleVersion = 1;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

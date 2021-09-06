@@ -78,18 +78,32 @@ extension WebView {
         
         func webView(_ view: WKWebView, didFinish: WKNavigation!) {
             print("Finish navigation")
-            let js = "document.documentElement.outerHTML.toString()"
+            /*let js = "document.documentElement.outerHTML.toString()"
             view.evaluateJavaScript(js,
                                        completionHandler: { (html: Any?, error: Error?) in
                 //print(html)
-            })
+            })*/
         }
         
         func webView(_ view: WKWebView, didFail: WKNavigation!, withError: Error) {
             print("error \(withError)")
         }
+        
+        func webView(_ view: WKWebView, decidePolicyFor: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+            print(decidePolicyFor.request)
+            if let url = decidePolicyFor.request.url, url.scheme == "magicapp" {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                decisionHandler(.cancel)
+            } else {
+                decisionHandler(.allow)
+            }
+        }
+        
+        func webView(_ view: WKWebView, decidePolicyFor: WKNavigationResponse, decisionHandler: (WKNavigationResponsePolicy) -> Void) {
+            print(decidePolicyFor.response.url?.absoluteString ?? "")
+            decisionHandler(.allow)
+        }
 
-        
-        
+
     }
 }
