@@ -45,6 +45,11 @@ extension ContentAccess {
     }
     
     func sourceItems(source: Source) -> [ContentItem] {
+        let query = sourceQuery(source: source)
+        return try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
+    }
+    
+    func sourceQuery(source: Source) -> Table {
         let query = ContentTable.table
             .join(
                 ContentSourceTable.table,
@@ -52,7 +57,7 @@ extension ContentAccess {
             )
             .filter(ContentSourceTable.source_id == source.id)
         
-        return try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
+        return query
     }
     
     func all() -> [ContentItem] {

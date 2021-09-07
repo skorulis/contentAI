@@ -6,7 +6,6 @@
 //
 
 import Foundation
-
 import SwiftUI
 
 // MARK: - Memory footprint
@@ -28,6 +27,7 @@ extension ProjectOutputView: View {
         ZStack {
             VStack {
                 buttons
+                ProjectOperationsView(operations: viewModel.operations)
                 contentList
                 Text(viewModel.project.name)
             }
@@ -84,7 +84,7 @@ extension ProjectOutputView {
 
 // MARK: - Previews
 
-struct ProjectOutputView_Previews: PreviewProvider {
+/*struct ProjectOutputView_Previews: PreviewProvider {
     
     static var previews: some View {
         let project = Project(name: "TESET", inputs: [])
@@ -93,3 +93,4 @@ struct ProjectOutputView_Previews: PreviewProvider {
     }
 }
 
+*/
