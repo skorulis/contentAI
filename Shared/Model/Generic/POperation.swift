@@ -6,9 +6,17 @@
 //
 
 import Foundation
+import Combine
 
 protocol POperation {
     
     var name: String { get }
     var count: Int { get }
+    
+    //var output: AnyPublisher<PContent, Never> { get }
+    
+    //func start()
+    
+    func handle(value: PContent) -> AnyPublisher<PContent, Never>
+    
 }

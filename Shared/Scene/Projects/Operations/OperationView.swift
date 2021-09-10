@@ -22,7 +22,7 @@ extension OperationView: View {
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 8)
-                .fill(Color.brown)
+                .fill(Color.gray)
                 .frame(width: 64, height: 64)
             VStack {
                 Text(operation.name)

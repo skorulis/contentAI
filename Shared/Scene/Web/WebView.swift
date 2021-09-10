@@ -92,8 +92,12 @@ extension WebView {
         func webView(_ view: WKWebView, decidePolicyFor: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
             print(decidePolicyFor.request)
             if let url = decidePolicyFor.request.url, url.scheme == "magicapp" {
+                #if os(iOS)
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
                 decisionHandler(.cancel)
+                #else
+                decisionHandler(.allow)
+                #endif
             } else {
                 decisionHandler(.allow)
             }

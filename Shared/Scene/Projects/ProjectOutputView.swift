@@ -25,12 +25,15 @@ extension ProjectOutputView: View {
     
     var body: some View {
         ZStack {
-            VStack {
-                buttons
-                ProjectOperationsView(operations: viewModel.operations)
+            List {
+                VStack {
+                    Text(viewModel.project.name)
+                    buttons
+                    ProjectOperationsView(operations: viewModel.operations)
+                }
                 contentList
-                Text(viewModel.project.name)
             }
+            
             if let active = viewModel.activeContent {
                 detailContainer(content: active)
             }
@@ -50,11 +53,9 @@ extension ProjectOutputView: View {
     }
     
     private var contentList: some View {
-        List {
-            ForEach(viewModel.inputContent, id: \.self.id) { item in
-                ContentSummaryView(item: item) {
-                    clicked(item: item)
-                }
+        ForEach(viewModel.inputContent, id: \.self.id) { item in
+            ContentSummaryView(item: item) {
+                clicked(item: item)
             }
         }
     }
