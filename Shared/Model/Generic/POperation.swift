@@ -17,6 +17,12 @@ protocol POperation {
     
     //func start()
     
-    func handle(value: PContent) -> AnyPublisher<PContent, Never>
+    //func handle(value: PContent) -> AnyPublisher<PContent, Never>
+    
+    /// Handle a single piece of content and put it into the output if necessary 
+    func handle(value: PContent)
+    
+    /// Output from this step
+    var output: [PContent] { get }
     
 }

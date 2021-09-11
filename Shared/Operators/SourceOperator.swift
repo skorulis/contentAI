@@ -17,11 +17,7 @@ final class SourceOperator: POperation {
     var name: String { source.name }
     var count: Int { pager.loaded.count }
     
-    @Published private var _output: PassthroughSubject<PContent, Never> = .init()
-    var output: AnyPublisher<PContent, Never> {
-        return _output
-            .eraseToAnyPublisher()
-    }
+    var output: [PContent] = []
     
     init(source: Source, access: ContentAccess) {
         self.source = source
@@ -29,15 +25,10 @@ final class SourceOperator: POperation {
         pager = QueryPager(db: access.db.db, baseQuery: query, rowMap: { row in
             try! ContentAccess.ContentTable.extract(row: row)
         })
+        output = pager.loaded
     }
     
-    func start() {
-        for item in pager.loaded {
-            _output.send(item)
-        }
-    }
-    
-    func handle(value: PContent) -> AnyPublisher<PContent, Never> {
+    func handle(value: PContent) {
         fatalError("Source should not bee handling")
     }
     

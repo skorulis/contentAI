@@ -33,15 +33,27 @@ extension ContentAccess {
         let setters: [[Setter]] = items.map { ContentTable.setters(item: $0) }
         _ = try? db.db.run(ContentTable.table.insertMany(or: .ignore, setters))
         
+        let ids = items.map { $0.id }
+        
         // TODO: Insert labels
         
         
         
         // TODO: Insert source
         
-        let sourceSetters = items.map { ContentSourceTable.setters(source: source, item: $0) }
-        _ = try! db.db.run(ContentSourceTable.table.insertMany(or: .replace, sourceSetters))
+        let existingQuery = ContentSourceTable.table
+            .filter(ContentSourceTable.source_id == source.id)
+            .filter(ids.contains(ContentSourceTable.content_id))
         
+        let existing = try! db.db.prepare(existingQuery).map { row in
+            return try! row.get(ContentSourceTable.content_id)
+        }
+        
+        let needingLink = ids.filter { !existing.contains($0) }
+        if needingLink.count > 0 {
+            let sourceSetters = needingLink.map { ContentSourceTable.setters(source: source, itemID: $0) }
+            _ = try! db.db.run(ContentSourceTable.table.insertMany(or: .replace, sourceSetters))
+        }
     }
     
     func sourceItems(source: Source) -> [ContentItem] {
@@ -150,9 +162,9 @@ extension ContentAccess {
         static let content_id = Expression<String>("content_id")
         static let source_id = Expression<Int64>("source_id")
         
-        static func setters(source: Source, item: ContentItem) -> [Setter] {
+        static func setters(source: Source, itemID: String) -> [Setter] {
             return [
-                content_id <- item.id,
+                content_id <- itemID,
                 source_id <- source.id
             ]
         }

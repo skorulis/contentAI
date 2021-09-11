@@ -8,19 +8,17 @@
 import Combine
 import Foundation
 
-struct FilterOperator: POperation {
+final class FilterOperator: POperation {
     var name: String = "Filter"
     
     var count: Int = 0
     
-    func start() { }
+    var output: [PContent] = []
     
-    func handle(value: PContent) -> AnyPublisher<PContent, Never> {
-        if value.title?.contains("Victoria") == true {
-            return Just(value).eraseToAnyPublisher()
-        } else {
-            return Empty(completeImmediately: false, outputType: PContent.self, failureType: Never.self)
-                .eraseToAnyPublisher()
+    func handle(value: PContent)  {
+        if value.url?.hasSuffix("jpg") == true {
+            count += 1
+            output.append(value)
         }
     }
     

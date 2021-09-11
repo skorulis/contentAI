@@ -29,24 +29,15 @@ final class ProjectOutputViewModel: ObservableObject {
             FilterOperator()
             ]
         
-        let source = operations[0] as! SourceOperator
-        var output: AnyPublisher<PContent, Never> = source.output
-        
-        for i in 1..<operations.count {
-            output = output.flatMap { [unowned self] value in
-                return self.operations[i].handle(value: value)
+        for i in 0..<operations.count-1 {
+            let input = operations[i]
+            for c in input.output {
+                operations[i+1].handle(value: c)
             }
-            .eraseToAnyPublisher()
         }
         
-        output
-            .sink { [unowned self] c in
-                self.inputContent.append(c)
-            }
-            .store(in: &subscribers)
+        self.inputContent = operations.last?.output ?? []
         
-        
-        source.start()
     }
     
 }
