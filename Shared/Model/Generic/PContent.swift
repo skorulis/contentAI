@@ -16,3 +16,12 @@ protocol PContent {
     var created: Double { get }
     var labels: [String] { get }
 }
+
+
+extension PContent {
+    
+    var isImage: Bool {
+        guard let url = url else { return false }
+        return url.hasSuffix("jpg") || url.hasSuffix("jpeg") || url.hasSuffix("png") 
+    }
+}

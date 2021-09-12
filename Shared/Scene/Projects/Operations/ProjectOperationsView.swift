@@ -13,7 +13,7 @@ import SwiftUI
 
 struct ProjectOperationsView {
  
-    let operations: [POperation]
+    let nodes: [OperatorNode.NodeStatus]
 }
 
 // MARK: - Rendering
@@ -23,8 +23,8 @@ extension ProjectOperationsView: View {
     var body: some View {
         ScrollView {
             HStack {
-                ForEach(Array(operations.indices), id: \.self) { index in
-                    OperationView(operation: operations[index])
+                ForEach(Array(nodes.indices), id: \.self) { index in
+                    OperationView(node: nodes[index])
                 }
             }
         }
@@ -36,7 +36,7 @@ extension ProjectOperationsView: View {
 struct ProjectSectionsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ProjectOperationsView(operations: [])
+        ProjectOperationsView(nodes: [])
     }
 }
 

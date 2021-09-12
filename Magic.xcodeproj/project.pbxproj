@@ -99,6 +99,9 @@
 		FA8CA8EF26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
 		FAB5286426EA0187005CD2F2 /* OperationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286326EA0187005CD2F2 /* OperationNode.swift */; };
 		FAB5286526EB5314005CD2F2 /* SheetFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */; };
+		FAB5286726EC98A2005CD2F2 /* PreloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */; };
+		FAB5286926ECC7F9005CD2F2 /* HTTPDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */; };
+		FAB5286B26ED6A40005CD2F2 /* OperatorNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */; };
 		FAE91B9B26E60A4B002858A8 /* SheetFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */; };
 		FAE91BA026E6149D002858A8 /* ProjectOperationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9F26E6149D002858A8 /* ProjectOperationsView.swift */; };
 		FAE91BA126E6149D002858A8 /* ProjectOperationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9F26E6149D002858A8 /* ProjectOperationsView.swift */; };
@@ -203,6 +206,9 @@
 		FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewModel.swift; sourceTree = "<group>"; };
 		FAB5286326EA0187005CD2F2 /* OperationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationNode.swift; sourceTree = "<group>"; };
+		FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadOperation.swift; sourceTree = "<group>"; };
+		FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataRequest.swift; sourceTree = "<group>"; };
+		FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorNode.swift; sourceTree = "<group>"; };
 		FAE91B9826E6066C002858A8 /* iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS-Info.plist"; sourceTree = "<group>"; };
 		FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetFrameModifier.swift; sourceTree = "<group>"; };
 		FAE91B9F26E6149D002858A8 /* ProjectOperationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOperationsView.swift; sourceTree = "<group>"; };
@@ -263,6 +269,8 @@
 			children = (
 				FA10E5E026E46A9C00325378 /* FilterOperator.swift */,
 				FAE91BA826E61C86002858A8 /* SourceOperator.swift */,
+				FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */,
+				FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -343,6 +351,7 @@
 				FA3A565826D9F49900F9FE9A /* HTTPClient.swift */,
 				FA3A565926D9F49900F9FE9A /* HTTPResponseValidator.swift */,
 				FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */,
+				FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -746,6 +755,7 @@
 				FA10E60126E48C5700325378 /* Source.swift in Sources */,
 				FAFB038E26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
 				FAE91BA026E6149D002858A8 /* ProjectOperationsView.swift in Sources */,
+				FAB5286926ECC7F9005CD2F2 /* HTTPDataRequest.swift in Sources */,
 				FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
 				FA5F9A4B26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */,
 				FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
@@ -772,6 +782,7 @@
 				FAFE57FF26E32E7200051A83 /* ProjectOutputViewModel.swift in Sources */,
 				FAFE580226E338A200051A83 /* ContentPickerView.swift in Sources */,
 				FA3A566226D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
+				FAB5286B26ED6A40005CD2F2 /* OperatorNode.swift in Sources */,
 				FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */,
 				FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */,
 				FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
@@ -781,6 +792,7 @@
 				FAFB037A26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FAEE450126DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
+				FAB5286726EC98A2005CD2F2 /* PreloadOperation.swift in Sources */,
 				FAFE580B26E3401000051A83 /* IconButton.swift in Sources */,
 				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAE91BA326E6151A002858A8 /* OperationView.swift in Sources */,

@@ -8,36 +8,81 @@
 import Combine
 import Foundation
 
-final class ProjectOutputViewModel: ObservableObject {
+final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
     let project: Project
     let contentAccess: ContentAccess
     
     @Published var operations: [POperation]
-    @Published var inputContent: [PContent] = []
+    @Published var operationNodes: [OperatorNode.NodeStatus] = []
+    @Published var displayContent: [PContent] = []
     @Published var activeContent: PContent?
     
     private var subscribers: Set<AnyCancellable> = []
     
     init(project: Project,
-         contentAccess: ContentAccess
+         contentAccess: ContentAccess,
+         factory: GenericFactory
     ) {
         self.project = project
         self.contentAccess = contentAccess
         operations = [
             SourceOperator(source: project.inputs[0], access: contentAccess),
-            FilterOperator()
+            FilterOperator(),
+            PreloadOperation(factory: factory)
             ]
+        operationNodes = buildProcesss()
         
-        for i in 0..<operations.count-1 {
-            let input = operations[i]
-            for c in input.output {
-                operations[i+1].handle(value: c)
-            }
+        async {
+            await loadAll()
         }
-        
-        self.inputContent = operations.last?.output ?? []
         
     }
     
+    func buildProcesss() -> [OperatorNode.NodeStatus] {
+        var nodes = [POperatorNode]()
+        var last: POperatorNode = self
+        for i in (0..<operations.count).reversed() {
+            let node = OperatorNode(operation: operations[i], next: last, delegate: self)
+            last = node
+            nodes.append(node)
+        }
+        return nodes.reversed().map { node in
+            return OperatorNode.NodeStatus(node: node, status: .init(count: 0))
+        }
+    }
+    
+    func loadAll() async {
+        let source = operations[0] as! SourceOperator
+        await operationNodes[0].node.buffer(content: source.output)
+    }
+    
+    func buffer(content: [PContent]) async {
+        DispatchQueue.main.async {
+            self.displayContent.append(contentsOf: content)
+        }
+    }
+    
+    var operation: POperation {
+        fatalError("Not supported here")
+    }
+    
+    var id: String {
+        return ""
+    }
+    
 }
+
+// MARK: - OperatorNodeDelegate
+
+extension ProjectOutputViewModel: OperatorNodeDelegate {
+    
+    func statusChanged(id: String, status: OperatorNode.Status) {
+        DispatchQueue.main.async {
+            guard let index = self.operationNodes.firstIndex(where: {$0.node.id == id} ) else { return }
+            self.operationNodes[index].status = status
+            print("Count \(status.count)")
+        }
+    }
+}
+

@@ -11,14 +11,11 @@ import Foundation
 final class FilterOperator: POperation {
     var name: String = "Filter"
     
-    var count: Int = 0
-    
-    var output: [PContent] = []
-    
-    func handle(value: PContent)  {
-        if value.url?.hasSuffix("jpg") == true {
-            count += 1
-            output.append(value)
+    func process(value: PContent) async -> PContent? {
+        if value.isImage {
+            return value
+        } else {
+            return nil
         }
     }
     

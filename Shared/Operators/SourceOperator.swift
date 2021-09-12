@@ -28,8 +28,8 @@ final class SourceOperator: POperation {
         output = pager.loaded
     }
     
-    func handle(value: PContent) {
-        fatalError("Source should not bee handling")
+    func process(value: PContent) async -> PContent? {
+        return value
     }
     
 }
