@@ -23,16 +23,43 @@ extension ContentDetailView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            if let urlString = viewModel.content.url, let url = URL(string: urlString) {
-                if viewModel.content.isImage {
-                    plainImage(url: url)
-                } else {
-                    WebView(urlString: urlString)
+            ZStack(alignment: .bottomTrailing) {
+                mainContent
+                VStack {
+                    Button {
+                        viewModel.addLabel(text: "upvote")
+                        viewModel.removeLabel(name: "downvote")
+                    } label: {
+                        Image(systemName: "arrow.up.square.fill")
+                            .resizable()
+                            .frame(width: 44, height: 44)
+                    }
+                    
+                    Button {
+                        viewModel.addLabel(text: "downvote")
+                        viewModel.removeLabel(name: "upvote")
+                    } label: {
+                        Image(systemName: "arrow.down.app.fill")
+                            .resizable()
+                            .frame(width: 44, height: 44)
+                    }
                 }
-            } else {
-                Text("Missing URL")
+                .padding(20)
             }
             labels
+        }
+    }
+    
+    @ViewBuilder
+    private var mainContent: some View {
+        if let urlString = viewModel.content.url, let url = URL(string: urlString) {
+            if viewModel.content.isImage {
+                plainImage(url: url)
+            } else {
+                WebView(urlString: urlString)
+            }
+        } else {
+            Text("Missing URL")
         }
     }
     

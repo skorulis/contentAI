@@ -81,7 +81,6 @@ extension ProjectOutputViewModel: OperatorNodeDelegate {
         DispatchQueue.main.async {
             guard let index = self.operationNodes.firstIndex(where: {$0.node.id == id} ) else { return }
             self.operationNodes[index].status = status
-            print("Count \(status.count)")
         }
     }
 }

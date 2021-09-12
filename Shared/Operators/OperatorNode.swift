@@ -37,7 +37,6 @@ actor OperatorNode: POperatorNode, Identifiable {
     }
     
     private func process(content: [PContent]) async {
-        print("Process \(content.count) in \(operation.name)")
         for element in content {
             if let result = await operation.process(value: element) {
                 self.count += 1

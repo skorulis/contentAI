@@ -9,16 +9,19 @@ import Foundation
 
 final class ContentDetailViewModel: ObservableObject {
     
-    let content: PContent
+    var content: PContent
     let labelAccess: LabelAccess
+    let contentAccess: ContentAccess
     
     @Published var labelText: String = ""
     
     init(content: PContent,
-         labelAccess: LabelAccess
+         labelAccess: LabelAccess,
+         contentAccess: ContentAccess
     ) {
         self.content = content
         self.labelAccess = labelAccess
+        self.contentAccess = contentAccess
     }
 }
 
@@ -38,18 +41,24 @@ extension ContentDetailViewModel {
 
     func addLabel() {
         guard labelText.count > 0 else { return }
-        //guard let entity = content as? ContentEntity else { return }
         
-        // TODO: FIX
+        addLabel(text: labelText.lowercased())
         
         labelText = ""
     }
     
+    func addLabel(text: String) {
+        let label = labelAccess.findOrCreate(labels: [text]).first
+        contentAccess.addLabel(contentID: content.id, labelID: label!.id)
+        if !content.labels.contains(text) {
+            content.labels.append(text)
+        }
+        self.objectWillChange.send()
+    }
+    
     func removeLabel(name: String) {
-        //guard let entity = content as? ContentEntity else { return }
-        //entity.labelEntities = entity.labelEntities.filter { $0.name != name }
-        
-        // TODO: FIX
+        let label = labelAccess.findOrCreate(labels: [name]).first
+        contentAccess.deleteLabel(contentID: content.id, labelID: label!.id)
         
         objectWillChange.send()
     }

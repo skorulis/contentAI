@@ -18,7 +18,8 @@ extension ProjectAccess {
     
     var all: [Project] {
         return [
-            dummyProject1
+            dummyProject1,
+            dummyProject2
         ]
             .compactMap { $0 }
     }
@@ -28,6 +29,13 @@ extension ProjectAccess {
             return nil
         }
         return Project(name: "D1", inputs: [source])
+    }
+    
+    var dummyProject2: Project? {
+        guard let source = try! sourceAccess.get(name: "Aww") else {
+            return nil
+        }
+        return Project(name: "Aww", inputs: [source])
     }
     
 }

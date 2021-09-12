@@ -14,7 +14,7 @@ protocol PContent {
     var url: String? { get }
     var thumbnail: String? { get }
     var created: Double { get }
-    var labels: [String] { get }
+    var labels: [String] { get set }
 }
 
 

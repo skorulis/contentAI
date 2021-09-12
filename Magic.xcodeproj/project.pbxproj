@@ -35,6 +35,8 @@
 		FA2116E326DE222400DE7BE7 /* ContentSummaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */; };
 		FA2116E526DE315C00DE7BE7 /* Reddit.SourceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E426DE315C00DE7BE7 /* Reddit.SourceConfig.swift */; };
 		FA2116E626DE323000DE7BE7 /* Reddit.SourceConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2116E426DE315C00DE7BE7 /* Reddit.SourceConfig.swift */; };
+		FA2F6D2E26EDAA0000FAAEE5 /* ContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F6D2D26EDAA0000FAAEE5 /* ContentLabel.swift */; };
+		FA2F6D2F26EDAA0000FAAEE5 /* ContentLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2F6D2D26EDAA0000FAAEE5 /* ContentLabel.swift */; };
 		FA35D1F326E76E470062186E /* QueryPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D1F226E76E470062186E /* QueryPager.swift */; };
 		FA35D1F426E76E470062186E /* QueryPager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA35D1F226E76E470062186E /* QueryPager.swift */; };
 		FA3A564426D9F44F00F9FE9A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA3A563026D9F44E00F9FE9A /* Assets.xcassets */; };
@@ -173,6 +175,7 @@
 		FA2116DE26DE1E8300DE7BE7 /* ContentSummaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentSummaryView.swift; sourceTree = "<group>"; };
 		FA2116E026DE201400DE7BE7 /* PContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PContent.swift; sourceTree = "<group>"; };
 		FA2116E426DE315C00DE7BE7 /* Reddit.SourceConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.SourceConfig.swift; sourceTree = "<group>"; };
+		FA2F6D2D26EDAA0000FAAEE5 /* ContentLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLabel.swift; sourceTree = "<group>"; };
 		FA35D1F226E76E470062186E /* QueryPager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryPager.swift; sourceTree = "<group>"; };
 		FA3A563026D9F44E00F9FE9A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA3A563526D9F44E00F9FE9A /* Magic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magic.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,6 +374,7 @@
 				FA10E5FA26E487AE00325378 /* Label.swift */,
 				FA10E60026E48C5700325378 /* Source.swift */,
 				FA10E60326E4A05900325378 /* Project.swift */,
+				FA2F6D2D26EDAA0000FAAEE5 /* ContentLabel.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -792,6 +796,7 @@
 				FAFB037A26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FAEE450126DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
+				FA2F6D2E26EDAA0000FAAEE5 /* ContentLabel.swift in Sources */,
 				FAB5286726EC98A2005CD2F2 /* PreloadOperation.swift in Sources */,
 				FAFE580B26E3401000051A83 /* IconButton.swift in Sources */,
 				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
@@ -868,6 +873,7 @@
 				FA3A568626D9FA3200F9FE9A /* IOC.swift in Sources */,
 				FAEE44ED26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
 				FA8CA8EF26E1795600BAF427 /* EditProjectViewModel.swift in Sources */,
+				FA2F6D2F26EDAA0000FAAEE5 /* ContentLabel.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
 				FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,

@@ -54,6 +54,7 @@ extension ProjectOutputView: View {
     
     private var contentList: some View {
         ForEach(viewModel.displayContent, id: \.self.id) { item in
+            
             ContentSummaryView(item: item) {
                 clicked(item: item)
             }

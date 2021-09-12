@@ -19,11 +19,25 @@ struct LabelAccess {
 extension LabelAccess {
     
     func findOrCreate(labels: [String]) -> [Label] {
-        return labels.map { label in
+        let found = find(labels: labels)
+        let names = Set(found.map(\.name))
+        let missing = labels.filter { !names.contains($0) }
+        
+        let created = missing.map { label -> Label in
             let setter = LabelTable.setters(label: label)
-            let id = try! database.db.run(LabelTable.table.insert(or: .replace, setter))
+            let id = try! database.db.run(LabelTable.table.insert(or: .ignore, setter))
             return Label(id: id, name: label)
         }
+        return created + found
+    }
+    
+    func find(labels: [String]) -> [Label] {
+        let query = LabelTable.table
+            .filter(labels.contains(LabelTable.name))
+        let labels = try! database.db.prepare(query).map { row in
+            return try LabelTable.extract(row: row)
+        }
+        return labels
     }
     
 }
@@ -46,6 +60,13 @@ extension LabelAccess {
             return [
                 Self.name <- label
             ]
+        }
+        
+        static func extract(row: Row) throws -> Label {
+            return Label(
+                id: try row.get(id),
+                name: try row.get(name)
+            )
         }
     }
     

@@ -12,20 +12,20 @@ import Combine
 final class SourceOperator: POperation {
     
     let source: Source
-    let pager: QueryPager<ContentItem>
+    //let pager: QueryPager<ContentItem>
     
     var name: String { source.name }
-    var count: Int { pager.loaded.count }
     
     var output: [PContent] = []
     
     init(source: Source, access: ContentAccess) {
         self.source = source
-        let query = access.sourceQuery(source: source)
+        /*let query = access.sourceQuery(source: source)
         pager = QueryPager(db: access.db.db, baseQuery: query, rowMap: { row in
             try! ContentAccess.ContentTable.extract(row: row)
-        })
-        output = pager.loaded
+        })*/
+        output = access.sourceItems(source: source)
+        
     }
     
     func process(value: PContent) async -> PContent? {

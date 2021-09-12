@@ -58,7 +58,15 @@ extension ContentAccess {
     
     func sourceItems(source: Source) -> [ContentItem] {
         let query = sourceQuery(source: source)
-        return try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
+        var content = try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
+        let ids = content.map { $0.id }
+        let labels = Dictionary(grouping: allLabels(contentIDs: ids), by: {$0.contentID} )
+        
+        for i in 0..<content.count {
+            let id = content[i].id
+            content[i].labels = (labels[id] ?? []).map { $0.label.name }
+        }
+        return content
     }
     
     func sourceQuery(source: Source) -> Table {
@@ -88,6 +96,37 @@ extension ContentAccess {
         
         return QueryPublisher<ContentItem>(db: db.db, baseQuery: query) { row in
             return try! ContentTable.extract(row: row)
+        }
+    }
+    
+    func addLabel(contentID: String, labelID: Int64) {
+        let query = ContentLabelTable.table
+            .filter(ContentLabelTable.content_id == contentID)
+            .filter(ContentLabelTable.label_id == labelID)
+            
+        let existing = try! db.db.prepare(query).map { $0 }
+        if existing.count > 0 {
+            return
+        }
+        
+        let setters: [Setter] = ContentLabelTable.setters(labelID: labelID, itemID: contentID)
+        _ = try! db.db.run(ContentLabelTable.table.insert(setters))
+    }
+    
+    func deleteLabel(contentID: String, labelID: Int64) {
+        _ = ContentLabelTable.table
+            .filter(ContentLabelTable.content_id == contentID)
+            .filter(ContentLabelTable.label_id == labelID)
+            .delete()
+    }
+    
+    func allLabels(contentIDs: [String]) -> [ContentLabel] {
+        let query = ContentLabelTable.table
+            .filter(contentIDs.contains(ContentLabelTable.content_id))
+            .join(LabelAccess.LabelTable.table, on: ContentLabelTable.label_id == LabelAccess.LabelTable.id)
+        
+        return try! db.db.prepare(query).map { row in
+            return try ContentLabelTable.extract(row: row)
         }
     }
     
@@ -141,9 +180,13 @@ extension ContentAccess {
         static let label_id = Expression<Int64>("label_id")
         
         static func setters(label: Label, item: ContentItem) -> [Setter] {
+            return setters(labelID: label.id, itemID: item.id)
+        }
+        
+        static func setters(labelID: Int64, itemID: String) -> [Setter] {
             return [
-                content_id <- item.id,
-                label_id <- label.id
+                content_id <- itemID,
+                label_id <- labelID
             ]
         }
         
@@ -153,7 +196,18 @@ extension ContentAccess {
                 t.column(label_id)
                 t.foreignKey(content_id, references: ContentTable.table, ContentTable.id, delete: .noAction)
                 t.foreignKey(label_id, references: LabelAccess.LabelTable.table, LabelAccess.LabelTable.id, delete: .noAction)
+                t.primaryKey(content_id, label_id)
             })
+        }
+        
+        static func extract(row: Row) throws -> ContentLabel {
+            return ContentLabel(
+                contentID: try row.get(content_id),
+                label: Label(
+                    id: try row.get(label_id),
+                    name: try row.get(LabelAccess.LabelTable.name)
+                )
+            )
         }
     }
     
@@ -178,6 +232,7 @@ extension ContentAccess {
                              references: ContentSourceAccess.SourceTable.table,
                              ContentSourceAccess.SourceTable.id, delete: .noAction
                 )
+                t.primaryKey(content_id, source_id)
             })
         }
     }
