@@ -25,10 +25,11 @@ extension ProjectAccess {
     }
     
     var dummyProject1: Project? {
-        guard let source = try! sourceAccess.get(name: "C1") else {
-            return nil
-        }
-        return Project(name: "D1", inputs: [source])
+        let s1 = try! sourceAccess.get(name: "C1")
+        let s2 = try! sourceAccess.get(name: "N1")
+        let sources = [s1,s2].compactMap { $0 }
+        
+        return Project(name: "D1", inputs: sources)
     }
     
     var dummyProject2: Project? {

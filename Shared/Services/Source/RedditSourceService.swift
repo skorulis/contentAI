@@ -33,7 +33,7 @@ final class RedditSourceService: PSourceService {
         let config: Reddit.SourceConfig? = source.configObject()
         let subreddit = config?.subreddit ?? ""
         let token = auth.access_token
-        let req = Reddit.Endpoints.getData(token: token, subreddit: subreddit)
+        let req = Reddit.Endpoints.getListings(token: token, subreddit: subreddit)
         client.execute(req: req)
             .handleError(ErrorService.shared)
             .receive(on: DispatchQueue.global())

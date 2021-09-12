@@ -50,14 +50,18 @@ extension Reddit {
             return req
         }
         
-        static func getData(token: String, subreddit: String) -> HTTPJSONRequest<ListingResponse> {
+        static func getListings(token: String, subreddit: String, after: String? = nil) -> HTTPJSONRequest<ListingResponse> {
             var url = "https://oauth.reddit.com/"
             if subreddit.count > 0 {
                 url += "r/\(subreddit)/"
             }
             url += "new"
+            var comps = URLComponents(string: url)!
+            if let after = after {
+                comps.queryItems = [URLQueryItem(name: "after", value: after)]
+            }
             
-            var req = HTTPJSONRequest<ListingResponse>(endpoint: url)
+            var req = HTTPJSONRequest<ListingResponse>(endpoint: comps.url!.absoluteString)
             req.headers["Authorization"] = "Bearer \(token)"
             req.headers["User-Agent"] = userAgent
             
