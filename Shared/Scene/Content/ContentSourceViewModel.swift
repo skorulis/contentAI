@@ -44,18 +44,31 @@ final class ContentSourceViewModel: ObservableObject {
     
 }
 
+// MARK: - Inner logic
+
 extension ContentSourceViewModel {
     
     var availableContent: [ContentItem] {
         return contentAccess.sourceItems(source: source)
     }
 
-    
     func loadMore() {
         sourceRouter.loadMore()
     }
     
+}
+
+
+// MARK: - Behaviors
+
+extension ContentSourceViewModel {
     
-    
-    
+    func next() {
+        guard let current = activeContent,
+              let index = self.availableContent.firstIndex(where: {$0.id == current.id} ),
+              index < availableContent.count - 1
+        else { return }
+        activeContent = availableContent[index + 1]
+        objectWillChange.send()
+    }
 }

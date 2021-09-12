@@ -74,6 +74,21 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
 }
 
+// MARK: - Behaviors
+
+extension ProjectOutputViewModel {
+    
+    func next() {
+        guard let current = activeContent,
+              let index = self.displayContent.firstIndex(where: {$0.id == current.id} ),
+              index < displayContent.count - 1
+        else { return }
+        activeContent = displayContent[index + 1]
+        objectWillChange.send()
+    }
+    
+}
+
 // MARK: - OperatorNodeDelegate
 
 extension ProjectOutputViewModel: OperatorNodeDelegate {

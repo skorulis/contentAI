@@ -64,12 +64,13 @@ extension ProjectOutputView: View {
     @ViewBuilder
     private func detailContainer(content: PContent) -> some View {
         ZStack(alignment: .topLeading) {
-            ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content))
+            ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content), onNext: viewModel.next)
             Button(action: {viewModel.activeContent = nil}) {
                 Text("Back")
             }
             .keyboardShortcut(KeyEquivalent.leftArrow, modifiers: [])
         }
+        .id(content.id)
     }
 }
 

@@ -14,6 +14,7 @@ import SwiftUI
 struct ContentDetailView {
     
     @StateObject var viewModel: ContentDetailViewModel
+    var onNext: () -> Void
     
 }
 
@@ -25,29 +26,40 @@ extension ContentDetailView: View {
         VStack(spacing: 0) {
             ZStack(alignment: .bottomTrailing) {
                 mainContent
-                VStack {
-                    Button {
-                        viewModel.addLabel(text: "upvote")
-                        viewModel.removeLabel(name: "downvote")
-                    } label: {
-                        Image(systemName: "arrow.up.square.fill")
-                            .resizable()
-                            .frame(width: 44, height: 44)
-                    }
-                    
-                    Button {
-                        viewModel.addLabel(text: "downvote")
-                        viewModel.removeLabel(name: "upvote")
-                    } label: {
-                        Image(systemName: "arrow.down.app.fill")
-                            .resizable()
-                            .frame(width: 44, height: 44)
-                    }
-                }
-                .padding(20)
+                rightButtons
+                
             }
             labels
         }
+    }
+    
+    private var rightButtons: some View {
+        VStack {
+            Button(action: onNext) {
+                Image(systemName: "arrow.right.square.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+            }
+            Spacer()
+            Button {
+                viewModel.addLabel(text: "upvote")
+                viewModel.removeLabel(name: "downvote")
+            } label: {
+                Image(systemName: "arrow.up.square.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+            }
+            
+            Button {
+                viewModel.addLabel(text: "downvote")
+                viewModel.removeLabel(name: "upvote")
+            } label: {
+                Image(systemName: "arrow.down.app.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+            }
+        }
+        .padding(20)
     }
     
     @ViewBuilder
@@ -77,9 +89,9 @@ extension ContentDetailView: View {
     @ViewBuilder
     private func preloadedImage(url: URL) -> some View {
         if let filename = PreloadOperation.filename(url: url.absoluteString),
-           let image = NSImage(contentsOfFile: filename.path)
+           let image = NativeImage(contentsOfFile: filename.path)
         {
-            Image(nsImage: image)
+            Image(nativeImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         } else {
