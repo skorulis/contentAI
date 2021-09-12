@@ -60,7 +60,9 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
     func buffer(content: [PContent]) async {
         DispatchQueue.main.async {
-            self.displayContent.append(contentsOf: content)
+            let temp = self.displayContent + content
+            
+            self.displayContent = SortOperator.process(items: temp)
         }
     }
     

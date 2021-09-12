@@ -40,24 +40,34 @@ extension ContentDetailView: View {
                     .resizable()
                     .frame(width: 44, height: 44)
             }
+            .keyboardShortcut("n", modifiers: [])
+            .buttonStyle(.plain)
+            
+            
             Spacer()
             Button {
                 viewModel.addLabel(text: "upvote")
                 viewModel.removeLabel(name: "downvote")
             } label: {
-                Image(systemName: "arrow.up.square.fill")
+                Image(systemName: viewModel.isUpvoted ? "arrow.up.square.fill" : "arrow.up.square")
                     .resizable()
                     .frame(width: 44, height: 44)
             }
+            .keyboardShortcut("u", modifiers: [])
+            .buttonStyle(.plain)
+            
             
             Button {
                 viewModel.addLabel(text: "downvote")
                 viewModel.removeLabel(name: "upvote")
             } label: {
-                Image(systemName: "arrow.down.app.fill")
+                Image(systemName: viewModel.isDownvoted ? "arrow.down.square.fill" : "arrow.down.square")
                     .resizable()
                     .frame(width: 44, height: 44)
             }
+            .keyboardShortcut("d", modifiers: [])
+            .buttonStyle(.plain)
+            
         }
         .padding(20)
     }

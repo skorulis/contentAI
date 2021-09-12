@@ -62,4 +62,12 @@ extension ContentDetailViewModel {
         
         objectWillChange.send()
     }
+    
+    var isUpvoted: Bool {
+        return content.labels.contains("upvote")
+    }
+    
+    var isDownvoted: Bool {
+        return content.labels.contains("downvote")
+    }
 }
