@@ -77,9 +77,9 @@ extension ContentDetailView: View {
     @ViewBuilder
     private func preloadedImage(url: URL) -> some View {
         if let filename = PreloadOperation.filename(url: url.absoluteString),
-           let image = UIImage(contentsOfFile: filename.path)
+           let image = NSImage(contentsOfFile: filename.path)
         {
-            Image(uiImage: image)
+            Image(nsImage: image)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
         } else {

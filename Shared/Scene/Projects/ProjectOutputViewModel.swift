@@ -29,7 +29,8 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
         operations = [
             SourceOperator(source: project.inputs[0], access: contentAccess),
             FilterOperator(),
-            PreloadOperation(factory: factory)
+            PreloadOperation(factory: factory),
+            TrainModelOperator(factory: factory)
             ]
         operationNodes = buildProcesss()
         
