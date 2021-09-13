@@ -99,25 +99,29 @@ extension ContentAccess {
         }
     }
     
-    func addLabel(contentID: String, labelID: Int64) {
+    func addLabel(contentID: String, text: String) {
+        let label = labelAccess.findOrCreate(labels: [text]).first!
         let query = ContentLabelTable.table
             .filter(ContentLabelTable.content_id == contentID)
-            .filter(ContentLabelTable.label_id == labelID)
+            .filter(ContentLabelTable.label_id == label.id)
             
         let existing = try! db.db.prepare(query).map { $0 }
         if existing.count > 0 {
             return
         }
         
-        let setters: [Setter] = ContentLabelTable.setters(labelID: labelID, itemID: contentID)
+        let setters: [Setter] = ContentLabelTable.setters(labelID: label.id, itemID: contentID)
         _ = try! db.db.run(ContentLabelTable.table.insert(setters))
     }
     
-    func deleteLabel(contentID: String, labelID: Int64) {
-        _ = ContentLabelTable.table
+    func deleteLabel(contentID: String, text: String) {
+        let label = labelAccess.findOrCreate(labels: [text]).first!
+        let query = ContentLabelTable.table
             .filter(ContentLabelTable.content_id == contentID)
-            .filter(ContentLabelTable.label_id == labelID)
+            .filter(ContentLabelTable.label_id == label.id)
             .delete()
+        
+        _ =     try? db.db.run(query)
     }
     
     func allLabels(contentIDs: [String]) -> [ContentLabel] {
@@ -130,6 +134,13 @@ extension ContentAccess {
         }
     }
     
+    func markViewed(contentID: String) {
+        let query = ContentTable.table
+            .filter(ContentTable.id == contentID)
+            .update([ContentTable.viewed <- true])
+        
+        try! db.db.run(query)
+    }
 }
 
 extension ContentAccess {
@@ -141,6 +152,7 @@ extension ContentAccess {
         static let url = Expression<String?>("url")
         static let thumbnail = Expression<String?>("thumbnail")
         static let created = Expression<Double>("created")
+        static let viewed = Expression<Bool>("viewed")
         
         static func create(db: Connection) throws {
             try db.run(table.create(ifNotExists: true) { t in
@@ -149,6 +161,7 @@ extension ContentAccess {
                 t.column(url)
                 t.column(thumbnail)
                 t.column(created)
+                t.column(viewed, defaultValue: false)
             })
         }
         
@@ -159,6 +172,7 @@ extension ContentAccess {
                 Self.url <- item.url,
                 Self.thumbnail <- item.thumbnail,
                 Self.created <- item.created,
+                Self.viewed <- false
             ]
         }
         
@@ -169,6 +183,7 @@ extension ContentAccess {
                 url: try row.get(url),
                 thumbnail: try row.get(thumbnail),
                 created: try row.get(created),
+                viewed: try row.get(viewed),
                 labels: []
             )
         }

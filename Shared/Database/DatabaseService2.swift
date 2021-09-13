@@ -14,7 +14,7 @@ final class DatabaseService {
     
     init() {
         db = try! Connection(Self.dbPath)
-        db.trace { print ($0) }
+        //db.trace { print ($0) }
         do {
             try ContentAccess.ContentTable.create(db: db)
             try LabelAccess.LabelTable.create(db: db)

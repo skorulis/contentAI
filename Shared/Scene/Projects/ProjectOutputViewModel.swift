@@ -7,6 +7,7 @@
 
 import Combine
 import Foundation
+import CreateML
 
 final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
@@ -19,6 +20,8 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     @Published var activeContent: PContent?
     
     private var subscribers: Set<AnyCancellable> = []
+    
+    @Published var mlJob: MLJob<MLImageClassifier>?
     
     init(project: Project,
          contentAccess: ContentAccess,
@@ -87,6 +90,45 @@ extension ProjectOutputViewModel {
         else { return }
         activeContent = displayContent[index + 1]
         objectWillChange.send()
+    }
+    
+    func train() {
+        var labeledFiles = [String: [URL]]()
+        labeledFiles["upvote"] = []
+        labeledFiles["downvote"] = []
+        for content in displayContent {
+            guard let url = PreloadOperation.filename(url: content.url!) else { continue }
+            if content.labels.contains("upvote") {
+                labeledFiles["upvote"]?.append(url)
+            } else if content.labels.contains("downvote") {
+                labeledFiles["downvote"]?.append(url)
+            }
+        }
+        
+        do {
+            let data = MLImageClassifier.DataSource.filesByLabel(labeledFiles)
+            let job = try MLImageClassifier.train(trainingData: data)
+            self.mlJob = job
+            job.result
+                .sink { result in
+                    switch result {
+                    case .success(let mlc):
+                        print("Training done \(mlc)")
+                    case .failure(let error):
+                        print("training error \(error)")
+                    }
+
+                }
+                .store(in: &subscribers)
+            Timer.publish(every: 10, on: .main, in: .common).autoconnect()
+                .sink { [unowned self] _ in
+                    self.objectWillChange.send()
+                }
+                .store(in: &subscribers)
+        } catch {
+            print("Training error \(error)")
+        }
+        
     }
     
 }

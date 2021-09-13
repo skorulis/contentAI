@@ -14,5 +14,7 @@ struct ContentItem: PContent, Identifiable {
     public var url: String?
     public var thumbnail: String?
     public var created: Double
+    public var viewed: Bool
     public var labels: [String]
+
 }

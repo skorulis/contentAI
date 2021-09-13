@@ -11,7 +11,10 @@ final class SortOperator {
     
     static func process(items: [PContent]) -> [PContent] {
         return items.sorted { p1, p2 in
-            return p1.created < p2.created
+            if p1.viewed != p2.viewed {
+                return p2.viewed
+            }
+            return p1.created > p2.created
         }
     }
     

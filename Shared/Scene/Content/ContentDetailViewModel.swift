@@ -48,8 +48,7 @@ extension ContentDetailViewModel {
     }
     
     func addLabel(text: String) {
-        let label = labelAccess.findOrCreate(labels: [text]).first
-        contentAccess.addLabel(contentID: content.id, labelID: label!.id)
+        contentAccess.addLabel(contentID: content.id, text: text)
         if !content.labels.contains(text) {
             content.labels.append(text)
         }
@@ -57,9 +56,8 @@ extension ContentDetailViewModel {
     }
     
     func removeLabel(name: String) {
-        let label = labelAccess.findOrCreate(labels: [name]).first
-        contentAccess.deleteLabel(contentID: content.id, labelID: label!.id)
-        
+        contentAccess.deleteLabel(contentID: content.id, text: name)
+        content.labels = content.labels.filter { $0 != name }
         objectWillChange.send()
     }
     
@@ -69,5 +67,9 @@ extension ContentDetailViewModel {
     
     var isDownvoted: Bool {
         return content.labels.contains("downvote")
+    }
+    
+    func markViewed() {
+        contentAccess.markViewed(contentID: content.id)
     }
 }

@@ -15,6 +15,7 @@ protocol PContent {
     var thumbnail: String? { get }
     var created: Double { get }
     var labels: [String] { get set }
+    var viewed: Bool { get }
 }
 
 

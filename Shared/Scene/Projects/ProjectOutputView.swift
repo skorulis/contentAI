@@ -49,6 +49,12 @@ extension ProjectOutputView: View {
             Button(action: {isEditing = true}) {
                 Text("Edit")
             }
+            Button(action: viewModel.train) {
+                Text("Go train")
+            }
+            if let job = viewModel.mlJob {
+                Text("Training \(job.progress.fractionCompleted)")
+            }
         }
     }
     

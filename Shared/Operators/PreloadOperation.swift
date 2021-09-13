@@ -10,17 +10,20 @@ import Foundation
 /// Preload data from an external source
 final class PreloadOperation: POperation {
     
-    
     private let client: MagicClient
+    private let access: ContentAccess
     
     var name: String = "Preload"
     
     init(factory: GenericFactory) {
         self.client = factory.resolve()
+        self.access = factory.resolve()
     }
     
     func process(value: PContent) async -> PContent? {
-        
+        if value.labels.contains("missing") {
+            return nil
+        }
         guard let url = value.url else { return nil }
         guard let file = Self.filename(url: url) else { return nil }
         if !FileManager.default.fileExists(atPath: file.path) {
@@ -29,6 +32,14 @@ final class PreloadOperation: POperation {
                 let data = try await client.executeAsync(req: req)
                 try data.write(to: file)
             } catch {
+                if let status = error as? HTTPStatusError {
+                    switch status {
+                    case .unexpectedStatus(let status):
+                        if status == 404 {
+                            access.addLabel(contentID: value.id, text: "missing")
+                        }
+                    }
+                }
                 print("Preload error \(error)")
                 return nil
             }

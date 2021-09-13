@@ -27,10 +27,10 @@ extension ContentDetailView: View {
             ZStack(alignment: .bottomTrailing) {
                 mainContent
                 rightButtons
-                
             }
             labels
         }
+        .onAppear(perform: viewModel.markViewed)
     }
     
     private var rightButtons: some View {

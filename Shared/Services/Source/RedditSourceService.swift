@@ -52,6 +52,7 @@ final class RedditSourceService: PSourceService {
                         url: listing.data.url,
                         thumbnail: listing.data.thumbnail,
                         created: listing.data.created,
+                        viewed: false,
                         labels: labels
                     )
                 }
