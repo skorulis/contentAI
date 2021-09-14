@@ -72,6 +72,8 @@ public final class IOC {
         container.autoregister(EditProjectViewModel.self, argument: EditProjectViewModel.Argument.self, initializer: EditProjectViewModel.init)
         container.autoregister(ProjectOutputViewModel.self, argument: Project.self, initializer: ProjectOutputViewModel.init)
         container.autoregister(AccountsViewModel.self, initializer: AccountsViewModel.init)
+        
+        container.autoregister(NodeDetailsViewModel.self, argument: OperatorNode.self, initializer: NodeDetailsViewModel.init)
     }
     
     func resolve<ServiceType>(_ type: ServiceType.Type) -> ServiceType? {

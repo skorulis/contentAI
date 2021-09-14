@@ -15,7 +15,6 @@ struct ProjectOutputView {
     @StateObject var viewModel: ProjectOutputViewModel
     
     @State private var isEditing: Bool = false
-    
     @EnvironmentObject var factory: GenericFactory
 }
 
@@ -29,7 +28,9 @@ extension ProjectOutputView: View {
                 VStack {
                     Text(viewModel.project.name)
                     buttons
-                    ProjectOperationsView(nodes: viewModel.operationNodes)
+                    ProjectOperationsView(nodes: viewModel.operationNodes, onSelect: viewModel.select)
+                    maybeNodeDetails
+                        .id(viewModel.selectedNode?.id ?? "-")
                 }
                 contentList
             }
@@ -64,6 +65,13 @@ extension ProjectOutputView: View {
             ContentSummaryView(item: item) {
                 clicked(item: item)
             }
+        }
+    }
+    
+    @ViewBuilder
+    private var maybeNodeDetails: some View {
+        if let node = viewModel.selectedNode {
+            NodeDetailsView(viewModel: factory.resolve(NodeDetailsViewModel.self, argument: node))
         }
     }
     

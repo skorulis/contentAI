@@ -50,7 +50,11 @@ extension Reddit {
             return req
         }
         
-        static func getListings(token: String, subreddit: String, after: String? = nil) -> HTTPJSONRequest<ListingResponse> {
+        static func getListings(token: String,
+                                subreddit: String,
+                                before: String? = nil,
+                                after: String? = nil
+        ) -> HTTPJSONRequest<ListingResponse> {
             var url = "https://oauth.reddit.com/"
             if subreddit.count > 0 {
                 url += "r/\(subreddit)/"
@@ -59,6 +63,9 @@ extension Reddit {
             var comps = URLComponents(string: url)!
             if let after = after {
                 comps.queryItems = [URLQueryItem(name: "after", value: after)]
+            }
+            if let before = before {
+                comps.queryItems = [URLQueryItem(name: "before", value: before)]
             }
             
             var req = HTTPJSONRequest<ListingResponse>(endpoint: comps.url!.absoluteString)

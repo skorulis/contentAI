@@ -28,12 +28,12 @@ final class RedditSourceService: PSourceService {
     
     private var subscribers: Set<AnyCancellable> = []
     
-    func fetchRedditData() {
+    func fetchRedditData(before: String? = nil, after: String? = nil) {
         guard let auth: Reddit.AuthResponse = accountAccess.redditAuth else { return }
         let config: Reddit.SourceConfig? = source.configObject()
         let subreddit = config?.subreddit ?? ""
         let token = auth.access_token
-        let req = Reddit.Endpoints.getListings(token: token, subreddit: subreddit)
+        let req = Reddit.Endpoints.getListings(token: token, subreddit: subreddit, before: before, after: after)
         client.execute(req: req)
             .handleError(ErrorService.shared)
             .receive(on: DispatchQueue.global())
@@ -66,6 +66,21 @@ final class RedditSourceService: PSourceService {
     
     func loadMore() {
         fetchRedditData()
+    }
+    
+    func loadOldest() {
+        var query = access.sourceQuery(source: source)
+        query = query
+            .order(ContentAccess.ContentTable.created.asc)
+            .limit(1)
+        
+        guard let oldest = try! access.db.db.prepare(query)
+                .map({ try ContentAccess.ContentTable.extract(row: $0) })
+                .first else {
+            return
+        }
+        fetchRedditData(after: "t3_\(oldest.id)")
+        
     }
     
 }

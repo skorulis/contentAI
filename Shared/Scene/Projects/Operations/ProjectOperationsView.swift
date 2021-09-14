@@ -14,6 +14,7 @@ import SwiftUI
 struct ProjectOperationsView {
  
     let nodes: [OperatorNode.NodeStatus]
+    let onSelect: (OperatorNode) -> Void
 }
 
 // MARK: - Rendering
@@ -24,7 +25,12 @@ extension ProjectOperationsView: View {
         ScrollView {
             HStack {
                 ForEach(Array(nodes.indices), id: \.self) { index in
-                    OperationView(node: nodes[index])
+                    Button {
+                        onSelect(nodes[index].node)
+                    } label: {
+                        OperationView(node: nodes[index])
+                    }
+                    .buttonStyle(.plain)
                 }
             }
         }
@@ -36,7 +42,7 @@ extension ProjectOperationsView: View {
 struct ProjectSectionsView_Previews: PreviewProvider {
     
     static var previews: some View {
-        ProjectOperationsView(nodes: [])
+        ProjectOperationsView(nodes: [], onSelect: { _ in })
     }
 }
 

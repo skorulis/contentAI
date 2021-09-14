@@ -14,7 +14,7 @@ extension Reddit {
     }
     
     struct ListingResponseData: Codable {
-        let after: String
+        let after: String?
         let children: [Listing]
     }
     

@@ -18,6 +18,7 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     @Published var operationNodes: [OperatorNode.NodeStatus] = []
     @Published var displayContent: [PContent] = []
     @Published var activeContent: PContent?
+    @Published var selectedNode: OperatorNode?
     
     private var subscribers: Set<AnyCancellable> = []
     
@@ -37,14 +38,14 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
             ]
         operationNodes = buildProcesss()
         
-        async {
+        Task(priority: .high) {
             await loadAll()
         }
         
     }
     
     func buildProcesss() -> [OperatorNode.NodeStatus] {
-        var nodes = [POperatorNode]()
+        var nodes = [OperatorNode]()
         var last: POperatorNode = self
         for i in (0..<operations.count).reversed() {
             let node = OperatorNode(operation: operations[i], next: last, delegate: self)
@@ -129,6 +130,10 @@ extension ProjectOutputViewModel {
             print("Training error \(error)")
         }
         
+    }
+    
+    func select(node: OperatorNode) {
+        self.selectedNode = node
     }
     
 }
