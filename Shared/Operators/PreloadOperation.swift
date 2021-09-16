@@ -20,7 +20,7 @@ final class PreloadOperation: POperation {
         self.access = factory.resolve()
     }
     
-    func process(value: PContent) async -> PContent? {
+    func process(value: ContentItem) async -> ContentItem? {
         if value.labels.contains("missing") {
             return nil
         }

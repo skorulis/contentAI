@@ -18,7 +18,7 @@ final class ContentSourceViewModel: ObservableObject {
     
     private var subscribers: Set<AnyCancellable> = []
     
-    @Published var activeContent: PContent?
+    @Published var activeContent: ContentItem?
     
     init(source: Source,
          client: MagicClient,

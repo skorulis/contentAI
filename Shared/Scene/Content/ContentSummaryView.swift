@@ -12,7 +12,7 @@ import SwiftUI
 
 struct ContentSummaryView {
     
-    let item: PContent
+    let item: ContentItem
     let action: () -> Void
     
 }
@@ -27,8 +27,13 @@ extension ContentSummaryView: View {
                 VStack(alignment: .leading) {
                     Text(item.title ?? "")
                     Text("\(item.labels.count) labels")
+                    
                 }
                 Spacer()
+                Text("\(StorageOperator.score(item: item))")
+                if !item.viewed {
+                    Text("New")
+                }
             }
             .contentShape(Rectangle())
         }

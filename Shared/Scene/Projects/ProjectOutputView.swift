@@ -60,7 +60,7 @@ extension ProjectOutputView: View {
     }
     
     private var contentList: some View {
-        ForEach(viewModel.displayContent, id: \.self.id) { item in
+        ForEach(viewModel.output.storage, id: \.self.id) { item in
             
             ContentSummaryView(item: item) {
                 clicked(item: item)
@@ -76,7 +76,7 @@ extension ProjectOutputView: View {
     }
     
     @ViewBuilder
-    private func detailContainer(content: PContent) -> some View {
+    private func detailContainer(content: ContentItem) -> some View {
         ZStack(alignment: .topLeading) {
             ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content), onNext: viewModel.next)
             Button(action: {viewModel.activeContent = nil}) {
@@ -92,7 +92,7 @@ extension ProjectOutputView: View {
                 
 extension ProjectOutputView {
     
-    func clicked(item: PContent) {
+    func clicked(item: ContentItem) {
         viewModel.activeContent = item
     }
     

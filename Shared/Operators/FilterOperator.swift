@@ -11,7 +11,7 @@ import Foundation
 final class FilterOperator: POperation {
     var name: String = "Filter"
     
-    func process(value: PContent) async -> PContent? {
+    func process(value: ContentItem) async -> ContentItem? {
         if value.isImage {
             return value
         } else {

@@ -22,7 +22,7 @@ final class SourceOperator: POperation {
         }
     }
     
-    var output: [PContent] = []
+    var output: [ContentItem] = []
     
     init(sources: [Source], access: ContentAccess) {
         self.sources = sources
@@ -36,7 +36,7 @@ final class SourceOperator: POperation {
         }
     }
     
-    func process(value: PContent) async -> PContent? {
+    func process(value: ContentItem) async -> ContentItem? {
         return value
     }
     

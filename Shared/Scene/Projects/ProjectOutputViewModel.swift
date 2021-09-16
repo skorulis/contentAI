@@ -16,9 +16,10 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
     @Published var operations: [POperation]
     @Published var operationNodes: [OperatorNode.NodeStatus] = []
-    @Published var displayContent: [PContent] = []
-    @Published var activeContent: PContent?
+    @Published var activeContent: ContentItem?
     @Published var selectedNode: OperatorNode?
+    
+    @Published var output: StorageOperator = .init()
     
     private var subscribers: Set<AnyCancellable> = []
     
@@ -62,11 +63,12 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
         await operationNodes[0].node.buffer(content: source.output)
     }
     
-    func buffer(content: [PContent]) async {
+    func buffer(content: [ContentItem]) async {
         DispatchQueue.main.async {
-            let temp = self.displayContent + content
-            
-            self.displayContent = SortOperator.process(items: temp)
+            for item in content {
+                self.output.store(value: item)
+            }
+            self.objectWillChange.send()
         }
     }
     
@@ -86,19 +88,21 @@ extension ProjectOutputViewModel {
     
     func next() {
         guard let current = activeContent,
-              let index = self.displayContent.firstIndex(where: {$0.id == current.id} ),
-              index < displayContent.count - 1
+              let index = self.output.storage.firstIndex(where: {$0.id == current.id} ),
+              index < self.output.storage.count - 1
         else { return }
-        activeContent = displayContent[index + 1]
+        activeContent = self.output.storage[index + 1]
         objectWillChange.send()
     }
     
     func train() {
+        
         var labeledFiles = [String: [URL]]()
         labeledFiles["upvote"] = []
         labeledFiles["downvote"] = []
-        for content in displayContent {
+        for content in self.output.storage {
             guard let url = PreloadOperation.filename(url: content.url!) else { continue }
+            guard content.viewed else { continue }
             if content.labels.contains("upvote") {
                 labeledFiles["upvote"]?.append(url)
             } else if content.labels.contains("downvote") {

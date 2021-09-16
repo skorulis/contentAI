@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ContentItem: PContent, Identifiable {
+struct ContentItem: PContent, Identifiable, Hashable {
     
     public var id: String
     public var title: String?
@@ -16,5 +16,9 @@ struct ContentItem: PContent, Identifiable {
     public var created: Double
     public var viewed: Bool
     public var labels: [String]
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
 
 }

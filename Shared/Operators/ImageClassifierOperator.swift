@@ -16,11 +16,11 @@ final class TrainModelOperator: POperation {
         //MLImageClassifier(trainingData: <#T##MLImageClassifier.DataSource#>)
     }
     
-    func process(value: PContent) async -> PContent? {
+    func process(value: ContentItem) async -> ContentItem? {
         return value
     }
     
-    func train(content: [PContent]) throws -> MLJob<MLImageClassifier> {
+    func train(content: [ContentItem]) throws -> MLJob<MLImageClassifier> {
         var labeledFiles = [String: [URL]]()
         labeledFiles["upvote"] = []
         labeledFiles["downvote"] = []

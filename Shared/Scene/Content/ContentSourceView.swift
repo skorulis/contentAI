@@ -31,7 +31,7 @@ extension ContentSourceView: View {
     }
     
     @ViewBuilder
-    private func detailContainer(content: PContent) -> some View {
+    private func detailContainer(content: ContentItem) -> some View {
         ZStack(alignment: .topLeading) {
             ContentDetailView(
                 viewModel: factory.resolve(ContentDetailViewModel.self, argument: content),
@@ -70,7 +70,7 @@ extension ContentSourceView: View {
                 
 extension ContentSourceView {
     
-    func clicked(item: PContent) {
+    func clicked(item: ContentItem) {
         viewModel.activeContent = item
     }
     

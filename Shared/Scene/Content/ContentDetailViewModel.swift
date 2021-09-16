@@ -9,13 +9,13 @@ import Foundation
 
 final class ContentDetailViewModel: ObservableObject {
     
-    var content: PContent
+    var content: ContentItem
     let labelAccess: LabelAccess
     let contentAccess: ContentAccess
     
     @Published var labelText: String = ""
     
-    init(content: PContent,
+    init(content: ContentItem,
          labelAccess: LabelAccess,
          contentAccess: ContentAccess
     ) {

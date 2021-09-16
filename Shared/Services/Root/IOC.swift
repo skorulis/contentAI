@@ -67,7 +67,7 @@ public final class IOC {
         container.autoregister(AppListViewModel.self, initializer: AppListViewModel.init)
         container.autoregister(NewSourceViewModel.self, argument: NewSourceViewModel.Argument.self, initializer: NewSourceViewModel.init)
         container.autoregister(ContentSourceViewModel.self, argument: Source.self, initializer: ContentSourceViewModel.init)
-        container.autoregister(ContentDetailViewModel.self, argument: PContent.self, initializer: ContentDetailViewModel.init)
+        container.autoregister(ContentDetailViewModel.self, argument: ContentItem.self, initializer: ContentDetailViewModel.init)
         
         container.autoregister(EditProjectViewModel.self, argument: EditProjectViewModel.Argument.self, initializer: EditProjectViewModel.init)
         container.autoregister(ProjectOutputViewModel.self, argument: Project.self, initializer: ProjectOutputViewModel.init)

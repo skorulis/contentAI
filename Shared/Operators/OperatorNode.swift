@@ -9,7 +9,7 @@ import Combine
 import Foundation
 
 protocol POperatorNode: AnyObject {
-    func buffer(content: [PContent]) async
+    func buffer(content: [ContentItem]) async
     var operation: POperation { get }
     var id: String { get }
 }
@@ -22,7 +22,7 @@ actor OperatorNode: POperatorNode, Identifiable, Equatable {
     let operation: POperation
     var count: Int = 0
     
-    var tempBuffer: [PContent] = []
+    var tempBuffer: [ContentItem] = []
     private var timerToken: Cancellable?
     
     init(operation: POperation,
@@ -34,17 +34,18 @@ actor OperatorNode: POperatorNode, Identifiable, Equatable {
         self.delegate = delegate
     }
     
-    func buffer(content: [PContent]) async {
+    func buffer(content: [ContentItem]) async {
+        //await process(content: content)
         Task {
             tempBuffer.append(contentsOf: content)
-            let runLoop = RunLoop.main
-            timerToken = RunLoop.main.schedule(after: runLoop.now, interval: .seconds(1)) { [weak self] in
+            
+            DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [weak self] in
                 self?.consumeWrapper()
             }
         }
     }
     
-    private func process(content: [PContent]) async {
+    private func process(content: [ContentItem]) async {
         for element in content {
             if let result = await operation.process(value: element) {
                 self.count += 1
@@ -69,8 +70,11 @@ actor OperatorNode: POperatorNode, Identifiable, Equatable {
     }
     
     private func consumeBuffer() async {
+        if tempBuffer.count == 0 { return }
+        let toSend = tempBuffer
+        self.tempBuffer = []
         timerToken = nil
-        await process(content: tempBuffer)
+        await process(content: toSend)
         self.tempBuffer = []
     }
     

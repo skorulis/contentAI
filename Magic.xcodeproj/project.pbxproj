@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		FA10E5E126E46A9C00325378 /* FilterOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5E026E46A9C00325378 /* FilterOperator.swift */; };
 		FA10E5E226E46A9C00325378 /* FilterOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5E026E46A9C00325378 /* FilterOperator.swift */; };
-		FA10E5E426E46ADC00325378 /* PContentSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5E326E46ADC00325378 /* PContentSource.swift */; };
-		FA10E5E526E46ADC00325378 /* PContentSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5E326E46ADC00325378 /* PContentSource.swift */; };
 		FA10E5E826E471D100325378 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FA10E5E726E471D100325378 /* SQLite */; };
 		FA10E5EA26E471E800325378 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = FA10E5E926E471E800325378 /* SQLite */; };
 		FA10E5EC26E471F900325378 /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10E5EB26E471F900325378 /* DatabaseService.swift */; };
@@ -112,7 +110,10 @@
 		FAB21F5E26EF5D7D00930FA7 /* NodeDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F5C26EF5D7D00930FA7 /* NodeDetailsView.swift */; };
 		FAB21F6026EF5D9100930FA7 /* NodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F5F26EF5D9100930FA7 /* NodeDetailsViewModel.swift */; };
 		FAB21F6126EF5D9100930FA7 /* NodeDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F5F26EF5D9100930FA7 /* NodeDetailsViewModel.swift */; };
-		FAB5286426EA0187005CD2F2 /* OperationNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286326EA0187005CD2F2 /* OperationNode.swift */; };
+		FAB21F6426F1E3E400930FA7 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = FAB21F6326F1E3E400930FA7 /* OrderedCollections */; };
+		FAB21F6626F1E86600930FA7 /* OrderedCollections in Frameworks */ = {isa = PBXBuildFile; productRef = FAB21F6526F1E86600930FA7 /* OrderedCollections */; };
+		FAB21F6E26F34C8A00930FA7 /* MagicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F6D26F34C8A00930FA7 /* MagicTests.swift */; };
+		FAB21F7626F34D5500930FA7 /* StorageOperatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F7526F34D5500930FA7 /* StorageOperatorTests.swift */; };
 		FAB5286526EB5314005CD2F2 /* SheetFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */; };
 		FAB5286726EC98A2005CD2F2 /* PreloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */; };
 		FAB5286926ECC7F9005CD2F2 /* HTTPDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */; };
@@ -146,8 +147,8 @@
 		FAEE450C26DB7DAC00FCF0AC /* ContentAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE450A26DB7DAC00FCF0AC /* ContentAccess.swift */; };
 		FAEE450E26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE450D26DB7F0200FCF0AC /* Reddit.AuthResponse.swift */; };
 		FAEE450F26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE450D26DB7F0200FCF0AC /* Reddit.AuthResponse.swift */; };
-		FAEEC3F226EDEFC700FD5B19 /* SortOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC3F126EDEFC700FD5B19 /* SortOperator.swift */; };
-		FAEEC3F326EDEFC700FD5B19 /* SortOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC3F126EDEFC700FD5B19 /* SortOperator.swift */; };
+		FAEEC3F226EDEFC700FD5B19 /* StorageOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC3F126EDEFC700FD5B19 /* StorageOperator.swift */; };
+		FAEEC3F326EDEFC700FD5B19 /* StorageOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEEC3F126EDEFC700FD5B19 /* StorageOperator.swift */; };
 		FAFB037A26DF7F2D00AEE99B /* LabelAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */; };
 		FAFB037B26DF7F2D00AEE99B /* LabelAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */; };
 		FAFB038A26DF88C300AEE99B /* Publisher+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038126DF88C300AEE99B /* Publisher+Extension.swift */; };
@@ -176,9 +177,18 @@
 		FAFE580C26E3401000051A83 /* IconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE580A26E3401000051A83 /* IconButton.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		FAB21F6F26F34C8A00930FA7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA3A562626D9F44C00F9FE9A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA3A563A26D9F44F00F9FE9A;
+			remoteInfo = "Magic (macOS)";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		FA10E5E026E46A9C00325378 /* FilterOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterOperator.swift; sourceTree = "<group>"; };
-		FA10E5E326E46ADC00325378 /* PContentSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PContentSource.swift; sourceTree = "<group>"; };
 		FA10E5EB26E471F900325378 /* DatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		FA10E5F126E47CE600325378 /* AccountsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsView.swift; sourceTree = "<group>"; };
 		FA10E5F426E47CF000325378 /* AccountsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsViewModel.swift; sourceTree = "<group>"; };
@@ -228,7 +238,9 @@
 		FAB21F5926EEAE5600930FA7 /* LabelPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPrediction.swift; sourceTree = "<group>"; };
 		FAB21F5C26EF5D7D00930FA7 /* NodeDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetailsView.swift; sourceTree = "<group>"; };
 		FAB21F5F26EF5D9100930FA7 /* NodeDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeDetailsViewModel.swift; sourceTree = "<group>"; };
-		FAB5286326EA0187005CD2F2 /* OperationNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationNode.swift; sourceTree = "<group>"; };
+		FAB21F6B26F34C8A00930FA7 /* MagicTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MagicTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAB21F6D26F34C8A00930FA7 /* MagicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicTests.swift; sourceTree = "<group>"; };
+		FAB21F7526F34D5500930FA7 /* StorageOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageOperatorTests.swift; sourceTree = "<group>"; };
 		FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadOperation.swift; sourceTree = "<group>"; };
 		FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataRequest.swift; sourceTree = "<group>"; };
 		FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorNode.swift; sourceTree = "<group>"; };
@@ -250,7 +262,7 @@
 		FAEE450D26DB7F0200FCF0AC /* Reddit.AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.AuthResponse.swift; sourceTree = "<group>"; };
 		FAEE451126DB83DC00FCF0AC /* Magic.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Magic.entitlements; sourceTree = "<group>"; };
 		FAEE451226DB83DC00FCF0AC /* macOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "macOS-Info.plist"; sourceTree = "<group>"; };
-		FAEEC3F126EDEFC700FD5B19 /* SortOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOperator.swift; sourceTree = "<group>"; };
+		FAEEC3F126EDEFC700FD5B19 /* StorageOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageOperator.swift; sourceTree = "<group>"; };
 		FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelAccess.swift; sourceTree = "<group>"; };
 		FAFB038126DF88C300AEE99B /* Publisher+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Publisher+Extension.swift"; sourceTree = "<group>"; };
 		FAFB038326DF88C300AEE99B /* FetchedResultsControllerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerPublisher.swift; sourceTree = "<group>"; };
@@ -273,6 +285,7 @@
 			files = (
 				FA10E5EA26E471E800325378 /* SQLite in Frameworks */,
 				FA3A568C26D9FCD800F9FE9A /* SwinjectAutoregistration in Frameworks */,
+				FAB21F6426F1E3E400930FA7 /* OrderedCollections in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,6 +295,14 @@
 			files = (
 				FA10E5E826E471D100325378 /* SQLite in Frameworks */,
 				FA3A568A26D9FCD500F9FE9A /* SwinjectAutoregistration in Frameworks */,
+				FAB21F6626F1E86600930FA7 /* OrderedCollections in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB21F6826F34C8A00930FA7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,7 +317,7 @@
 				FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */,
 				FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */,
 				FA2F6D3026EDC21200FAAEE5 /* ImageClassifierOperator.swift */,
-				FAEEC3F126EDEFC700FD5B19 /* SortOperator.swift */,
+				FAEEC3F126EDEFC700FD5B19 /* StorageOperator.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -345,6 +366,7 @@
 			children = (
 				FAEE451026DB83DC00FCF0AC /* Configs */,
 				FA3A562A26D9F44C00F9FE9A /* Shared */,
+				FAB21F6C26F34C8A00930FA7 /* MagicTests */,
 				FA3A563626D9F44E00F9FE9A /* Products */,
 				FA3A568826D9FCD500F9FE9A /* Frameworks */,
 			);
@@ -370,6 +392,7 @@
 			children = (
 				FA3A563526D9F44E00F9FE9A /* Magic.app */,
 				FA3A563B26D9F44F00F9FE9A /* Magic.app */,
+				FAB21F6B26F34C8A00930FA7 /* MagicTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -509,10 +532,26 @@
 			path = Source;
 			sourceTree = "<group>";
 		};
+		FAB21F6C26F34C8A00930FA7 /* MagicTests */ = {
+			isa = PBXGroup;
+			children = (
+				FAB21F7426F34D2500930FA7 /* Operators */,
+				FAB21F6D26F34C8A00930FA7 /* MagicTests.swift */,
+			);
+			path = MagicTests;
+			sourceTree = "<group>";
+		};
+		FAB21F7426F34D2500930FA7 /* Operators */ = {
+			isa = PBXGroup;
+			children = (
+				FAB21F7526F34D5500930FA7 /* StorageOperatorTests.swift */,
+			);
+			path = Operators;
+			sourceTree = "<group>";
+		};
 		FAB5286226EA0178005CD2F2 /* Operation */ = {
 			isa = PBXGroup;
 			children = (
-				FAB5286326EA0187005CD2F2 /* OperationNode.swift */,
 			);
 			path = Operation;
 			sourceTree = "<group>";
@@ -579,7 +618,6 @@
 			children = (
 				FAEE450426DB7B6400FCF0AC /* ContentItem.swift */,
 				FA2116E026DE201400DE7BE7 /* PContent.swift */,
-				FA10E5E326E46ADC00325378 /* PContentSource.swift */,
 				FAE91BA526E619B2002858A8 /* POperation.swift */,
 			);
 			path = Generic;
@@ -681,6 +719,7 @@
 			packageProductDependencies = (
 				FA3A568B26D9FCD800F9FE9A /* SwinjectAutoregistration */,
 				FA10E5E926E471E800325378 /* SQLite */,
+				FAB21F6326F1E3E400930FA7 /* OrderedCollections */,
 			);
 			productName = "Magic (iOS)";
 			productReference = FA3A563526D9F44E00F9FE9A /* Magic.app */;
@@ -702,10 +741,29 @@
 			packageProductDependencies = (
 				FA3A568926D9FCD500F9FE9A /* SwinjectAutoregistration */,
 				FA10E5E726E471D100325378 /* SQLite */,
+				FAB21F6526F1E86600930FA7 /* OrderedCollections */,
 			);
 			productName = "Magic (macOS)";
 			productReference = FA3A563B26D9F44F00F9FE9A /* Magic.app */;
 			productType = "com.apple.product-type.application";
+		};
+		FAB21F6A26F34C8A00930FA7 /* MagicTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAB21F7126F34C8A00930FA7 /* Build configuration list for PBXNativeTarget "MagicTests" */;
+			buildPhases = (
+				FAB21F6726F34C8A00930FA7 /* Sources */,
+				FAB21F6826F34C8A00930FA7 /* Frameworks */,
+				FAB21F6926F34C8A00930FA7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FAB21F7026F34C8A00930FA7 /* PBXTargetDependency */,
+			);
+			name = MagicTests;
+			productName = MagicTests;
+			productReference = FAB21F6B26F34C8A00930FA7 /* MagicTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -723,6 +781,10 @@
 					FA3A563A26D9F44F00F9FE9A = {
 						CreatedOnToolsVersion = 13.0;
 					};
+					FAB21F6A26F34C8A00930FA7 = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = FA3A563A26D9F44F00F9FE9A;
+					};
 				};
 			};
 			buildConfigurationList = FA3A562926D9F44C00F9FE9A /* Build configuration list for PBXProject "Magic" */;
@@ -737,6 +799,7 @@
 			packageReferences = (
 				FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */,
 				FA10E5E626E471D100325378 /* XCRemoteSwiftPackageReference "SQLite" */,
+				FAB21F6226F1E3E400930FA7 /* XCRemoteSwiftPackageReference "swift-collections" */,
 			);
 			productRefGroup = FA3A563626D9F44E00F9FE9A /* Products */;
 			projectDirPath = "";
@@ -744,6 +807,7 @@
 			targets = (
 				FA3A563426D9F44E00F9FE9A /* Magic (iOS) */,
 				FA3A563A26D9F44F00F9FE9A /* Magic (macOS) */,
+				FAB21F6A26F34C8A00930FA7 /* MagicTests */,
 			);
 		};
 /* End PBXProject section */
@@ -762,6 +826,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA3A564526D9F44F00F9FE9A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAB21F6926F34C8A00930FA7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -790,7 +861,6 @@
 				FAB21F5A26EEAE5600930FA7 /* LabelPrediction.swift in Sources */,
 				FAFB038C26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
 				FA3A569526D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */,
-				FA10E5E426E46ADC00325378 /* PContentSource.swift in Sources */,
 				FA3A56A926DA022900F9FE9A /* NewSourceViewModel.swift in Sources */,
 				FAFE57FC26E32E5E00051A83 /* ProjectOutputView.swift in Sources */,
 				FA10E60426E4A05900325378 /* Project.swift in Sources */,
@@ -803,7 +873,7 @@
 				FA3A56B626DA112600F9FE9A /* ContentSourceAccess.swift in Sources */,
 				FAFB038A26DF88C300AEE99B /* Publisher+Extension.swift in Sources */,
 				FA3A566026D9F49900F9FE9A /* HTTPLogger.swift in Sources */,
-				FAEEC3F226EDEFC700FD5B19 /* SortOperator.swift in Sources */,
+				FAEEC3F226EDEFC700FD5B19 /* StorageOperator.swift in Sources */,
 				FA3A56B926DA153600F9FE9A /* ErrorService.swift in Sources */,
 				FA3BE92C26DC3875003A0F94 /* RedditSourceService.swift in Sources */,
 				FA10E5E126E46A9C00325378 /* FilterOperator.swift in Sources */,
@@ -841,7 +911,6 @@
 				FAFE580B26E3401000051A83 /* IconButton.swift in Sources */,
 				FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */,
 				FAE91BA326E6151A002858A8 /* OperationView.swift in Sources */,
-				FAB5286426EA0187005CD2F2 /* OperationNode.swift in Sources */,
 				FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */,
 				FAFE580526E33CDC00051A83 /* NavigationBar.swift in Sources */,
 				FA35D1F326E76E470062186E /* QueryPager.swift in Sources */,
@@ -869,7 +938,7 @@
 				FA10E5F626E47CF000325378 /* AccountsViewModel.swift in Sources */,
 				FA2116E326DE222400DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FAEE450F26DB7F0200FCF0AC /* Reddit.AuthResponse.swift in Sources */,
-				FAEEC3F326EDEFC700FD5B19 /* SortOperator.swift in Sources */,
+				FAEEC3F326EDEFC700FD5B19 /* StorageOperator.swift in Sources */,
 				FA2F6D3526EDCB0D00FAAEE5 /* HTTPDataRequest.swift in Sources */,
 				FA3A568326D9FA1C00F9FE9A /* MainAppView.swift in Sources */,
 				FA10E5FC26E487AE00325378 /* Label.swift in Sources */,
@@ -881,7 +950,6 @@
 				FAFB038D26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
 				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FAE91BA126E6149D002858A8 /* ProjectOperationsView.swift in Sources */,
-				FA10E5E526E46ADC00325378 /* PContentSource.swift in Sources */,
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
 				FAFE57FD26E32E5E00051A83 /* ProjectOutputView.swift in Sources */,
 				FA10E60526E4A05900325378 /* Project.swift in Sources */,
@@ -943,7 +1011,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		FAB21F6726F34C8A00930FA7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAB21F6E26F34C8A00930FA7 /* MagicTests.swift in Sources */,
+				FAB21F7626F34D5500930FA7 /* StorageOperatorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FAB21F7026F34C8A00930FA7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA3A563A26D9F44F00F9FE9A /* Magic (macOS) */;
+			targetProxy = FAB21F6F26F34C8A00930FA7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		FA3A564626D9F44F00F9FE9A /* Debug */ = {
@@ -1194,6 +1279,58 @@
 			};
 			name = Release;
 		};
+		FAB21F7226F34C8A00930FA7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.MagicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Magic.app/Contents/MacOS/Magic";
+			};
+			name = Debug;
+		};
+		FAB21F7326F34C8A00930FA7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = X4S6MUZL2D;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.MagicTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Magic.app/Contents/MacOS/Magic";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1224,6 +1361,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		FAB21F7126F34C8A00930FA7 /* Build configuration list for PBXNativeTarget "MagicTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAB21F7226F34C8A00930FA7 /* Debug */,
+				FAB21F7326F34C8A00930FA7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1241,6 +1387,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 2.7.0;
+			};
+		};
+		FAB21F6226F1E3E400930FA7 /* XCRemoteSwiftPackageReference "swift-collections" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-collections.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.3;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1265,6 +1419,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = FA3A568726D9FC6100F9FE9A /* XCRemoteSwiftPackageReference "SwinjectAutoregistration" */;
 			productName = SwinjectAutoregistration;
+		};
+		FAB21F6326F1E3E400930FA7 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAB21F6226F1E3E400930FA7 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
+		};
+		FAB21F6526F1E86600930FA7 /* OrderedCollections */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FAB21F6226F1E3E400930FA7 /* XCRemoteSwiftPackageReference "swift-collections" */;
+			productName = OrderedCollections;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
