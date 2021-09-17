@@ -14,7 +14,6 @@ final class StorageOperator {
     
     func store(value: ContentItem) {
         assert(Thread.current.isMainThread, "Expected to be on the main thread")
-        print("Store \(value.id)")
         storage.remove(value)
         let v1 = Self.score(item: value)
         

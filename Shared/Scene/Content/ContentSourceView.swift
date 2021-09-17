@@ -22,12 +22,22 @@ extension ContentSourceView: View {
     
     var body: some View {
         ZStack {
-            list
-                .opacity(viewModel.activeContent == nil ? 1 : 0)
+            VStack(spacing: 0) {
+                navBar
+                list
+                    .opacity(viewModel.activeContent == nil ? 1 : 0)
+            }
+            
             if let active = viewModel.activeContent {
                 detailContainer(content: active)
             }
+            
+            
         }
+    }
+    
+    private var navBar: some View {
+        NavigationBar(trailing: .imageButton("pencil.circle.fill", viewModel.edit))
     }
     
     @ViewBuilder
@@ -56,6 +66,9 @@ extension ContentSourceView: View {
     
     private var contentList: some View {
         List {
+            if viewModel.isEditing {
+                NewSourceView(viewModel: factory.resolve(NewSourceViewModel.self, argument: NewSourceViewModel.Argument(id: viewModel.source.id)))
+            }
             ForEach(viewModel.availableContent) { item in
                 ContentSummaryView(item: item) {
                     clicked(item: item)

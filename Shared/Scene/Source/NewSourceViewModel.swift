@@ -20,9 +20,14 @@ final class NewSourceViewModel: ObservableObject {
     init(arg: Argument, access: ContentSourceAccess?) {
         self.id = arg.id
         self.access = access
-        if let project = loadProject() {
+        if let project = loadSource() {
             self.type = project.sourceType
             self.name = project.name
+            if project.sourceType == .reddit {
+                if let config: Reddit.SourceConfig = project.configObject() {
+                    reddit = config
+                }
+            }
         }
     }
 }
@@ -41,7 +46,7 @@ extension NewSourceViewModel {
 
 extension NewSourceViewModel {
  
-    func loadProject() -> Source? {
+    func loadSource() -> Source? {
         if let id = id, let project = try? access?.get(id: id) {
             return project
         } else {

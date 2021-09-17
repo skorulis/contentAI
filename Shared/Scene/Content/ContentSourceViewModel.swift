@@ -19,6 +19,7 @@ final class ContentSourceViewModel: ObservableObject {
     private var subscribers: Set<AnyCancellable> = []
     
     @Published var activeContent: ContentItem?
+    @Published var isEditing: Bool = false
     
     init(source: Source,
          client: MagicClient,
@@ -70,5 +71,9 @@ extension ContentSourceViewModel {
         else { return }
         activeContent = availableContent[index + 1]
         objectWillChange.send()
+    }
+    
+    func edit() {
+        self.isEditing.toggle()
     }
 }

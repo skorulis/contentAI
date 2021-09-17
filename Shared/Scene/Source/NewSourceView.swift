@@ -65,7 +65,7 @@ extension NewSourceView: View {
     }
     
     private var projectView: some View {
-        NavigationLazyView(ContentSourceView(viewModel: factory.resolve(ContentSourceViewModel.self, argument: viewModel.loadProject()!)))
+        NavigationLazyView(ContentSourceView(viewModel: factory.resolve(ContentSourceViewModel.self, argument: viewModel.loadSource()!)))
     }
 }
 
