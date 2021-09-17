@@ -49,10 +49,11 @@ extension ContentSourceAccess {
     
     func save(source: Source) -> Source{
         let setters = SourceTable.setters(source: source)
-        let query = SourceTable.table.insert(or: .replace, setters)
+        let query = SourceTable.table.upsert(setters, onConflictOf: SourceTable.id)
         let id = try! db.db.run(query)
         
         self.updatePublisher()
+        ChangeNotifierService.shared.sourceChanged.send(source)
         
         return Source(
             id: id,

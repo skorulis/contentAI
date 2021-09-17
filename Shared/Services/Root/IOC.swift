@@ -47,6 +47,8 @@ public final class IOC {
             .inObjectScope(.container)
         container.autoregister(ProjectAccess.self, initializer: ProjectAccess.init)
             .inObjectScope(.container)
+        container.autoregister(ChangeNotifierService.self, initializer: ChangeNotifierService.init)
+            .inObjectScope(.container)
     }
     
     private func setupServices() {

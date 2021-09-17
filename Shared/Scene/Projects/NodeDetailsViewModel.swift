@@ -38,7 +38,7 @@ extension NodeDetailsViewModel {
  
     func loadSource(source: Source) {
         self.sourceRouter = factory.resolve(SourceServiceRouter.self, argument: source)
-        sourceRouter?.loadOldest()
+        sourceRouter?.loadMore()
     }
     
 }

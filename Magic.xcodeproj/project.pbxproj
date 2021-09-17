@@ -114,6 +114,8 @@
 		FAB21F8126F483A100930FA7 /* NewSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F7E26F483A000930FA7 /* NewSourceView.swift */; };
 		FAB21F8226F483A100930FA7 /* NewSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F7F26F483A000930FA7 /* NewSourceViewModel.swift */; };
 		FAB21F8326F483A100930FA7 /* NewSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F7F26F483A000930FA7 /* NewSourceViewModel.swift */; };
+		FAB21F8526F5613500930FA7 /* ChangeNotifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F8426F5613500930FA7 /* ChangeNotifierService.swift */; };
+		FAB21F8626F5613500930FA7 /* ChangeNotifierService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB21F8426F5613500930FA7 /* ChangeNotifierService.swift */; };
 		FAB5286526EB5314005CD2F2 /* SheetFrameModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */; };
 		FAB5286726EC98A2005CD2F2 /* PreloadOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */; };
 		FAB5286926ECC7F9005CD2F2 /* HTTPDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */; };
@@ -241,6 +243,7 @@
 		FAB21F7526F34D5500930FA7 /* StorageOperatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageOperatorTests.swift; sourceTree = "<group>"; };
 		FAB21F7E26F483A000930FA7 /* NewSourceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSourceView.swift; sourceTree = "<group>"; };
 		FAB21F7F26F483A000930FA7 /* NewSourceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSourceViewModel.swift; sourceTree = "<group>"; };
+		FAB21F8426F5613500930FA7 /* ChangeNotifierService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeNotifierService.swift; sourceTree = "<group>"; };
 		FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadOperation.swift; sourceTree = "<group>"; };
 		FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataRequest.swift; sourceTree = "<group>"; };
 		FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorNode.swift; sourceTree = "<group>"; };
@@ -509,6 +512,7 @@
 				FAEE450A26DB7DAC00FCF0AC /* ContentAccess.swift */,
 				FAFB037926DF7F2D00AEE99B /* LabelAccess.swift */,
 				FAFE57F826E3276700051A83 /* ProjectAccess.swift */,
+				FAB21F8426F5613500930FA7 /* ChangeNotifierService.swift */,
 			);
 			path = DataAccess;
 			sourceTree = "<group>";
@@ -896,6 +900,7 @@
 				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FAE91BA926E61C86002858A8 /* SourceOperator.swift in Sources */,
 				FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */,
+				FAB21F8526F5613500930FA7 /* ChangeNotifierService.swift in Sources */,
 				FA2116E526DE315C00DE7BE7 /* Reddit.SourceConfig.swift in Sources */,
 				FAFE580826E33E1900051A83 /* NavItem.swift in Sources */,
 				FAEE44EC26DB2E8600FCF0AC /* MagicClient.swift in Sources */,
@@ -982,6 +987,7 @@
 				FAEE44FF26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
 				FA10E5ED26E471F900325378 /* DatabaseService.swift in Sources */,
 				FAEE44F426DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
+				FAB21F8626F5613500930FA7 /* ChangeNotifierService.swift in Sources */,
 				FA35D1F426E76E470062186E /* QueryPager.swift in Sources */,
 				FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */,
 				FAE91BAA26E61C86002858A8 /* SourceOperator.swift in Sources */,

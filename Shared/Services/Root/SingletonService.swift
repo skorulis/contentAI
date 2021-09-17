@@ -17,3 +17,10 @@ extension ErrorService {
         return IOC.shared.container.resolve(ErrorService.self)!
     }
 }
+
+extension ChangeNotifierService {
+    
+    static var shared: ChangeNotifierService {
+        return IOC.shared.container.resolve(ChangeNotifierService.self)!
+    }
+}

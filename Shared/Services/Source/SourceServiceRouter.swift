@@ -18,9 +18,15 @@ final class SourceServiceRouter: PSourceService {
         }
     }
     
+    func loadLatest() {
+        innerService?.loadLatest()
+    }
+    
     func loadMore() {
         innerService?.loadMore()
     }
+    
+    
     
     func loadOldest() {
         innerService?.loadOldest()

@@ -12,23 +12,26 @@ final class RedditSourceService: PSourceService {
     
     private let source: Source
     private let client: MagicClient
+    private let sourceAccess: ContentSourceAccess
     private let access: ContentAccess
     private let accountAccess: AccountsAccess
     
     init(source: Source,
          client: MagicClient,
+         sourceAccess: ContentSourceAccess,
          access: ContentAccess,
          accountAccess: AccountsAccess
     ) {
         self.client = client
         self.source = source
+        self.sourceAccess = sourceAccess
         self.access = access
         self.accountAccess = accountAccess
     }
     
     private var subscribers: Set<AnyCancellable> = []
     
-    func fetchRedditData(before: String? = nil, after: String? = nil) {
+    func fetchRedditData(before: String? = nil, after: String? = nil, storePage: Bool ) {
         guard let auth: Reddit.AuthResponse = accountAccess.redditAuth else { return }
         let config: Reddit.SourceConfig? = source.configObject()
         let subreddit = config?.subreddit ?? ""
@@ -59,13 +62,26 @@ final class RedditSourceService: PSourceService {
             }
             .sink { [unowned self] items in
                 self.access.store(items: items, source: self.source)
+                if let lastID = items.last?.id, storePage {
+                    var config: Reddit.SourceConfig? = source.configObject()
+                    config?.pageinationID = lastID
+                    _ = sourceAccess.save(source: source)
+                }
                 //print(response)
             }
             .store(in: &subscribers)
     }
     
     func loadMore() {
-        fetchRedditData()
+        fetchRedditData(storePage: true)
+    }
+    
+    func loadLatest() {
+        guard let config: Reddit.SourceConfig? = source.configObject(), let id = config?.pageinationID else {
+            loadMore()
+            return
+        }
+        fetchRedditData(after: "t3_\(id)", storePage: true)
     }
     
     func loadOldest() {
@@ -79,8 +95,7 @@ final class RedditSourceService: PSourceService {
                 .first else {
             return
         }
-        fetchRedditData(after: "t3_\(oldest.id)")
-        
+        fetchRedditData(after: "t3_\(oldest.id)", storePage: false)
     }
     
 }

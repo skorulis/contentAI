@@ -10,5 +10,6 @@ import Foundation
 protocol PSourceService {
     
     func loadMore()
+    func loadLatest()
     func loadOldest()
 }
