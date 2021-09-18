@@ -18,6 +18,11 @@ struct Source {
         guard let data = config else { return nil }
         return try! JSONDecoder().decode(T.self, from: data)
     }
+    
+    mutating func setConfigObject<T: Encodable>(obj: T?) {
+        guard let obj = obj, let data = try? JSONEncoder().encode(obj) else { return}
+        config = data
+    }
 
     
 }

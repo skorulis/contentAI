@@ -12,5 +12,6 @@ extension Reddit {
     struct SourceConfig: Codable {
         var subreddit: String = ""
         var pageinationID: String?
+        var paginationTime: Double?
     }
 }

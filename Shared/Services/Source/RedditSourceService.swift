@@ -8,9 +8,13 @@
 import Combine
 import Foundation
 
-final class RedditSourceService: PSourceService {
+final class RedditSourceService: PSourceService, ObservableObject {
     
-    private let source: Source
+    @Published var source: Source {
+        didSet {
+            print("TEST")
+        }
+    }
     private let client: MagicClient
     private let sourceAccess: ContentSourceAccess
     private let access: ContentAccess
@@ -27,6 +31,11 @@ final class RedditSourceService: PSourceService {
         self.sourceAccess = sourceAccess
         self.access = access
         self.accountAccess = accountAccess
+        
+        ChangeNotifierService.shared.sourceChanged
+            .filter { $0.id == source.id}
+            .assign(to: &$source)
+        
     }
     
     private var subscribers: Set<AnyCancellable> = []
@@ -62,26 +71,32 @@ final class RedditSourceService: PSourceService {
             }
             .sink { [unowned self] items in
                 self.access.store(items: items, source: self.source)
-                if let lastID = items.last?.id, storePage {
-                    var config: Reddit.SourceConfig? = source.configObject()
-                    config?.pageinationID = lastID
-                    _ = sourceAccess.save(source: source)
+                var config: Reddit.SourceConfig? = source.configObject()
+                if let last = items.first, storePage {
+                    config?.pageinationID = last.id
+                    config?.paginationTime = last.created
+                } else {
+                    config?.pageinationID = nil
+                    config?.paginationTime = nil
                 }
+                var mutableSource = source
+                mutableSource.setConfigObject(obj: config)
+                _ = sourceAccess.save(source: mutableSource)
                 //print(response)
             }
             .store(in: &subscribers)
     }
     
     func loadMore() {
-        fetchRedditData(storePage: true)
-    }
-    
-    func loadLatest() {
         guard let config: Reddit.SourceConfig? = source.configObject(), let id = config?.pageinationID else {
-            loadMore()
+            loadLatest()
             return
         }
         fetchRedditData(after: "t3_\(id)", storePage: true)
+    }
+    
+    func loadLatest() {
+        fetchRedditData(storePage: true)
     }
     
     func loadOldest() {

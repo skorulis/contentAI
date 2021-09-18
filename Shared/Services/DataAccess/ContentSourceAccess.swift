@@ -53,7 +53,9 @@ extension ContentSourceAccess {
         let id = try! db.db.run(query)
         
         self.updatePublisher()
-        ChangeNotifierService.shared.sourceChanged.send(source)
+        DispatchQueue.main.async {
+            ChangeNotifierService.shared.sourceChanged.send(source)
+        }
         
         return Source(
             id: id,
