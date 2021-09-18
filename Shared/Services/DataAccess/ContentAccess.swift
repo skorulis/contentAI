@@ -57,7 +57,7 @@ extension ContentAccess {
     }
     
     func sourceItems(source: Source) -> [ContentItem] {
-        let query = sourceQuery(source: source)
+        let query = sourceQuery(sources: [source])
         var content = try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
         let ids = content.map { $0.id }
         let labels = Dictionary(grouping: allLabels(contentIDs: ids), by: {$0.contentID} )
@@ -69,13 +69,14 @@ extension ContentAccess {
         return content
     }
     
-    func sourceQuery(source: Source) -> Table {
+    func sourceQuery(sources: [Source]) -> Table {
+        let ids = sources.map { $0.id }
         let query = ContentTable.table
             .join(
                 ContentSourceTable.table,
                 on: ContentSourceTable.content_id == ContentTable.table[ContentTable.id]
             )
-            .filter(ContentSourceTable.source_id == source.id)
+            .filter(ids.contains(ContentSourceTable.source_id))
         
         return query
     }

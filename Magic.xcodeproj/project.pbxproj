@@ -125,8 +125,8 @@
 		FAE91BA126E6149D002858A8 /* ProjectOperationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91B9F26E6149D002858A8 /* ProjectOperationsView.swift */; };
 		FAE91BA326E6151A002858A8 /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA226E6151A002858A8 /* OperationView.swift */; };
 		FAE91BA426E6151A002858A8 /* OperationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA226E6151A002858A8 /* OperationView.swift */; };
-		FAE91BA626E619B2002858A8 /* POperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA526E619B2002858A8 /* POperation.swift */; };
-		FAE91BA726E619B2002858A8 /* POperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA526E619B2002858A8 /* POperation.swift */; };
+		FAE91BA626E619B2002858A8 /* POperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA526E619B2002858A8 /* POperator.swift */; };
+		FAE91BA726E619B2002858A8 /* POperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA526E619B2002858A8 /* POperator.swift */; };
 		FAE91BA926E61C86002858A8 /* SourceOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA826E61C86002858A8 /* SourceOperator.swift */; };
 		FAE91BAA26E61C86002858A8 /* SourceOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE91BA826E61C86002858A8 /* SourceOperator.swift */; };
 		FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */; };
@@ -251,7 +251,7 @@
 		FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetFrameModifier.swift; sourceTree = "<group>"; };
 		FAE91B9F26E6149D002858A8 /* ProjectOperationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOperationsView.swift; sourceTree = "<group>"; };
 		FAE91BA226E6151A002858A8 /* OperationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationView.swift; sourceTree = "<group>"; };
-		FAE91BA526E619B2002858A8 /* POperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POperation.swift; sourceTree = "<group>"; };
+		FAE91BA526E619B2002858A8 /* POperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POperator.swift; sourceTree = "<group>"; };
 		FAE91BA826E61C86002858A8 /* SourceOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceOperator.swift; sourceTree = "<group>"; };
 		FAEE44E826DB2CDE00FCF0AC /* Reddit.Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reddit.Endpoints.swift; sourceTree = "<group>"; };
 		FAEE44EB26DB2E8600FCF0AC /* MagicClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagicClient.swift; sourceTree = "<group>"; };
@@ -630,7 +630,7 @@
 			children = (
 				FAEE450426DB7B6400FCF0AC /* ContentItem.swift */,
 				FA2116E026DE201400DE7BE7 /* PContent.swift */,
-				FAE91BA526E619B2002858A8 /* POperation.swift */,
+				FAE91BA526E619B2002858A8 /* POperator.swift */,
 			);
 			path = Generic;
 			sourceTree = "<group>";
@@ -930,7 +930,7 @@
 				FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */,
 				FA5F9A4826E0BEB100C8F3B5 /* ContentDetailView.swift in Sources */,
 				FAEE44FB26DB746900FCF0AC /* Reddit.swift in Sources */,
-				FAE91BA626E619B2002858A8 /* POperation.swift in Sources */,
+				FAE91BA626E619B2002858A8 /* POperator.swift in Sources */,
 				FAB21F6026EF5D9100930FA7 /* NodeDetailsViewModel.swift in Sources */,
 				FA3A56C326DA3D5E00F9FE9A /* WebView.swift in Sources */,
 				FAEE450B26DB7DAC00FCF0AC /* ContentAccess.swift in Sources */,
@@ -956,7 +956,7 @@
 				FA3A568326D9FA1C00F9FE9A /* MainAppView.swift in Sources */,
 				FA10E5FC26E487AE00325378 /* Label.swift in Sources */,
 				FAB21F6126EF5D9100930FA7 /* NodeDetailsViewModel.swift in Sources */,
-				FAE91BA726E619B2002858A8 /* POperation.swift in Sources */,
+				FAE91BA726E619B2002858A8 /* POperator.swift in Sources */,
 				FA10E5F326E47CE600325378 /* AccountsView.swift in Sources */,
 				FAEE44F926DB735800FCF0AC /* RedditSecrets.swift in Sources */,
 				FA2116E226DE205300DE7BE7 /* PContent.swift in Sources */,

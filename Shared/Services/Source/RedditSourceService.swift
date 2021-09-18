@@ -100,7 +100,7 @@ final class RedditSourceService: PSourceService, ObservableObject {
     }
     
     func loadOldest() {
-        var query = access.sourceQuery(source: source)
+        var query = access.sourceQuery(sources: [source])
         query = query
             .order(ContentAccess.ContentTable.created.asc)
             .limit(1)
@@ -112,5 +112,6 @@ final class RedditSourceService: PSourceService, ObservableObject {
         }
         fetchRedditData(after: "t3_\(oldest.id)", storePage: false)
     }
+    
     
 }

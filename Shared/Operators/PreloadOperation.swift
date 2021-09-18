@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SQLite
 
 /// Preload data from an external source
-final class PreloadOperation: POperation {
+final class PreloadOperation: POperator {
     
     private let client: MagicClient
     private let access: ContentAccess
@@ -61,6 +62,10 @@ final class PreloadOperation: POperation {
     static func hasPreloaded(url: String) -> Bool {
         guard let file = Self.filename(url: url) else { return false }
         return FileManager.default.fileExists(atPath: file.path)
+    }
+    
+    func query(inputQuery: Table?) -> Table {
+        return inputQuery!
     }
     
 }

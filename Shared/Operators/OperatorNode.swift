@@ -10,7 +10,7 @@ import Foundation
 
 protocol POperatorNode: AnyObject {
     func buffer(content: [ContentItem]) async
-    var operation: POperation { get }
+    var operation: POperator { get }
     var id: String { get }
 }
 
@@ -19,13 +19,13 @@ actor OperatorNode: POperatorNode, Identifiable, Equatable {
     weak var next: POperatorNode?
     weak var delegate: OperatorNodeDelegate?
     let id: String = UUID().uuidString
-    let operation: POperation
+    let operation: POperator
     var count: Int = 0
     
     var tempBuffer: [ContentItem] = []
     private var timerToken: Cancellable?
     
-    init(operation: POperation,
+    init(operation: POperator,
          next: POperatorNode,
          delegate: OperatorNodeDelegate
     ) {

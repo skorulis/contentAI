@@ -9,10 +9,10 @@ import Foundation
 import SQLite
 import Combine
 
-final class SourceOperator: POperation {
+final class SourceOperator: POperator {
     
     let sources: [Source]
-    //let pager: QueryPager<ContentItem>
+    let access: ContentAccess
     
     var name: String {
         if sources.count == 1 {
@@ -26,10 +26,7 @@ final class SourceOperator: POperation {
     
     init(sources: [Source], access: ContentAccess) {
         self.sources = sources
-        /*let query = access.sourceQuery(source: source)
-        pager = QueryPager(db: access.db.db, baseQuery: query, rowMap: { row in
-            try! ContentAccess.ContentTable.extract(row: row)
-        })*/
+        self.access = access
         
         output = sources.flatMap { s in
             return access.sourceItems(source: s)
@@ -38,6 +35,10 @@ final class SourceOperator: POperation {
     
     func process(value: ContentItem) async -> ContentItem? {
         return value
+    }
+    
+    func query(inputQuery: Table?) -> Table {
+        return access.sourceQuery(sources: sources)
     }
     
 }

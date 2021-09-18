@@ -8,13 +8,14 @@
 import Combine
 import Foundation
 import CreateML
+import SQLite
 
 final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
     let project: Project
     let contentAccess: ContentAccess
     
-    @Published var operations: [POperation]
+    @Published var operations: [POperator]
     @Published var operationNodes: [OperatorNode.NodeStatus] = []
     @Published var activeContent: ContentItem?
     @Published var selectedNode: OperatorNode?
@@ -25,6 +26,8 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
     @Published var mlJob: MLJob<MLImageClassifier>?
     
+    @Published var output2: QueryPager!
+    
     init(project: Project,
          contentAccess: ContentAccess,
          factory: GenericFactory
@@ -33,11 +36,15 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
         self.contentAccess = contentAccess
         operations = [
             SourceOperator(sources: project.inputs, access: contentAccess),
-            FilterOperator(),
-            PreloadOperation(factory: factory),
-            TrainModelOperator(factory: factory)
+            //FilterOperator(),
+            //PreloadOperation(factory: factory),
+            //TrainModelOperator(factory: factory)
             ]
         operationNodes = buildProcesss()
+        
+        output2 = QueryPager(access: contentAccess, baseQuery: outputQuery, rowMap: { row in
+            return try! ContentAccess.ContentTable.extract(row: row)
+        })
         
         Task(priority: .high) {
             await loadAll()
@@ -72,12 +79,20 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
         }
     }
     
-    var operation: POperation {
+    var operation: POperator {
         fatalError("Not supported here")
     }
     
     var id: String {
         return ""
+    }
+    
+    var outputQuery: Table {
+        var result: Table? = nil
+        for op in operations {
+            result = op.query(inputQuery: result)
+        }
+        return result!
     }
     
 }

@@ -8,8 +8,9 @@
 import Foundation
 import CoreML
 import CreateML
+import SQLite
 
-final class TrainModelOperator: POperation {
+final class TrainModelOperator: POperator {
     var name: String = "Train model"
 
     init(factory: GenericFactory) {
@@ -39,6 +40,9 @@ final class TrainModelOperator: POperation {
         
     }
     
+    func query(inputQuery: Table?) -> Table {
+        return inputQuery!
+    }
     
     
 }

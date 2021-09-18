@@ -7,8 +7,9 @@
 
 import Combine
 import Foundation
+import SQLite
 
-final class FilterOperator: POperation {
+final class FilterOperator: POperator {
     var name: String = "Filter"
     
     func process(value: ContentItem) async -> ContentItem? {
@@ -17,6 +18,10 @@ final class FilterOperator: POperation {
         } else {
             return nil
         }
+    }
+    
+    func query(inputQuery: Table?) -> Table {
+        return inputQuery!
     }
     
 }
