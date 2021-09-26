@@ -21,7 +21,7 @@ final class PreloadOperation: POperator {
         self.access = factory.resolve()
     }
     
-    func cache(value: ContentItem) async {
+    func cache(value: inout ContentItem) async {
         if value.labels.contains("missing") {
             return
         }
@@ -37,11 +37,11 @@ final class PreloadOperation: POperator {
                     switch status {
                     case .unexpectedStatus(let status):
                         if status == 404 {
-                            access.addLabel(contentID: value.id, text: "missing")
+                            access.addLabel(content: &value, text: "missing")
                         }
                     }
                 } else if let urlError = error as? URLError, urlError.code == URLError.appTransportSecurityRequiresSecureConnection {
-                    access.addLabel(contentID: value.id, text: "missing")
+                    access.addLabel(content: &value, text: "missing")
                 }
                 print("Preload error \(error)")
                 
@@ -78,8 +78,8 @@ final class PreloadOperation: POperator {
         
         let items = access.loadContent(query: query)
         
-        for i in items {
-            await cache(value: i)
+        for var i in items {
+            await cache(value: &i)
         }
         
     }

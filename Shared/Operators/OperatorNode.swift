@@ -17,6 +17,8 @@ actor OperatorNode: Identifiable, Equatable, ObservableObject {
     let inputQuery: Table
     @Published var count: Int = 0
     
+    private var subscribers: Set<AnyCancellable> = []
+    
     init(operation: POperator,
          delegate: OperatorNodeDelegate,
          inputQuery: Table
@@ -24,6 +26,18 @@ actor OperatorNode: Identifiable, Equatable, ObservableObject {
         self.operation = operation
         self.delegate = delegate
         self.inputQuery = inputQuery
+        
+        self.asyncInit()
+    }
+    
+    private func asyncInit() {
+        if let observable = operation as? SourceOperator {
+            observable.objectWillChange
+                .sink { [unowned self] _ in
+                    self.objectWillChange.send()
+                }
+                .store(in: &subscribers)
+        }
     }
     
     nonisolated var name: String {

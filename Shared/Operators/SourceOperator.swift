@@ -9,10 +9,13 @@ import Foundation
 import SQLite
 import Combine
 
-final class SourceOperator: POperator {
+final class SourceOperator: POperator, ObservableObject {
     
-    let sources: [Source]
+    @Published var sources: [Source]
     let access: ContentAccess
+    var output: [ContentItem] = []
+    
+    private var subsscribers: Set<AnyCancellable> = []
     
     var name: String {
         if sources.count == 1 {
@@ -22,7 +25,7 @@ final class SourceOperator: POperator {
         }
     }
     
-    var output: [ContentItem] = []
+    
     
     init(sources: [Source], access: ContentAccess) {
         self.sources = sources
@@ -31,6 +34,15 @@ final class SourceOperator: POperator {
         output = sources.flatMap { s in
             return access.sourceItems(source: s)
         }
+        
+        ChangeNotifierService.shared.sourceChanged
+            .sink { source in
+                guard let index = sources.firstIndex(where: {$0.id == source.id}) else { return }
+                self.sources[index] = source
+                let r: Reddit.SourceConfig? = source.configObject()
+                print("Updated pagination: \(r?.pageinationID ?? "") " )
+            }
+            .store(in: &subsscribers)
     }
     
     func process(value: ContentItem) async -> ContentItem? {

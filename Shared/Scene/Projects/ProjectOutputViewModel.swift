@@ -26,7 +26,7 @@ final class ProjectOutputViewModel: ObservableObject {
     
     @Published var mlJob: MLJob<MLImageClassifier>?
     
-    @Published var output: QueryPager?
+    var output: QueryPager?
     
     nonisolated init(project: Project,
          contentAccess: ContentAccess,
@@ -54,10 +54,17 @@ final class ProjectOutputViewModel: ObservableObject {
             return try! ContentAccess.ContentTable.extract(row: row)
         })
         
+        output?.objectWillChange
+            .sink { [unowned self] _ in
+                self.objectWillChange.send()
+            }
+            .store(in: &subscribers)
+        
         var inputQuery = ContentAccess.ContentTable.table
         for o in operations {
             await o.processWaiting(inputQuery: inputQuery)
             inputQuery = o.query(inputQuery: inputQuery)
+            self.objectWillChange.send()
         }
         for o in operationNodes {
             await o.updateCount(access: contentAccess)

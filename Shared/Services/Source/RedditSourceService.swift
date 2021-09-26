@@ -10,15 +10,13 @@ import Foundation
 
 final class RedditSourceService: PSourceService, ObservableObject {
     
-    @Published var source: Source {
-        didSet {
-            print("TEST")
-        }
-    }
+    @Published var source: Source 
     private let client: MagicClient
     private let sourceAccess: ContentSourceAccess
     private let access: ContentAccess
     private let accountAccess: AccountsAccess
+    
+    @Published var isLoading: Bool = false
     
     init(source: Source,
          client: MagicClient,
@@ -46,6 +44,7 @@ final class RedditSourceService: PSourceService, ObservableObject {
         let subreddit = config?.subreddit ?? ""
         let token = auth.access_token
         let req = Reddit.Endpoints.getListings(token: token, subreddit: subreddit, before: before, after: after)
+        isLoading = true
         client.execute(req: req)
             .handleError(ErrorService.shared)
             .receive(on: DispatchQueue.global())
@@ -57,6 +56,8 @@ final class RedditSourceService: PSourceService, ObservableObject {
                     case .some(false): labels.append("downvote")
                     default: break
                     }
+                    
+                    labels.append(listing.data.subreddit)
                     
                     return ContentItem(
                         id: listing.data.id,
@@ -74,9 +75,11 @@ final class RedditSourceService: PSourceService, ObservableObject {
             .sink { [unowned self] items in
                 self.access.store(items: items, source: self.source)
                 var config: Reddit.SourceConfig? = source.configObject()
-                if let last = items.first, storePage {
+                if let last = items.last, storePage {
                     config?.pageinationID = last.id
                     config?.paginationTime = last.created
+                    let date = Date(timeIntervalSince1970: last.created)
+                    print("Updated pagination \(last.id): \(date)")
                 } else {
                     config?.pageinationID = nil
                     config?.paginationTime = nil
@@ -85,6 +88,7 @@ final class RedditSourceService: PSourceService, ObservableObject {
                 mutableSource.setConfigObject(obj: config)
                 _ = sourceAccess.save(source: mutableSource)
                 //print(response)
+                self.isLoading = false
             }
             .store(in: &subscribers)
     }

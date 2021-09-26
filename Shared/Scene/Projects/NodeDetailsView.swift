@@ -40,11 +40,23 @@ extension NodeDetailsView: View {
         HStack {
             ForEach(Array(op.sources.indices), id: \.self) { index in
                 let source = op.sources[index]
-                Button {
-                    viewModel.loadSource(source: source)
-                } label: {
-                    Text("\(source.name)")
-                }
+                VStack {
+                    if viewModel.isLoading(source: source) {
+                        ProgressView()
+                    } else {
+                        Button {
+                            viewModel.loadLatest(source: source)
+                        } label: {
+                            Text("Latest \(source.name)")
+                        }
+                        
+                        Button {
+                            viewModel.loadMore(source: source)
+                        } label: {
+                            Text("More \(source.name)")
+                        }
+                    }
+                }.padding(10)
             }
         }
     }

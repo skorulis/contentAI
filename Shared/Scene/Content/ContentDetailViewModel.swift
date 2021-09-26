@@ -48,10 +48,7 @@ extension ContentDetailViewModel {
     }
     
     func addLabel(text: String) {
-        contentAccess.addLabel(contentID: content.id, text: text)
-        if !content.labels.contains(text) {
-            content.labels.append(text)
-        }
+        contentAccess.addLabel(content: &content, text: text)
         self.objectWillChange.send()
     }
     

@@ -20,22 +20,13 @@ extension ContentAccess {
     
     func store(items: [ContentItem], source: Source) {
         assert(source.id != 0)
-        var labels: Set<String> = []
-        items.forEach { meta in
-            meta.labels.forEach { name in
-                labels.insert(name)
-            }
-        }
-        
-        let labelEntities = labelAccess.findOrCreate(labels: Array(labels))
-        let labelDict = Dictionary(grouping: labelEntities) { $0.name }.mapValues { $0[0] }
         
         let setters: [[Setter]] = items.map { ContentTable.setters(item: $0) }
         _ = try? db.db.run(ContentTable.table.insertMany(or: .ignore, setters))
         
         let ids = items.map { $0.id }
         
-        // TODO: Insert labels
+        insertLabels(items: items)
         
         let existingQuery = ContentSourceTable.table
             .filter(ContentSourceTable.source_id == source.id)
@@ -50,6 +41,40 @@ extension ContentAccess {
             let sourceSetters = needingLink.map { ContentSourceTable.setters(source: source, itemID: $0) }
             _ = try! db.db.run(ContentSourceTable.table.insertMany(or: .replace, sourceSetters))
         }
+        print("Created \(needingLink.count) items")
+    }
+    
+    private func insertLabels(items: [ContentItem]) {
+        var labels: Set<String> = []
+        items.forEach { meta in
+            meta.labels.forEach { name in
+                labels.insert(name)
+            }
+        }
+        
+        let labelEntities = labelAccess.findOrCreate(labels: Array(labels))
+        let labelDict = Dictionary(grouping: labelEntities) { $0.name }.mapValues { $0[0] }
+        
+        let existing = allLabels(contentIDs: items.map { $0.id })
+        let existingDict = Dictionary(grouping: existing, by: {$0.contentID})
+        
+        var toCreate: [ContentLabel] = []
+        
+        for item in items {
+            let labels = existingDict[item.id] ?? []
+            for l in item.labels {
+                if !labels.contains(where: {$0.label.name == l}) {
+                    let labelItem = labelDict[l]!
+                    toCreate.append(ContentLabel(contentID: item.id, label: labelItem))
+                }
+            }
+        }
+        
+        if toCreate.count > 0 {
+            let setters = toCreate.map { ContentLabelTable.setters(labelID: $0.label.id, itemID: $0.contentID) }
+            _ = try! db.db.run(ContentLabelTable.table.insertMany(setters))
+        }
+        
     }
     
     func updateType(ids: [String], type: ContentType) {
@@ -108,10 +133,10 @@ extension ContentAccess {
         }
     }
     
-    func addLabel(contentID: String, text: String) {
+    func addLabel(content: inout ContentItem, text: String) {
         let label = labelAccess.findOrCreate(labels: [text]).first!
         let query = ContentLabelTable.table
-            .filter(ContentLabelTable.content_id == contentID)
+            .filter(ContentLabelTable.content_id == content.id)
             .filter(ContentLabelTable.label_id == label.id)
             
         let existing = try! db.db.prepare(query).map { $0 }
@@ -119,8 +144,13 @@ extension ContentAccess {
             return
         }
         
-        let setters: [Setter] = ContentLabelTable.setters(labelID: label.id, itemID: contentID)
+        let setters: [Setter] = ContentLabelTable.setters(labelID: label.id, itemID: content.id)
         _ = try! db.db.run(ContentLabelTable.table.insert(setters))
+        
+        if !content.labels.contains(text) {
+            content.labels.append(text)
+        }
+        ChangeNotifierService.shared.onChange(content: content)
     }
     
     func deleteLabel(contentID: String, text: String) {
@@ -157,6 +187,13 @@ extension ContentAccess {
             .update([ContentTable.cached <- true])
         
         try! db.db.run(query)
+    }
+    
+    func allContentLabels(ids: [String]) -> [ContentLabel] {
+        let query = ContentLabelTable.table
+            .filter(ids.contains(ContentLabelTable.content_id))
+        
+        return try! db.db.prepare(query).map { try ContentLabelTable.extract(row: $0) }
     }
 }
 

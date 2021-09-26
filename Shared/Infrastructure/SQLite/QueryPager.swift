@@ -5,17 +5,20 @@
 //  Created by Alexander Skorulis on 7/9/21.
 //
 
+import Combine
 import Foundation
 import SQLite
 
-struct QueryPager {
+final class QueryPager: ObservableObject {
     
     let pageSize: Int = 100
     var count: Int = 0
     let baseQuery: Table
-    var loaded: [ContentItem] = []
+    @Published var loaded: [ContentItem] = []
     let rowMap: (Row) -> ContentItem
     let access: ContentAccess
+    
+    private var subscribers: Set<AnyCancellable> = []
     
     init(access: ContentAccess, baseQuery: Table, rowMap: @escaping (Row) -> ContentItem) {
         self.access = access
@@ -23,6 +26,14 @@ struct QueryPager {
         self.rowMap = rowMap
         self.count = getCount()
         self.loaded = loadPage()
+        
+        ChangeNotifierService.shared.contentChanged
+            .sink { [unowned self] value in
+                guard let index = self.index(id: value.id) else { return }
+                loaded[index] = value
+            }
+            .store(in: &subscribers)
+        
     }
     
     private var db: Connection {
@@ -47,6 +58,10 @@ struct QueryPager {
         }
         
         return content
+    }
+    
+    func index(id: String) -> Int? {
+        return loaded.firstIndex(where: { $0.id == id})
     }
     
 }
