@@ -28,7 +28,7 @@ extension ProjectOutputView: View {
                 VStack {
                     Text(viewModel.project.name)
                     buttons
-                    ProjectOperationsView(nodes: viewModel.operationNodes, onSelect: viewModel.select)
+                    ProjectOperationsView(nodes: viewModel.operationNodes, onSelect: viewModel.selectAsync)
                     maybeNodeDetails
                         .id(viewModel.selectedNode?.id ?? "-")
                 }
@@ -50,7 +50,7 @@ extension ProjectOutputView: View {
             Button(action: {isEditing = true}) {
                 Text("Edit")
             }
-            Button(action: viewModel.train) {
+            Button(action: viewModel.trainAsync) {
                 Text("Go train")
             }
             if let job = viewModel.mlJob {
@@ -59,13 +59,17 @@ extension ProjectOutputView: View {
         }
     }
     
+    @ViewBuilder
     private var contentList: some View {
-        ForEach(viewModel.output2.loaded, id: \.self.id) { item in
-            
-            ContentSummaryView(item: item) {
-                clicked(item: item)
+        if let output = viewModel.output2?.loaded {
+            ForEach(output, id: \.self.id) { item in
+                
+                ContentSummaryView(item: item) {
+                    clicked(item: item)
+                }
             }
         }
+        
     }
     
     @ViewBuilder
@@ -78,7 +82,7 @@ extension ProjectOutputView: View {
     @ViewBuilder
     private func detailContainer(content: ContentItem) -> some View {
         ZStack(alignment: .topLeading) {
-            ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content), onNext: viewModel.next)
+            ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content), onNext: viewModel.nextAsync)
             Button(action: {viewModel.activeContent = nil}) {
                 Text("Back")
             }

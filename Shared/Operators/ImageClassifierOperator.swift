@@ -40,9 +40,12 @@ final class TrainModelOperator: POperator {
         
     }
     
-    func query(inputQuery: Table?) -> Table {
-        return inputQuery!
+    func query(inputQuery: Table) -> Table {
+        return inputQuery
     }
     
+    func processWaiting() async {
+        
+    }
     
 }

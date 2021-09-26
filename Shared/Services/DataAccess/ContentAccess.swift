@@ -37,10 +37,6 @@ extension ContentAccess {
         
         // TODO: Insert labels
         
-        
-        
-        // TODO: Insert source
-        
         let existingQuery = ContentSourceTable.table
             .filter(ContentSourceTable.source_id == source.id)
             .filter(ids.contains(ContentSourceTable.content_id))
@@ -54,6 +50,14 @@ extension ContentAccess {
             let sourceSetters = needingLink.map { ContentSourceTable.setters(source: source, itemID: $0) }
             _ = try! db.db.run(ContentSourceTable.table.insertMany(or: .replace, sourceSetters))
         }
+    }
+    
+    func updateType(ids: [String], type: ContentType) {
+        let query = ContentTable.table
+            .filter(ids.contains(ContentTable.id))
+            .update(ContentTable.contentType <- type.rawValue)
+        
+        try! db.db.run(query)
     }
     
     func sourceItems(source: Source) -> [ContentItem] {
@@ -154,6 +158,8 @@ extension ContentAccess {
         static let thumbnail = Expression<String?>("thumbnail")
         static let created = Expression<Double>("created")
         static let viewed = Expression<Bool>("viewed")
+        static let cached = Expression<Bool>("cached")
+        static let contentType = Expression<Int>("content_type")
         
         static func create(db: Connection) throws {
             try db.run(table.create(ifNotExists: true) { t in
@@ -163,6 +169,8 @@ extension ContentAccess {
                 t.column(thumbnail)
                 t.column(created)
                 t.column(viewed, defaultValue: false)
+                t.column(cached, defaultValue: false)
+                t.column(contentType, defaultValue: ContentType.unchecked.rawValue)
             })
         }
         
@@ -173,7 +181,9 @@ extension ContentAccess {
                 Self.url <- item.url,
                 Self.thumbnail <- item.thumbnail,
                 Self.created <- item.created,
-                Self.viewed <- false
+                Self.viewed <- item.viewed,
+                Self.cached <- item.cached,
+                self.contentType <- item.contentType.rawValue
             ]
         }
         
@@ -185,6 +195,8 @@ extension ContentAccess {
                 thumbnail: try row.get(thumbnail),
                 created: try row.get(created),
                 viewed: try row.get(viewed),
+                cached: try row.get(cached),
+                contentType: ContentType(rawValue: try row.get(contentType)) ?? .unknown,
                 labels: []
             )
         }

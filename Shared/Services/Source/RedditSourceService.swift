@@ -65,6 +65,8 @@ final class RedditSourceService: PSourceService, ObservableObject {
                         thumbnail: listing.data.thumbnail,
                         created: listing.data.created,
                         viewed: false,
+                        cached: false,
+                        contentType: ContentType.unchecked,
                         labels: labels
                     )
                 }

@@ -7,52 +7,28 @@
 
 import Combine
 import Foundation
+import SQLite
 
 protocol POperatorNode: AnyObject {
-    func buffer(content: [ContentItem]) async
     var operation: POperator { get }
     var id: String { get }
 }
 
 actor OperatorNode: POperatorNode, Identifiable, Equatable {
     
-    weak var next: POperatorNode?
     weak var delegate: OperatorNodeDelegate?
     let id: String = UUID().uuidString
     let operation: POperator
+    let inputQuery: Table
     var count: Int = 0
     
-    var tempBuffer: [ContentItem] = []
-    private var timerToken: Cancellable?
-    
     init(operation: POperator,
-         next: POperatorNode,
-         delegate: OperatorNodeDelegate
+         delegate: OperatorNodeDelegate,
+         inputQuery: Table
     ) {
         self.operation = operation
-        self.next = next
         self.delegate = delegate
-    }
-    
-    func buffer(content: [ContentItem]) async {
-        //await process(content: content)
-        Task {
-            tempBuffer.append(contentsOf: content)
-            
-            DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [weak self] in
-                self?.consumeWrapper()
-            }
-        }
-    }
-    
-    private func process(content: [ContentItem]) async {
-        for element in content {
-            if let result = await operation.process(value: element) {
-                self.count += 1
-                self.delegate?.statusChanged(id: id, status: .init(count: count))
-                await next?.buffer(content: [result])
-            }
-        }
+        self.inputQuery = inputQuery
     }
     
     nonisolated var name: String {
@@ -63,19 +39,12 @@ actor OperatorNode: POperatorNode, Identifiable, Equatable {
         return lhs.id == rhs.id
     }
     
-    nonisolated private func consumeWrapper() {
-        Task {
-            await self.consumeBuffer()
-        }
+    nonisolated var outputQuery: Table {
+        return operation.query(inputQuery: inputQuery)
     }
     
-    private func consumeBuffer() async {
-        if tempBuffer.count == 0 { return }
-        let toSend = tempBuffer
-        self.tempBuffer = []
-        timerToken = nil
-        await process(content: toSend)
-        self.tempBuffer = []
+    func updateCount(access: ContentAccess) {
+        self.count = try! access.db.db.scalar(outputQuery.count)
     }
     
 }
@@ -95,5 +64,5 @@ extension OperatorNode {
 }
 
 protocol OperatorNodeDelegate: AnyObject {
-    func statusChanged(id: String, status: OperatorNode.Status)
+    func statusChanged(id: String, status: OperatorNode.Status) async
 }

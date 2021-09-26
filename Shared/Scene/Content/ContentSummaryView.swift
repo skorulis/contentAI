@@ -53,6 +53,8 @@ struct ContentSummaryView_Previews: PreviewProvider {
             thumbnail: nil,
             created: Date().timeIntervalSince1970,
             viewed: true,
+            cached: false,
+            contentType: ContentType.image,
             labels: []
         )
         ) {}

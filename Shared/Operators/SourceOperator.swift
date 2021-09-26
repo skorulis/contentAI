@@ -37,7 +37,30 @@ final class SourceOperator: POperator {
         return value
     }
     
-    func query(inputQuery: Table?) -> Table {
+    func processWaiting() async {
+        let query = access.sourceQuery(sources: sources)
+            .filter(ContentAccess.ContentTable.contentType == ContentType.unchecked.rawValue)
+        
+        let toUpdate = try! access.db.db.prepare(query).map({ row in
+            return try! ContentAccess.ContentTable.extract(row: row)
+        })
+        
+        print("Updating source type for \(toUpdate.count) items ")
+        
+        let types = Dictionary(grouping: toUpdate) { item -> ContentType in
+            if item.isImage {
+                return ContentType.image
+            } else {
+                return ContentType.unknown
+            }
+        }
+        
+        for (key, value) in types {
+            access.updateType(ids: value.map { $0.id }, type: key)
+        }
+    }
+    
+    func query(inputQuery: Table) -> Table {
         return access.sourceQuery(sources: sources)
     }
     

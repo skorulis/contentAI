@@ -64,8 +64,12 @@ final class PreloadOperation: POperator {
         return FileManager.default.fileExists(atPath: file.path)
     }
     
-    func query(inputQuery: Table?) -> Table {
-        return inputQuery!
+    func query(inputQuery: Table) -> Table {
+        return inputQuery
+    }
+    
+    func processWaiting() async {
+        
     }
     
 }

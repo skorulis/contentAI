@@ -34,7 +34,7 @@ final class DatabaseService {
         let documentsDirectory = paths[0]
         let url = documentsDirectory.appendingPathComponent("magic2.sqlite3")
         
-        print("DATABASE: \(url.absoluteString ?? "-")")
+        print("DATABASE: \(url.absoluteString )")
         return url.absoluteString
     }
     

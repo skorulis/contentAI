@@ -10,12 +10,13 @@ import Foundation
 import CreateML
 import SQLite
 
-final class ProjectOutputViewModel: ObservableObject, POperatorNode {
+@MainActor
+final class ProjectOutputViewModel: ObservableObject {
     
     let project: Project
     let contentAccess: ContentAccess
     
-    @Published var operations: [POperator]
+    @Published var operations: [POperator] = []
     @Published var operationNodes: [OperatorNode.NodeStatus] = []
     @Published var activeContent: ContentItem?
     @Published var selectedNode: OperatorNode?
@@ -26,17 +27,23 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
     
     @Published var mlJob: MLJob<MLImageClassifier>?
     
-    @Published var output2: QueryPager!
+    @Published var output2: QueryPager?
     
-    init(project: Project,
+    nonisolated init(project: Project,
          contentAccess: ContentAccess,
          factory: GenericFactory
     ) {
         self.project = project
         self.contentAccess = contentAccess
+        Task {
+            await initIsolated()
+        }
+    }
+    
+    private func initIsolated() async {
         operations = [
             SourceOperator(sources: project.inputs, access: contentAccess),
-            //FilterOperator(),
+            FilterOperator(),
             //PreloadOperation(factory: factory),
             //TrainModelOperator(factory: factory)
             ]
@@ -46,18 +53,22 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
             return try! ContentAccess.ContentTable.extract(row: row)
         })
         
-        Task(priority: .high) {
-            await loadAll()
+        for o in operations {
+            await o.processWaiting()
         }
-        
+        for o in operationNodes {
+            await o.node.updateCount(access: contentAccess)
+        }
+        self.objectWillChange.send()
     }
     
     func buildProcesss() -> [OperatorNode.NodeStatus] {
         var nodes = [OperatorNode]()
-        var last: POperatorNode = self
+        var query: Table = ContentAccess.ContentTable.table
+        
         for i in (0..<operations.count).reversed() {
-            let node = OperatorNode(operation: operations[i], next: last, delegate: self)
-            last = node
+            let node = OperatorNode(operation: operations[i], delegate: self, inputQuery: query)
+            query = node.outputQuery
             nodes.append(node)
         }
         return nodes.reversed().map { node in
@@ -65,34 +76,12 @@ final class ProjectOutputViewModel: ObservableObject, POperatorNode {
         }
     }
     
-    func loadAll() async {
-        let source = operations[0] as! SourceOperator
-        await operationNodes[0].node.buffer(content: source.output)
-    }
-    
-    func buffer(content: [ContentItem]) async {
-        DispatchQueue.main.async {
-            for item in content {
-                self.output.store(value: item)
-            }
-            self.objectWillChange.send()
-        }
-    }
-    
-    var operation: POperator {
-        fatalError("Not supported here")
-    }
-    
-    var id: String {
-        return ""
-    }
-    
     var outputQuery: Table {
-        var result: Table? = nil
+        var result: Table = ContentAccess.ContentTable.table
         for op in operations {
             result = op.query(inputQuery: result)
         }
-        return result!
+        return result
     }
     
 }
@@ -157,15 +146,32 @@ extension ProjectOutputViewModel {
     
 }
 
+// MARK: - Non isolated behaviors
+
+extension ProjectOutputViewModel {
+    
+    nonisolated func selectAsync(node: OperatorNode) {
+        Task { await select(node: node) }
+    }
+    
+    nonisolated func trainAsync() {
+        Task { await train() }
+    }
+    
+    nonisolated func nextAsync() {
+        Task { await next() }
+    }
+}
+
+
+
 // MARK: - OperatorNodeDelegate
 
 extension ProjectOutputViewModel: OperatorNodeDelegate {
     
-    func statusChanged(id: String, status: OperatorNode.Status) {
-        DispatchQueue.main.async {
-            guard let index = self.operationNodes.firstIndex(where: {$0.node.id == id} ) else { return }
-            self.operationNodes[index].status = status
-        }
+    func statusChanged(id: String, status: OperatorNode.Status) async {
+        guard let index = self.operationNodes.firstIndex(where: {$0.node.id == id} ) else { return }
+        self.operationNodes[index].status = status
     }
 }
 

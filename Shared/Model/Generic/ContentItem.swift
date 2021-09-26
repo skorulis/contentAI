@@ -15,6 +15,8 @@ struct ContentItem: PContent, Identifiable, Hashable {
     public var thumbnail: String?
     public var created: Double
     public var viewed: Bool
+    public var cached: Bool
+    public var contentType: ContentType
     public var labels: [String]
     
     func hash(into hasher: inout Hasher) {

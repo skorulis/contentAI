@@ -20,8 +20,13 @@ final class FilterOperator: POperator {
         }
     }
     
-    func query(inputQuery: Table?) -> Table {
-        return inputQuery!
+    func query(inputQuery: Table) -> Table {
+        return inputQuery
+            .filter(ContentAccess.ContentTable.contentType == ContentType.image.rawValue)
+    }
+    
+    func processWaiting() async {
+        
     }
     
 }
