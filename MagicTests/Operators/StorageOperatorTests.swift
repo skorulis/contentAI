@@ -16,7 +16,7 @@ final class StorageOperatorTests: XCTestCase {
         let storage = StorageOperator()
         let ids = (0..<count).shuffled()
         for i in ids {
-            let item1 = ContentItem(id: "\(i)", title: "", url: "", thumbnail: "", created: Double(i), viewed: false, labels: [])
+            let item1 = ContentItem(id: "\(i)", title: "", url: "", thumbnail: "", created: Double(i), viewed: false, cached: false, contentType: .image, labels: [])
             storage.store(value: item1)
         }
         

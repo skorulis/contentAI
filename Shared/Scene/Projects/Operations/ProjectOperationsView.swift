@@ -13,8 +13,10 @@ import SwiftUI
 
 struct ProjectOperationsView {
  
-    let nodes: [OperatorNode.NodeStatus]
+    let nodes: [OperatorNode]
     let onSelect: (OperatorNode) -> Void
+    
+    @EnvironmentObject var factory: GenericFactory
 }
 
 // MARK: - Rendering
@@ -26,9 +28,9 @@ extension ProjectOperationsView: View {
             HStack {
                 ForEach(Array(nodes.indices), id: \.self) { index in
                     Button {
-                        onSelect(nodes[index].node)
+                        onSelect(nodes[index])
                     } label: {
-                        OperationView(node: nodes[index])
+                        OperationView(viewModel: factory.resolve(OperationViewModel.self, argument: nodes[index]))
                     }
                     .buttonStyle(.plain)
                 }

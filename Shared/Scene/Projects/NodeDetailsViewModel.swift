@@ -5,20 +5,29 @@
 //  Created by Alexander Skorulis on 13/9/21.
 //
 
+import Combine
 import Foundation
 
 final class NodeDetailsViewModel: ObservableObject {
     
-    let node: POperatorNode
+    @Published var node: OperatorNode
     let factory: GenericFactory
     
     var sourceRouter: SourceServiceRouter?
     
-    init(node: POperatorNode,
+    private var subscribers: Set<AnyCancellable> = []
+    
+    init(node: OperatorNode,
          factory: GenericFactory
     ) {
         self.node = node
         self.factory = factory
+        
+        node.objectWillChange
+            .sink { _ in
+                self.objectWillChange.send()
+            }
+            .store(in: &subscribers)
     }
     
 }

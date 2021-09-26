@@ -12,7 +12,8 @@ import SwiftUI
 
 struct OperationView {
     
-    let node: OperatorNode.NodeStatus
+    @StateObject var viewModel: OperationViewModel
+    
 }
 
 // MARK: - Rendering
@@ -25,8 +26,8 @@ extension OperationView: View {
                 .fill(Color.gray)
                 .frame(width: 64, height: 64)
             VStack {
-                Text(node.node.operation.name)
-                Text("\(node.status.count)")
+                Text(viewModel.node.operation.name)
+                Text("\(viewModel.count)")
             }
             
         }

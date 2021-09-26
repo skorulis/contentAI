@@ -96,6 +96,8 @@
 		FA5F9A4C26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */; };
 		FA5F9A4E26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */; };
 		FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */; };
+		FA82F7EF26FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */; };
+		FA82F7F026FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */; };
 		FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
 		FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
 		FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
@@ -235,6 +237,7 @@
 		FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewModel.swift; sourceTree = "<group>"; };
 		FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowStyle.swift; sourceTree = "<group>"; };
+		FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewModel.swift; sourceTree = "<group>"; };
 		FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewModel.swift; sourceTree = "<group>"; };
 		FAB21F5926EEAE5600930FA7 /* LabelPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPrediction.swift; sourceTree = "<group>"; };
@@ -584,6 +587,7 @@
 			children = (
 				FAE91B9F26E6149D002858A8 /* ProjectOperationsView.swift */,
 				FAE91BA226E6151A002858A8 /* OperationView.swift */,
+				FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */,
 			);
 			path = Operations;
 			sourceTree = "<group>";
@@ -881,6 +885,7 @@
 				FA10E60426E4A05900325378 /* Project.swift in Sources */,
 				FA10E60126E48C5700325378 /* Source.swift in Sources */,
 				FAFB038E26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */,
+				FA82F7EF26FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */,
 				FAE91BA026E6149D002858A8 /* ProjectOperationsView.swift in Sources */,
 				FAB5286926ECC7F9005CD2F2 /* HTTPDataRequest.swift in Sources */,
 				FAEE44E926DB2CDE00FCF0AC /* Reddit.Endpoints.swift in Sources */,
@@ -969,6 +974,7 @@
 				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
 				FAE91BA126E6149D002858A8 /* ProjectOperationsView.swift in Sources */,
 				FA3A566926D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
+				FA82F7F026FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */,
 				FAFE57FD26E32E5E00051A83 /* ProjectOutputView.swift in Sources */,
 				FA10E60526E4A05900325378 /* Project.swift in Sources */,
 				FA10E60226E48C5700325378 /* Source.swift in Sources */,

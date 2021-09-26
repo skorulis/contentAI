@@ -17,7 +17,7 @@ final class ProjectOutputViewModel: ObservableObject {
     let contentAccess: ContentAccess
     
     @Published var operations: [POperator] = []
-    @Published var operationNodes: [OperatorNode.NodeStatus] = []
+    @Published var operationNodes: [OperatorNode] = []
     @Published var activeContent: ContentItem?
     @Published var selectedNode: OperatorNode?
     
@@ -57,12 +57,12 @@ final class ProjectOutputViewModel: ObservableObject {
             await o.processWaiting()
         }
         for o in operationNodes {
-            await o.node.updateCount(access: contentAccess)
+            await o.updateCount(access: contentAccess)
         }
         self.objectWillChange.send()
     }
     
-    func buildProcesss() -> [OperatorNode.NodeStatus] {
+    func buildProcesss() -> [OperatorNode] {
         var nodes = [OperatorNode]()
         var query: Table = ContentAccess.ContentTable.table
         
@@ -71,9 +71,7 @@ final class ProjectOutputViewModel: ObservableObject {
             query = node.outputQuery
             nodes.append(node)
         }
-        return nodes.reversed().map { node in
-            return OperatorNode.NodeStatus(node: node, status: .init(count: 0))
-        }
+        return nodes.reversed()
     }
     
     var outputQuery: Table {
@@ -170,8 +168,8 @@ extension ProjectOutputViewModel {
 extension ProjectOutputViewModel: OperatorNodeDelegate {
     
     func statusChanged(id: String, status: OperatorNode.Status) async {
-        guard let index = self.operationNodes.firstIndex(where: {$0.node.id == id} ) else { return }
-        self.operationNodes[index].status = status
+        guard let index = self.operationNodes.firstIndex(where: {$0.id == id} ) else { return }
+        //self.operationNodes[index].status = status
     }
 }
 

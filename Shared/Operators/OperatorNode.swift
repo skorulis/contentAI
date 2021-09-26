@@ -9,18 +9,13 @@ import Combine
 import Foundation
 import SQLite
 
-protocol POperatorNode: AnyObject {
-    var operation: POperator { get }
-    var id: String { get }
-}
-
-actor OperatorNode: POperatorNode, Identifiable, Equatable {
+actor OperatorNode: Identifiable, Equatable, ObservableObject {
     
     weak var delegate: OperatorNodeDelegate?
     let id: String = UUID().uuidString
     let operation: POperator
     let inputQuery: Table
-    var count: Int = 0
+    @Published var count: Int = 0
     
     init(operation: POperator,
          delegate: OperatorNodeDelegate,
