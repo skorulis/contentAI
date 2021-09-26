@@ -21,12 +21,12 @@ final class PreloadOperation: POperator {
         self.access = factory.resolve()
     }
     
-    func process(value: ContentItem) async -> ContentItem? {
+    func cache(value: ContentItem) async {
         if value.labels.contains("missing") {
-            return nil
+            return
         }
-        guard let url = value.url else { return nil }
-        guard let file = Self.filename(url: url) else { return nil }
+        guard let url = value.url else { return }
+        guard let file = Self.filename(url: url) else { return }
         if !FileManager.default.fileExists(atPath: file.path) {
             let req = HTTPDataRequest(endpoint: url)
             do {
@@ -40,12 +40,15 @@ final class PreloadOperation: POperator {
                             access.addLabel(contentID: value.id, text: "missing")
                         }
                     }
+                } else if let urlError = error as? URLError, urlError.code == URLError.appTransportSecurityRequiresSecureConnection {
+                    access.addLabel(contentID: value.id, text: "missing")
                 }
                 print("Preload error \(error)")
-                return nil
+                
+                return
             }
         }
-        return value
+        access.markCached(contentID: value.id)
     }
     
     static func filename(url: String) -> URL? {
@@ -66,9 +69,18 @@ final class PreloadOperation: POperator {
     
     func query(inputQuery: Table) -> Table {
         return inputQuery
+            .filter(ContentAccess.ContentTable.cached == true)
     }
     
-    func processWaiting() async {
+    func processWaiting(inputQuery: Table) async {
+        let query = inputQuery
+            .filter(ContentAccess.ContentTable.cached == false)
+        
+        let items = access.loadContent(query: query)
+        
+        for i in items {
+            await cache(value: i)
+        }
         
     }
     

@@ -25,7 +25,7 @@ final class FilterOperator: POperator {
             .filter(ContentAccess.ContentTable.contentType == ContentType.image.rawValue)
     }
     
-    func processWaiting() async {
+    func processWaiting(inputQuery: Table) async {
         
     }
     

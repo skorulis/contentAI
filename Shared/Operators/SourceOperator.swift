@@ -37,7 +37,7 @@ final class SourceOperator: POperator {
         return value
     }
     
-    func processWaiting() async {
+    func processWaiting(inputQuery: Table) async {
         let query = access.sourceQuery(sources: sources)
             .filter(ContentAccess.ContentTable.contentType == ContentType.unchecked.rawValue)
         

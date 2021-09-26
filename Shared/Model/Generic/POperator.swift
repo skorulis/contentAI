@@ -14,12 +14,12 @@ protocol POperator {
     var name: String { get }
     
     /// Handle a single piece of content and put it into the output if necessary 
-    func process(value: ContentItem) async -> ContentItem?
+    //func process(value: ContentItem) async -> ContentItem?
     
     /// The query to get the content outputed from this operator
     func query(inputQuery: Table) -> Table
     
     /// Process any waiting content
-    func processWaiting() async
+    func processWaiting(inputQuery: Table) async
     
 }

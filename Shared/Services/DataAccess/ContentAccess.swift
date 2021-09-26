@@ -62,6 +62,10 @@ extension ContentAccess {
     
     func sourceItems(source: Source) -> [ContentItem] {
         let query = sourceQuery(sources: [source])
+        return loadContent(query: query)
+    }
+    
+    func loadContent(query: Table) -> [ContentItem] {
         var content = try! db.db.prepare(query).map { try! ContentTable.extract(row: $0) }
         let ids = content.map { $0.id }
         let labels = Dictionary(grouping: allLabels(contentIDs: ids), by: {$0.contentID} )
@@ -143,6 +147,14 @@ extension ContentAccess {
         let query = ContentTable.table
             .filter(ContentTable.id == contentID)
             .update([ContentTable.viewed <- true])
+        
+        try! db.db.run(query)
+    }
+    
+    func markCached(contentID: String) {
+        let query = ContentTable.table
+            .filter(ContentTable.id == contentID)
+            .update([ContentTable.cached <- true])
         
         try! db.db.run(query)
     }

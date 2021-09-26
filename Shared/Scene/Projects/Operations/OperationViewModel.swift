@@ -24,6 +24,7 @@ final class OperationViewModel: ObservableObject {
     func setupObservers() {
         Task {
             await node.$count
+                .receive(on: DispatchQueue.main)
                 .assign(to: &$count)
         }
         

@@ -44,7 +44,7 @@ final class TrainModelOperator: POperator {
         return inputQuery
     }
     
-    func processWaiting() async {
+    func processWaiting(inputQuery: Table) async {
         
     }
     

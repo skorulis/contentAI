@@ -14,6 +14,7 @@ import SQLite
 final class ProjectOutputViewModel: ObservableObject {
     
     let project: Project
+    let factory: GenericFactory
     let contentAccess: ContentAccess
     
     @Published var operations: [POperator] = []
@@ -35,6 +36,7 @@ final class ProjectOutputViewModel: ObservableObject {
     ) {
         self.project = project
         self.contentAccess = contentAccess
+        self.factory = factory
         Task {
             await initIsolated()
         }
@@ -44,7 +46,7 @@ final class ProjectOutputViewModel: ObservableObject {
         operations = [
             SourceOperator(sources: project.inputs, access: contentAccess),
             FilterOperator(),
-            //PreloadOperation(factory: factory),
+            PreloadOperation(factory: factory),
             //TrainModelOperator(factory: factory)
             ]
         operationNodes = buildProcesss()
@@ -53,8 +55,10 @@ final class ProjectOutputViewModel: ObservableObject {
             return try! ContentAccess.ContentTable.extract(row: row)
         })
         
+        var inputQuery = ContentAccess.ContentTable.table
         for o in operations {
-            await o.processWaiting()
+            await o.processWaiting(inputQuery: inputQuery)
+            inputQuery = o.query(inputQuery: inputQuery)
         }
         for o in operationNodes {
             await o.updateCount(access: contentAccess)
@@ -66,12 +70,13 @@ final class ProjectOutputViewModel: ObservableObject {
         var nodes = [OperatorNode]()
         var query: Table = ContentAccess.ContentTable.table
         
-        for i in (0..<operations.count).reversed() {
+        for i in (0..<operations.count) {
             let node = OperatorNode(operation: operations[i], delegate: self, inputQuery: query)
             query = node.outputQuery
             nodes.append(node)
         }
-        return nodes.reversed()
+        
+        return nodes
     }
     
     var outputQuery: Table {
