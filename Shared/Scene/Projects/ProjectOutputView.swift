@@ -61,7 +61,7 @@ extension ProjectOutputView: View {
     
     @ViewBuilder
     private var contentList: some View {
-        if let output = viewModel.output2?.loaded {
+        if let output = viewModel.output?.loaded {
             ForEach(output, id: \.self.id) { item in
                 
                 ContentSummaryView(item: item) {

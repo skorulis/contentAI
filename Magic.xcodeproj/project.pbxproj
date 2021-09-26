@@ -98,6 +98,8 @@
 		FA5F9A4F26E0D8AB00C8F3B5 /* ListRowStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */; };
 		FA82F7EF26FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */; };
 		FA82F7F026FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */; };
+		FA82F7F227001A0E00DA5ADA /* SortOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7F127001A0E00DA5ADA /* SortOperator.swift */; };
+		FA82F7F327001A0E00DA5ADA /* SortOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7F127001A0E00DA5ADA /* SortOperator.swift */; };
 		FA8CA8EB26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
 		FA8CA8EC26E1794600BAF427 /* EditProjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */; };
 		FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */; };
@@ -238,6 +240,7 @@
 		FA5F9A4A26E0BEDD00C8F3B5 /* ContentDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailViewModel.swift; sourceTree = "<group>"; };
 		FA5F9A4D26E0D8AB00C8F3B5 /* ListRowStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowStyle.swift; sourceTree = "<group>"; };
 		FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewModel.swift; sourceTree = "<group>"; };
+		FA82F7F127001A0E00DA5ADA /* SortOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOperator.swift; sourceTree = "<group>"; };
 		FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
 		FA8CA8ED26E1795600BAF427 /* EditProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewModel.swift; sourceTree = "<group>"; };
 		FAB21F5926EEAE5600930FA7 /* LabelPrediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelPrediction.swift; sourceTree = "<group>"; };
@@ -327,6 +330,7 @@
 				FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */,
 				FA2F6D3026EDC21200FAAEE5 /* ImageClassifierOperator.swift */,
 				FAEEC3F126EDEFC700FD5B19 /* StorageOperator.swift */,
+				FA82F7F127001A0E00DA5ADA /* SortOperator.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -909,6 +913,7 @@
 				FA3A568026D9FA1C00F9FE9A /* MagicApp.swift in Sources */,
 				FAE91BA926E61C86002858A8 /* SourceOperator.swift in Sources */,
 				FA3A568526D9FA3200F9FE9A /* IOC.swift in Sources */,
+				FA82F7F227001A0E00DA5ADA /* SortOperator.swift in Sources */,
 				FAB21F8526F5613500930FA7 /* ChangeNotifierService.swift in Sources */,
 				FA2116E526DE315C00DE7BE7 /* Reddit.SourceConfig.swift in Sources */,
 				FAFE580826E33E1900051A83 /* NavItem.swift in Sources */,
@@ -998,6 +1003,7 @@
 				FAEE44FF26DB748400FCF0AC /* Reddit.ListingResponse.swift in Sources */,
 				FA10E5ED26E471F900325378 /* DatabaseService.swift in Sources */,
 				FAEE44F426DB3CA700FCF0AC /* DeeplinkService.swift in Sources */,
+				FA82F7F327001A0E00DA5ADA /* SortOperator.swift in Sources */,
 				FAB21F8626F5613500930FA7 /* ChangeNotifierService.swift in Sources */,
 				FA35D1F426E76E470062186E /* QueryPager.swift in Sources */,
 				FA3A56A426D9FFBF00F9FE9A /* SingletonService.swift in Sources */,

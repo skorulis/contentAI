@@ -22,13 +22,11 @@ final class ProjectOutputViewModel: ObservableObject {
     @Published var activeContent: ContentItem?
     @Published var selectedNode: OperatorNode?
     
-    @Published var output: StorageOperator = .init()
-    
     private var subscribers: Set<AnyCancellable> = []
     
     @Published var mlJob: MLJob<MLImageClassifier>?
     
-    @Published var output2: QueryPager?
+    @Published var output: QueryPager?
     
     nonisolated init(project: Project,
          contentAccess: ContentAccess,
@@ -47,11 +45,12 @@ final class ProjectOutputViewModel: ObservableObject {
             SourceOperator(sources: project.inputs, access: contentAccess),
             FilterOperator(),
             PreloadOperation(factory: factory),
+            SortOperator()
             //TrainModelOperator(factory: factory)
             ]
         operationNodes = buildProcesss()
         
-        output2 = QueryPager(access: contentAccess, baseQuery: outputQuery, rowMap: { row in
+        output = QueryPager(access: contentAccess, baseQuery: outputQuery, rowMap: { row in
             return try! ContentAccess.ContentTable.extract(row: row)
         })
         
@@ -87,6 +86,10 @@ final class ProjectOutputViewModel: ObservableObject {
         return result
     }
     
+    var loaded: [ContentItem] {
+        return self.output?.loaded ?? []
+    }
+    
 }
 
 // MARK: - Behaviors
@@ -95,10 +98,10 @@ extension ProjectOutputViewModel {
     
     func next() {
         guard let current = activeContent,
-              let index = self.output.storage.firstIndex(where: {$0.id == current.id} ),
-              index < self.output.storage.count - 1
+              let index = self.loaded.firstIndex(where: {$0.id == current.id} ),
+              index < self.loaded.count - 1
         else { return }
-        activeContent = self.output.storage[index + 1]
+        activeContent = self.loaded[index + 1]
         objectWillChange.send()
     }
     
@@ -107,7 +110,7 @@ extension ProjectOutputViewModel {
         var labeledFiles = [String: [URL]]()
         labeledFiles["upvote"] = []
         labeledFiles["downvote"] = []
-        for content in self.output.storage {
+        for content in loaded {
             guard let url = PreloadOperation.filename(url: content.url!) else { continue }
             guard content.viewed else { continue }
             if content.labels.contains("upvote") {
