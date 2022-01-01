@@ -69,12 +69,12 @@ final class PreloadOperation: POperator {
     
     func query(inputQuery: Table) -> Table {
         return inputQuery
-            .filter(ContentAccess.ContentTable.cached == true)
+            .filter(ContentTable.cached == true)
     }
     
     func processWaiting(inputQuery: Table) async {
         let query = inputQuery
-            .filter(ContentAccess.ContentTable.cached == false)
+            .filter(ContentTable.cached == false)
         
         let items = access.loadContent(query: query)
         

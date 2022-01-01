@@ -51,10 +51,10 @@ final class SourceOperator: POperator, ObservableObject {
     
     func processWaiting(inputQuery: Table) async {
         let query = access.sourceQuery(sources: sources)
-            .filter(ContentAccess.ContentTable.contentType == ContentType.unchecked.rawValue)
+            .filter(ContentTable.contentType == ContentType.unchecked.rawValue)
         
         let toUpdate = try! access.db.db.prepare(query).map({ row in
-            return try! ContentAccess.ContentTable.extract(row: row)
+            return try! ContentTable.extract(row: row)
         })
         
         print("Updating source type for \(toUpdate.count) items ")

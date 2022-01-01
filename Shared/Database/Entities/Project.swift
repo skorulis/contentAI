@@ -17,3 +17,21 @@ struct Project {
 extension Project: Identifiable {
     var id: String { name }
 }
+
+// MARK: Logic
+
+extension Project {
+    
+    func operators(factory: GenericFactory) -> [POperator] {
+        let contentAccess = factory.resolve(ContentAccess.self)
+        
+        return [
+            SourceOperator(sources: inputs, access: contentAccess),
+            FilterOperator(),
+            PreloadOperation(factory: factory),
+            SortOperator()
+            //TrainModelOperator(factory: factory)
+            ]
+    }
+    
+}

@@ -22,7 +22,7 @@ final class FilterOperator: POperator {
     
     func query(inputQuery: Table) -> Table {
         return inputQuery
-            .filter(ContentAccess.ContentTable.contentType == ContentType.image.rawValue)
+            .filter(ContentTable.contentType == ContentType.image.rawValue)
     }
     
     func processWaiting(inputQuery: Table) async {

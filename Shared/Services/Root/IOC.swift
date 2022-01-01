@@ -24,6 +24,10 @@ public final class IOC {
         setupProcessors()
         setupAccess()
         
+        DispatchQueue.main.async {
+            self.startup()
+        }
+        
     }
     
     private func startup() {

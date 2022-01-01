@@ -19,26 +19,35 @@ extension ProjectAccess {
     var all: [Project] {
         return [
             dummyProject1,
-            dummyProject2
+            dummyProject2,
+            dummyProject3
         ]
             .compactMap { $0 }
     }
     
     var dummyProject1: Project? {
-        let s1 = try! sourceAccess.get(name: "C1")
-        let s2 = try! sourceAccess.get(name: "N1")
+        let s1 = try! sourceAccess.get(name: "NSFW")
+        let s2 = try! sourceAccess.get(name: "All")
         let s3 = try! sourceAccess.get(name: "B1")
         let sources = [s1,s2, s3].compactMap { $0 }
         
-        return Project(name: "D1", inputs: sources)
+        return Project(name: "Hot", inputs: sources)
     }
     
     var dummyProject2: Project? {
-        let s1 = try! sourceAccess.get(name: "Aww")
+        let s1 = try! sourceAccess.get(name: "All")
         
         let sources = [s1].compactMap { $0 }
         
         return Project(name: "Aww", inputs: sources)
+    }
+    
+    var dummyProject3: Project? {
+        let s1 = try! sourceAccess.get(name: "All")
+        
+        let sources = [s1].compactMap { $0 }
+        
+        return Project(name: "Interesting", inputs: sources)
     }
     
 }

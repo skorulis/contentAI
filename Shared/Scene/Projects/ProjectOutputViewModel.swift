@@ -41,17 +41,11 @@ final class ProjectOutputViewModel: ObservableObject {
     }
     
     private func initIsolated() async {
-        operations = [
-            SourceOperator(sources: project.inputs, access: contentAccess),
-            FilterOperator(),
-            PreloadOperation(factory: factory),
-            SortOperator()
-            //TrainModelOperator(factory: factory)
-            ]
+        operations = project.operators(factory: factory)
         operationNodes = buildProcesss()
         
         output = QueryPager(access: contentAccess, baseQuery: outputQuery, rowMap: { row in
-            return try! ContentAccess.ContentTable.extract(row: row)
+            return try! ContentTable.extract(row: row)
         })
         
         output?.objectWillChange
@@ -60,7 +54,7 @@ final class ProjectOutputViewModel: ObservableObject {
             }
             .store(in: &subscribers)
         
-        var inputQuery = ContentAccess.ContentTable.table
+        var inputQuery = ContentTable.table
         for o in operations {
             await o.processWaiting(inputQuery: inputQuery)
             inputQuery = o.query(inputQuery: inputQuery)
@@ -74,7 +68,7 @@ final class ProjectOutputViewModel: ObservableObject {
     
     func buildProcesss() -> [OperatorNode] {
         var nodes = [OperatorNode]()
-        var query: Table = ContentAccess.ContentTable.table
+        var query: Table = ContentTable.table
         
         for i in (0..<operations.count) {
             let node = OperatorNode(operation: operations[i], delegate: self, inputQuery: query)
@@ -86,7 +80,7 @@ final class ProjectOutputViewModel: ObservableObject {
     }
     
     var outputQuery: Table {
-        var result: Table = ContentAccess.ContentTable.table
+        var result: Table = ContentTable.table
         for op in operations {
             result = op.query(inputQuery: result)
         }

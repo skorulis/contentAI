@@ -46,7 +46,7 @@ final class QueryPager: ObservableObject {
     
     private func loadPage() -> [ContentItem] {
         var content = try! db.prepare(baseQuery).map({ row in
-            return try! ContentAccess.ContentTable.extract(row: row)
+            return try! ContentTable.extract(row: row)
         })
         
         let ids = content.map { $0.id }

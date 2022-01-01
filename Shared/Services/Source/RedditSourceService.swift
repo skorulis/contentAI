@@ -108,11 +108,11 @@ final class RedditSourceService: PSourceService, ObservableObject {
     func loadOldest() {
         var query = access.sourceQuery(sources: [source])
         query = query
-            .order(ContentAccess.ContentTable.created.asc)
+            .order(ContentTable.created.asc)
             .limit(1)
         
         guard let oldest = try! access.db.db.prepare(query)
-                .map({ try ContentAccess.ContentTable.extract(row: $0) })
+                .map({ try ContentTable.extract(row: $0) })
                 .first else {
             return
         }

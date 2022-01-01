@@ -14,7 +14,7 @@ final class SortOperator: POperator {
     
     func query(inputQuery: Table) -> Table {
         return inputQuery
-            .order(ContentAccess.ContentTable.viewed.asc, ContentAccess.ContentTable.created.desc)
+            .order(ContentTable.viewed.asc, ContentTable.created.desc)
     }
     
     func processWaiting(inputQuery: Table) async { }
