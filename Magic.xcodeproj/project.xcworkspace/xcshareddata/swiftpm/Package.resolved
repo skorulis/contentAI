@@ -2,6 +2,15 @@
   "object": {
     "pins": [
       {
+        "package": "Neumorphic",
+        "repositoryURL": "https://github.com/costachung/neumorphic/",
+        "state": {
+          "branch": null,
+          "revision": "3fa56e844a5e375ff3d38e3c770886bcc949f6f5",
+          "version": "2.0.5"
+        }
+      },
+      {
         "package": "SQLite.swift",
         "repositoryURL": "https://github.com/stephencelis/SQLite.swift",
         "state": {
@@ -17,6 +26,15 @@
           "branch": null,
           "revision": "9d8719c8bebdc79740b6969c912ac706eb721d7a",
           "version": "0.0.7"
+        }
+      },
+      {
+        "package": "Introspect",
+        "repositoryURL": "https://github.com/siteline/SwiftUI-Introspect.git",
+        "state": {
+          "branch": null,
+          "revision": "2e09be8af614401bc9f87d40093ec19ce56ccaf2",
+          "version": "0.1.3"
         }
       },
       {

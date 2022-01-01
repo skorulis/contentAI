@@ -23,6 +23,11 @@ public final class IOC {
         setupViewModels()
         setupProcessors()
         setupAccess()
+        
+    }
+    
+    private func startup() {
+        container.resolve(AuthProcessor.self)?.startMonitoring()
     }
     
     private func setupFactories() {
@@ -33,7 +38,8 @@ public final class IOC {
     }
     
     private func setupProcessors() {
-        
+        container.autoregister(AuthProcessor.self, initializer: AuthProcessor.init)
+            .inObjectScope(.container)
     }
     
     private func setupAccess() {

@@ -22,7 +22,10 @@ extension AccountsView: View {
     
     var body: some View {
         ScrollView {
-            redditSection
+            VStack {
+                redditSection
+            }
+            .padding(.horizontal, 16)
         }
         .sheet(isPresented: $viewModel.showingRedditAuth) {
             VStack {
@@ -33,12 +36,15 @@ extension AccountsView: View {
             }
             .modifier(SheetFrameModifier())
         }
+        .navigationTitle("Accounts")
     }
     
     private var redditSection: some View {
-        VStack {
+        HStack {
             Text("Reddit")
-            if viewModel.needsReauth {
+                .font(.title)
+            Spacer()
+            if viewModel.needsRedditReauth {
                 Button {
                     viewModel.reauthReddit()
                 } label: {
@@ -50,7 +56,7 @@ extension AccountsView: View {
                 Button {
                     viewModel.showingRedditAuth = true
                 } label: {
-                    Text("Auth reddit")
+                    Text("Authorise")
                 }
             }
         }

@@ -23,22 +23,28 @@ struct NewSourceView {
 extension NewSourceView: View {
     
     var body: some View {
-        VStack {
-            Picker("SourceType", selection: $viewModel.type) {
-                ForEach(Source.SourceType.allCases) { type in
-                    Text(type.rawValue)
-                        .tag(type)
+        ScrollView {
+            VStack {
+                Picker("SourceType", selection: $viewModel.type) {
+                    ForEach(Source.SourceType.allCases) { type in
+                        Text(type.rawValue)
+                            .tag(type)
+                    }
                 }
+                .pickerStyle(.segmented)
+                TextField("Name", text: $viewModel.name)
+                if viewModel.type == .reddit {
+                    TextField("Subreddit", text: $viewModel.reddit.subreddit)
+                        .autocapitalization(.none)
+                        .disableAutocorrection(true)
+                }
+                
+                actions
             }
-            .pickerStyle(.segmented)
-            TextField("Name", text: $viewModel.name)
-            if viewModel.type == .reddit {
-                TextField("Subreddit", text: $viewModel.reddit.subreddit)
-            }
-            
-            actions
+            .padding(.horizontal, 16)
         }
-        .padding(.horizontal, 16)
+        .navigationTitle("New Source")
+        
     }
     
     private var actions: some View {
@@ -56,9 +62,6 @@ extension NewSourceView: View {
                     Text("View")
                 }
                 
-                NavigationLink(destination: Text("TEEST")) {
-                    Text("???")
-                }
             }
             
         }

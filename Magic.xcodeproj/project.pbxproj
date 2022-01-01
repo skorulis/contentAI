@@ -86,6 +86,8 @@
 		FA3BE92D26DC3875003A0F94 /* RedditSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */; };
 		FA3BE92F26DCCC00003A0F94 /* PSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */; };
 		FA3BE93026DCCC00003A0F94 /* PSourceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */; };
+		FA3E7566277FC8B800EFA457 /* AuthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7565277FC8B800EFA457 /* AuthProcessor.swift */; };
+		FA3E7567277FC8B800EFA457 /* AuthProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3E7565277FC8B800EFA457 /* AuthProcessor.swift */; };
 		FA5F9A4326E0BE4800C8F3B5 /* ContentSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4126E0BE4800C8F3B5 /* ContentSourceView.swift */; };
 		FA5F9A4426E0BE4800C8F3B5 /* ContentSourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4126E0BE4800C8F3B5 /* ContentSourceView.swift */; };
 		FA5F9A4526E0BE4800C8F3B5 /* ContentSourceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */; };
@@ -167,8 +169,6 @@
 		FAFB038F26DF88C300AEE99B /* ManagedObjectChangePublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038426DF88C300AEE99B /* ManagedObjectChangePublisher.swift */; };
 		FAFB039026DF88C300AEE99B /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */; };
 		FAFB039126DF88C300AEE99B /* NavigationLazyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */; };
-		FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */; };
-		FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */; };
 		FAFE57F926E3276700051A83 /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57F826E3276700051A83 /* ProjectAccess.swift */; };
 		FAFE57FA26E3276700051A83 /* ProjectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57F826E3276700051A83 /* ProjectAccess.swift */; };
 		FAFE57FC26E32E5E00051A83 /* ProjectOutputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFE57FB26E32E5E00051A83 /* ProjectOutputView.swift */; };
@@ -234,6 +234,7 @@
 		FA3BE92826DC386C003A0F94 /* SourceServiceRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceServiceRouter.swift; sourceTree = "<group>"; };
 		FA3BE92B26DC3875003A0F94 /* RedditSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedditSourceService.swift; sourceTree = "<group>"; };
 		FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSourceService.swift; sourceTree = "<group>"; };
+		FA3E7565277FC8B800EFA457 /* AuthProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthProcessor.swift; sourceTree = "<group>"; };
 		FA5F9A4126E0BE4800C8F3B5 /* ContentSourceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSourceView.swift; sourceTree = "<group>"; };
 		FA5F9A4226E0BE4800C8F3B5 /* ContentSourceViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentSourceViewModel.swift; sourceTree = "<group>"; };
 		FA5F9A4726E0BEB100C8F3B5 /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
@@ -256,6 +257,7 @@
 		FAB5286626EC98A2005CD2F2 /* PreloadOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreloadOperation.swift; sourceTree = "<group>"; };
 		FAB5286826ECC7F9005CD2F2 /* HTTPDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPDataRequest.swift; sourceTree = "<group>"; };
 		FAB5286A26ED6A40005CD2F2 /* OperatorNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperatorNode.swift; sourceTree = "<group>"; };
+		FAD7D7DC2779449300D90099 /* ASSwiftUI */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = ASSwiftUI; path = Frameworks/ASSwiftUI; sourceTree = "<group>"; };
 		FAE91B9826E6066C002858A8 /* iOS-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "iOS-Info.plist"; sourceTree = "<group>"; };
 		FAE91B9A26E60A4B002858A8 /* SheetFrameModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetFrameModifier.swift; sourceTree = "<group>"; };
 		FAE91B9F26E6149D002858A8 /* ProjectOperationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectOperationsView.swift; sourceTree = "<group>"; };
@@ -280,7 +282,6 @@
 		FAFB038326DF88C300AEE99B /* FetchedResultsControllerPublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchedResultsControllerPublisher.swift; sourceTree = "<group>"; };
 		FAFB038426DF88C300AEE99B /* ManagedObjectChangePublisher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectChangePublisher.swift; sourceTree = "<group>"; };
 		FAFB038726DF88C300AEE99B /* NavigationLazyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationLazyView.swift; sourceTree = "<group>"; };
-		FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatefulPreviewWrapper.swift; sourceTree = "<group>"; };
 		FAFE57F826E3276700051A83 /* ProjectAccess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectAccess.swift; sourceTree = "<group>"; };
 		FAFE57FB26E32E5E00051A83 /* ProjectOutputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOutputView.swift; sourceTree = "<group>"; };
 		FAFE57FE26E32E7200051A83 /* ProjectOutputViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectOutputViewModel.swift; sourceTree = "<group>"; };
@@ -450,6 +451,7 @@
 		FA3A567A26D9F9E700F9FE9A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FA3E7564277FC8B200EFA457 /* Processor */,
 				FA3A56B426DA110400F9FE9A /* DataAccess */,
 				FA3A567B26D9F9E700F9FE9A /* Root */,
 				FA3BE92726DC3844003A0F94 /* Source */,
@@ -494,6 +496,7 @@
 		FA3A568826D9FCD500F9FE9A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FAD7D7DC2779449300D90099 /* ASSwiftUI */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -543,6 +546,14 @@
 				FA3BE92E26DCCC00003A0F94 /* PSourceService.swift */,
 			);
 			path = Source;
+			sourceTree = "<group>";
+		};
+		FA3E7564277FC8B200EFA457 /* Processor */ = {
+			isa = PBXGroup;
+			children = (
+				FA3E7565277FC8B800EFA457 /* AuthProcessor.swift */,
+			);
+			path = Processor;
 			sourceTree = "<group>";
 		};
 		FAB21F6C26F34C8A00930FA7 /* MagicTests */ = {
@@ -712,7 +723,6 @@
 		FAFB038826DF88C300AEE99B /* Previews */ = {
 			isa = PBXGroup;
 			children = (
-				FAFB038926DF88C300AEE99B /* StatefulPreviewWrapper.swift */,
 			);
 			path = Previews;
 			sourceTree = "<group>";
@@ -884,6 +894,7 @@
 				FA3A566826D9F49900F9FE9A /* HTTPStatusError.swift in Sources */,
 				FAB21F5A26EEAE5600930FA7 /* LabelPrediction.swift in Sources */,
 				FAFB038C26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
+				FA3E7566277FC8B800EFA457 /* AuthProcessor.swift in Sources */,
 				FA3A569526D9FD8C00F9FE9A /* AppListViewModel.swift in Sources */,
 				FAFE57FC26E32E5E00051A83 /* ProjectOutputView.swift in Sources */,
 				FA10E60426E4A05900325378 /* Project.swift in Sources */,
@@ -926,7 +937,6 @@
 				FAB5286B26ED6A40005CD2F2 /* OperatorNode.swift in Sources */,
 				FA2116E126DE201400DE7BE7 /* PContent.swift in Sources */,
 				FA8CA8EE26E1795600BAF427 /* EditProjectViewModel.swift in Sources */,
-				FAFB039226DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA2116DF26DE1E8300DE7BE7 /* ContentSummaryView.swift in Sources */,
 				FA3A568E26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FA10E60826E4BE1E00325378 /* QueryPublisher.swift in Sources */,
@@ -974,6 +984,7 @@
 				FAE91BA726E619B2002858A8 /* POperator.swift in Sources */,
 				FA10E5F326E47CE600325378 /* AccountsView.swift in Sources */,
 				FAEE44F926DB735800FCF0AC /* RedditSecrets.swift in Sources */,
+				FA3E7567277FC8B800EFA457 /* AuthProcessor.swift in Sources */,
 				FA2116E226DE205300DE7BE7 /* PContent.swift in Sources */,
 				FAFB038D26DF88C300AEE99B /* FetchedResultsControllerPublisher.swift in Sources */,
 				FA3A566B26D9F49900F9FE9A /* HTTPClient.swift in Sources */,
@@ -1023,7 +1034,6 @@
 				FA2F6D2F26EDAA0000FAAEE5 /* ContentLabel.swift in Sources */,
 				FAB21F8926F5C5CC00930FA7 /* ContentType.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
-				FAFB039326DF88C300AEE99B /* StatefulPreviewWrapper.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FA10E60926E4BE1E00325378 /* QueryPublisher.swift in Sources */,
 				FAFB037B26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,
