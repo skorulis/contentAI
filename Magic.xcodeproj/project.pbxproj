@@ -108,6 +108,8 @@
 		FA68B82A27810A550059C0C5 /* ContentScoreTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68B82827810A550059C0C5 /* ContentScoreTable.swift */; };
 		FA68B82C27810C860059C0C5 /* ContentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68B82B27810C860059C0C5 /* ContentScore.swift */; };
 		FA68B82D27810C860059C0C5 /* ContentScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68B82B27810C860059C0C5 /* ContentScore.swift */; };
+		FA68B82F278159470059C0C5 /* ScoreOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68B82E278159470059C0C5 /* ScoreOperator.swift */; };
+		FA68B830278159470059C0C5 /* ScoreOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA68B82E278159470059C0C5 /* ScoreOperator.swift */; };
 		FA82F7EF26FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */; };
 		FA82F7F026FFF6CA00DA5ADA /* OperationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */; };
 		FA82F7F227001A0E00DA5ADA /* SortOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA82F7F127001A0E00DA5ADA /* SortOperator.swift */; };
@@ -255,6 +257,7 @@
 		FA68B825278109A80059C0C5 /* ContentLabelTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentLabelTable.swift; sourceTree = "<group>"; };
 		FA68B82827810A550059C0C5 /* ContentScoreTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentScoreTable.swift; sourceTree = "<group>"; };
 		FA68B82B27810C860059C0C5 /* ContentScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentScore.swift; sourceTree = "<group>"; };
+		FA68B82E278159470059C0C5 /* ScoreOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreOperator.swift; sourceTree = "<group>"; };
 		FA82F7EE26FFF6CA00DA5ADA /* OperationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OperationViewModel.swift; sourceTree = "<group>"; };
 		FA82F7F127001A0E00DA5ADA /* SortOperator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortOperator.swift; sourceTree = "<group>"; };
 		FA8CA8EA26E1794600BAF427 /* EditProjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectView.swift; sourceTree = "<group>"; };
@@ -347,6 +350,7 @@
 				FA2F6D3026EDC21200FAAEE5 /* ImageClassifierOperator.swift */,
 				FAEEC3F126EDEFC700FD5B19 /* StorageOperator.swift */,
 				FA82F7F127001A0E00DA5ADA /* SortOperator.swift */,
+				FA68B82E278159470059C0C5 /* ScoreOperator.swift */,
 			);
 			path = Operators;
 			sourceTree = "<group>";
@@ -958,6 +962,7 @@
 				FAB21F8826F5C5CC00930FA7 /* ContentType.swift in Sources */,
 				FA3A566C26D9F49900F9FE9A /* HTTPResponseValidator.swift in Sources */,
 				FAEE450126DB74BF00FCF0AC /* Reddit.Listing.swift in Sources */,
+				FA68B82F278159470059C0C5 /* ScoreOperator.swift in Sources */,
 				FA2F6D2E26EDAA0000FAAEE5 /* ContentLabel.swift in Sources */,
 				FAB5286726EC98A2005CD2F2 /* PreloadOperation.swift in Sources */,
 				FAFE580B26E3401000051A83 /* IconButton.swift in Sources */,
@@ -1053,6 +1058,7 @@
 				FA2F6D2F26EDAA0000FAAEE5 /* ContentLabel.swift in Sources */,
 				FAB21F8926F5C5CC00930FA7 /* ContentType.swift in Sources */,
 				FA3A566326D9F49900F9FE9A /* HTTPRequest.swift in Sources */,
+				FA68B830278159470059C0C5 /* ScoreOperator.swift in Sources */,
 				FA3A568F26D9FCF700F9FE9A /* GenericFactory.swift in Sources */,
 				FA10E60926E4BE1E00325378 /* QueryPublisher.swift in Sources */,
 				FAFB037B26DF7F2D00AEE99B /* LabelAccess.swift in Sources */,

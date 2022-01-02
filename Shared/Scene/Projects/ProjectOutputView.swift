@@ -64,7 +64,7 @@ extension ProjectOutputView: View {
         if let output = viewModel.output?.loaded {
             ForEach(output, id: \.self.id) { item in
                 
-                ContentSummaryView(item: item) {
+                ContentSummaryView(item: item, project: viewModel.project) {
                     clicked(item: item)
                 }
             }

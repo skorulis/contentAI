@@ -13,7 +13,7 @@ struct ContentScoreTable {
     static let table = Table("content_score")
     static let content_id = Expression<String>("content_id")
     static let project_id = Expression<String>("project_id")
-    static let score = Expression<Double>("score")
+    static let score = Expression<Double?>("score")
     static let date = Expression<Double>("date")
     
     static func setters(contentID: String, projectID: String, score: Double, date: Date) -> [Setter] {
@@ -41,7 +41,7 @@ struct ContentScoreTable {
         return ContentScore(
             contentID: try row.get(content_id),
             projectID: try row.get(project_id),
-            score: try row.get(score),
+            score: try row.get(score) ?? 0,
             date: Date(timeIntervalSince1970: dateDouble)
         )
     }

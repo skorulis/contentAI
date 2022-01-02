@@ -29,6 +29,9 @@ final class StorageOperator {
     }
     
     static func score(item: ContentItem) -> Double {
+        if let existing = item.score {
+            return existing
+        }
         var output = item.created
         if !item.viewed {
             output += 100000000

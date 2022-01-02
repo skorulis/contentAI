@@ -25,13 +25,34 @@ extension Project {
     func operators(factory: GenericFactory) -> [POperator] {
         let contentAccess = factory.resolve(ContentAccess.self)
         
-        return [
-            SourceOperator(sources: inputs, access: contentAccess),
-            FilterOperator(),
-            PreloadOperation(factory: factory),
-            SortOperator()
-            //TrainModelOperator(factory: factory)
-            ]
+        if name == "Hot" {
+            return [
+                SourceOperator(sources: inputs, access: contentAccess),
+                FilterOperator(),
+                PreloadOperation(factory: factory),
+                ScoreOperator(project: self, access: contentAccess),
+                SortOperator()
+                //TrainModelOperator(factory: factory)
+                ]
+        } else if name == "Interesting" {
+            return [
+                SourceOperator(sources: inputs, access: contentAccess),
+                //FilterOperator(),
+                //PreloadOperation(factory: factory),
+                SortOperator()
+                //TrainModelOperator(factory: factory)
+                ]
+        } else {
+            return [
+                SourceOperator(sources: inputs, access: contentAccess),
+                FilterOperator(),
+                PreloadOperation(factory: factory),
+                SortOperator()
+                //TrainModelOperator(factory: factory)
+                ]
+        }
+        
+        
     }
     
 }

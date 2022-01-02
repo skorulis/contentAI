@@ -13,6 +13,7 @@ import SwiftUI
 struct ContentSummaryView {
     
     let item: ContentItem
+    let project: Project?
     let action: () -> Void
     
 }
@@ -26,7 +27,7 @@ extension ContentSummaryView: View {
             HStack {
                 VStack(alignment: .leading) {
                     Text(item.title ?? "")
-                    Text("\(item.labels.count) labels")
+                    Text("\(item.projectLabels(project?.id).count) labels")
                     
                 }
                 Spacer()
@@ -56,7 +57,8 @@ struct ContentSummaryView_Previews: PreviewProvider {
             cached: false,
             contentType: ContentType.image,
             labels: []
-        )
+        ),
+        project: nil
         ) {}
     }
 }

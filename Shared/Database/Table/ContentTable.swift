@@ -47,7 +47,7 @@ struct ContentTable {
     
     static func extract(row: Row) throws -> ContentItem {
         return ContentItem(
-            id: try row.get(id),
+            id: try row.get(ContentTable.id),
             title: try row.get(title),
             url: try row.get(url),
             thumbnail: try row.get(thumbnail),
@@ -55,7 +55,8 @@ struct ContentTable {
             viewed: try row.get(viewed),
             cached: try row.get(cached),
             contentType: ContentType(rawValue: try row.get(contentType)) ?? .unknown,
-            labels: []
+            labels: [],
+            score: try? row.get(ContentScoreTable.score)
         )
     }
 }

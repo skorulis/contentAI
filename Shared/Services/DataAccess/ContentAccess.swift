@@ -104,10 +104,12 @@ extension ContentAccess {
     
     func sourceQuery(sources: [Source]) -> Table {
         let ids = sources.map { $0.id }
+        let sources = ContentSourceTable.table.alias("sources")
+        
         let query = ContentTable.table
             .join(
-                ContentSourceTable.table,
-                on: ContentSourceTable.content_id == ContentTable.table[ContentTable.id]
+                sources,
+                on: sources[ContentSourceTable.content_id] == ContentTable.table[ContentTable.id]
             )
             .filter(ids.contains(ContentSourceTable.source_id))
         
@@ -148,8 +150,10 @@ extension ContentAccess {
         let setters: [Setter] = ContentLabelTable.setters(labelID: label.id, itemID: content.id, projectID: projectID)
         _ = try! db.db.run(ContentLabelTable.table.insert(setters))
         
-        if !content.labelNames.contains(text) {
-            content.labels.append(SimplifiedContentLabel(projectID: projectID, name: text, predictionScore: nil))
+        let simpleItem = SimplifiedContentLabel(projectID: projectID, name: text, predictionScore: nil)
+        
+        if !content.labels.contains(simpleItem) {
+            content.labels.append(simpleItem)
         }
         ChangeNotifierService.shared.onChange(content: content)
     }

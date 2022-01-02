@@ -31,13 +31,13 @@ struct ContentLabelTable {
             t.column(prediction_score)
             t.foreignKey(content_id, references: ContentTable.table, ContentTable.id, delete: .noAction)
             t.foreignKey(label_id, references: LabelAccess.LabelTable.table, LabelAccess.LabelTable.id, delete: .noAction)
-            t.primaryKey(content_id, label_id)
         })
     }
     
     static func extract(row: Row) throws -> ContentLabel {
         return ContentLabel(
             contentID: try row.get(content_id),
+            projectID: try row.get(project_id),
             label: Label(
                 id: try row.get(label_id),
                 name: try row.get(LabelAccess.LabelTable.name)

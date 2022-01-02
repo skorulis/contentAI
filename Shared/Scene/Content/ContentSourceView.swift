@@ -69,7 +69,7 @@ extension ContentSourceView: View {
                 NewSourceView(viewModel: factory.resolve(NewSourceViewModel.self, argument: NewSourceViewModel.Argument(id: viewModel.source.id)))
             }
             ForEach(viewModel.availableContent) { item in
-                ContentSummaryView(item: item) {
+                ContentSummaryView(item: item, project: nil) {
                     clicked(item: item)
                 }
             }
