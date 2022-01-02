@@ -10,19 +10,40 @@ import Foundation
 final class ContentDetailViewModel: ObservableObject {
     
     var content: ContentItem
+    let project: Project?
     let labelAccess: LabelAccess
     let contentAccess: ContentAccess
+    let onNext: () -> Void
+    let onPrevious: () -> Void
     
     @Published var labelText: String = ""
+    @Published var addingLabel: Bool = false
+    @Published var globalLabel: Bool = true
     
-    init(content: ContentItem,
+    init(argument: Argument,
          labelAccess: LabelAccess,
          contentAccess: ContentAccess
     ) {
-        self.content = content
+        self.content = argument.content
+        self.project = argument.project
+        self.onNext = argument.onNext
+        self.onPrevious = argument.onPrevious
         self.labelAccess = labelAccess
         self.contentAccess = contentAccess
     }
+}
+
+// MARK: - Types
+
+extension ContentDetailViewModel {
+    
+    struct Argument {
+        let content: ContentItem
+        let project: Project?
+        let onNext: () -> Void
+        let onPrevious: () -> Void
+    }
+    
 }
 
 // MARK: - Logic
@@ -30,7 +51,7 @@ final class ContentDetailViewModel: ObservableObject {
 extension ContentDetailViewModel {
     
     var labels: [String] {
-        return content.labels
+        return content.projectLabels(project?.id)
     }
     
 }
@@ -45,25 +66,26 @@ extension ContentDetailViewModel {
         addLabel(text: labelText.lowercased())
         
         labelText = ""
+        self.addingLabel = false
     }
     
     func addLabel(text: String) {
-        contentAccess.addLabel(content: &content, text: text)
+        contentAccess.addLabel(content: &content, text: text, projectID: project?.id)
         self.objectWillChange.send()
     }
     
     func removeLabel(name: String) {
-        contentAccess.deleteLabel(contentID: content.id, text: name)
-        content.labels = content.labels.filter { $0 != name }
+        contentAccess.deleteLabel(contentID: content.id, text: name, projectID: project?.id)
+        content.labels = content.labels.filter { $0.name != name }
         objectWillChange.send()
     }
     
     var isUpvoted: Bool {
-        return content.labels.contains("upvote")
+        return labels.contains("upvote")
     }
     
     var isDownvoted: Bool {
-        return content.labels.contains("downvote")
+        return labels.contains("downvote")
     }
     
     func markViewed() {

@@ -54,7 +54,7 @@ final class QueryPager: ObservableObject {
         
         for i in 0..<content.count {
             let id = content[i].id
-            content[i].labels = (labels[id] ?? []).map { $0.label.name }
+            content[i].labels = (labels[id] ?? []).map { $0.simplified }
         }
         
         return content

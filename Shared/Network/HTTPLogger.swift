@@ -95,7 +95,7 @@ extension HTTPLogger {
             let data = try! JSONSerialization.data(withJSONObject: object, options: [.prettyPrinted])
             return String(data: data, encoding: .utf8)!
         }
-        return String(data: data, encoding: .utf8) ?? "ERROR"
+        return String(data: data, encoding: .utf8) ?? "NON TEXT BODY"
     }
     
     

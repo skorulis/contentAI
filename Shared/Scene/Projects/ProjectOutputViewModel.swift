@@ -91,6 +91,11 @@ final class ProjectOutputViewModel: ObservableObject {
         return self.output?.loaded ?? []
     }
     
+    func detailViewModel(_ content: ContentItem) -> ContentDetailViewModel {
+        let argument = ContentDetailViewModel.Argument(content: content, project: project, onNext: nextAsync, onPrevious: previousAsync)
+        return factory.resolve(ContentDetailViewModel.self, argument: argument)
+    }
+    
 }
 
 // MARK: - Behaviors
@@ -106,6 +111,15 @@ extension ProjectOutputViewModel {
         objectWillChange.send()
     }
     
+    func previous() {
+        guard let current = activeContent,
+              let index = self.loaded.firstIndex(where: {$0.id == current.id} ),
+              index > 0
+        else { return }
+        activeContent = self.loaded[index - 1]
+        objectWillChange.send()
+    }
+    
     func train() {
         
         var labeledFiles = [String: [URL]]()
@@ -114,9 +128,10 @@ extension ProjectOutputViewModel {
         for content in loaded {
             guard let url = PreloadOperation.filename(url: content.url!) else { continue }
             guard content.viewed else { continue }
-            if content.labels.contains("upvote") {
+            let labels = content.projectLabels(project.id)
+            if labels.contains("upvote") {
                 labeledFiles["upvote"]?.append(url)
-            } else if content.labels.contains("downvote") {
+            } else if labels.contains("downvote") {
                 labeledFiles["downvote"]?.append(url)
             }
         }
@@ -167,6 +182,10 @@ extension ProjectOutputViewModel {
     
     nonisolated func nextAsync() {
         Task { await next() }
+    }
+    
+    nonisolated func previousAsync() {
+        Task { await previous() }
     }
 }
 

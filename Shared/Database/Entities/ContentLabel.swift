@@ -7,8 +7,22 @@
 
 import Foundation
 
-struct ContentLabel {
+struct ContentLabel: Equatable {
  
     public var contentID: String
+    public var projectID: String?
     public var label: Label
+    public var predictionScore: Double?
+    
+    var simplified: SimplifiedContentLabel {
+        return SimplifiedContentLabel(projectID: projectID, name: label.name, predictionScore: predictionScore)
+    }
+}
+
+struct SimplifiedContentLabel: Equatable {
+    
+    public var projectID: String?
+    public var name: String
+    public var predictionScore: Double?
+    
 }

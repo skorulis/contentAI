@@ -73,6 +73,15 @@ extension ContentSourceViewModel {
         objectWillChange.send()
     }
     
+    func previous() {
+        guard let current = activeContent,
+              let index = self.availableContent.firstIndex(where: {$0.id == current.id} ),
+              index > 0
+        else { return }
+        activeContent = availableContent[index - 1]
+        objectWillChange.send()
+    }
+    
     func edit() {
         self.isEditing.toggle()
     }

@@ -47,8 +47,8 @@ extension ContentAccess {
     private func insertLabels(items: [ContentItem]) {
         var labels: Set<String> = []
         items.forEach { meta in
-            meta.labels.forEach { name in
-                labels.insert(name)
+            meta.labels.forEach { label in
+                labels.insert(label.name)
             }
         }
         
@@ -63,15 +63,15 @@ extension ContentAccess {
         for item in items {
             let labels = existingDict[item.id] ?? []
             for l in item.labels {
-                if !labels.contains(where: {$0.label.name == l}) {
-                    let labelItem = labelDict[l]!
+                if !labels.contains(where: {$0.label.name == l.name }) {
+                    let labelItem = labelDict[l.name]!
                     toCreate.append(ContentLabel(contentID: item.id, label: labelItem))
                 }
             }
         }
         
         if toCreate.count > 0 {
-            let setters = toCreate.map { ContentLabelTable.setters(labelID: $0.label.id, itemID: $0.contentID) }
+            let setters = toCreate.map { ContentLabelTable.setters(labelID: $0.label.id, itemID: $0.contentID, projectID: nil) }
             _ = try! db.db.run(ContentLabelTable.table.insertMany(setters))
         }
         
@@ -97,7 +97,7 @@ extension ContentAccess {
         
         for i in 0..<content.count {
             let id = content[i].id
-            content[i].labels = (labels[id] ?? []).map { $0.label.name }
+            content[i].labels = (labels[id] ?? []).map { $0.simplified }
         }
         return content
     }
@@ -133,10 +133,11 @@ extension ContentAccess {
         }
     }
     
-    func addLabel(content: inout ContentItem, text: String) {
+    func addLabel(content: inout ContentItem, text: String, projectID: String? = nil) {
         let label = labelAccess.findOrCreate(labels: [text]).first!
         let query = ContentLabelTable.table
             .filter(ContentLabelTable.content_id == content.id)
+            .filter(ContentLabelTable.project_id == projectID)
             .filter(ContentLabelTable.label_id == label.id)
             
         let existing = try! db.db.prepare(query).map { $0 }
@@ -144,16 +145,16 @@ extension ContentAccess {
             return
         }
         
-        let setters: [Setter] = ContentLabelTable.setters(labelID: label.id, itemID: content.id)
+        let setters: [Setter] = ContentLabelTable.setters(labelID: label.id, itemID: content.id, projectID: projectID)
         _ = try! db.db.run(ContentLabelTable.table.insert(setters))
         
-        if !content.labels.contains(text) {
-            content.labels.append(text)
+        if !content.labelNames.contains(text) {
+            content.labels.append(SimplifiedContentLabel(projectID: projectID, name: text, predictionScore: nil))
         }
         ChangeNotifierService.shared.onChange(content: content)
     }
     
-    func deleteLabel(contentID: String, text: String) {
+    func deleteLabel(contentID: String, text: String, projectID: String?) {
         let label = labelAccess.findOrCreate(labels: [text]).first!
         let query = ContentLabelTable.table
             .filter(ContentLabelTable.content_id == contentID)

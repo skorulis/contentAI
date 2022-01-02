@@ -17,7 +17,7 @@ struct ContentItem: PContent, Identifiable, Hashable {
     public var viewed: Bool
     public var cached: Bool
     public var contentType: ContentType
-    public var labels: [String]
+    public var labels: [SimplifiedContentLabel]
     
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)

@@ -14,7 +14,6 @@ import SwiftUI
 struct ContentDetailView {
     
     @StateObject var viewModel: ContentDetailViewModel
-    var onNext: () -> Void
     
 }
 
@@ -35,13 +34,7 @@ extension ContentDetailView: View {
     
     private var rightButtons: some View {
         VStack {
-            Button(action: onNext) {
-                Image(systemName: "arrow.right.square.fill")
-                    .resizable()
-                    .frame(width: 44, height: 44)
-            }
-            .keyboardShortcut("n", modifiers: [])
-            .buttonStyle(.plain)
+            navButtons
             
             
             Spacer()
@@ -70,6 +63,26 @@ extension ContentDetailView: View {
             
         }
         .padding(20)
+    }
+    
+    private var navButtons: some View {
+        HStack {
+            Button(action: viewModel.onPrevious) {
+                Image(systemName: "arrow.left.square.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+            }
+            .keyboardShortcut("b", modifiers: [])
+            .buttonStyle(.plain)
+            
+            Button(action: viewModel.onNext) {
+                Image(systemName: "arrow.right.square.fill")
+                    .resizable()
+                    .frame(width: 44, height: 44)
+            }
+            .keyboardShortcut("n", modifiers: [])
+            .buttonStyle(.plain)
+        }
     }
     
     @ViewBuilder
@@ -134,18 +147,44 @@ extension ContentDetailView: View {
                 }
             }
             Spacer()
+            Button {
+                viewModel.addingLabel = true
+            } label: {
+                Image(systemName: "plus.circle.fill")
+            }
+            .popover(isPresented: $viewModel.addingLabel) {
+                addLabelView
+            }
+            
+        }
+        .padding(EdgeInsets(top: 8, leading: 8, bottom: 8, trailing: 8))
+        .background(Color.white)
+    }
+    
+    private var addLabelView: some View {
+        VStack {
+            Text("Add label")
+                .font(.title)
+            
             TextField(
                     "New label",
                      text: $viewModel.labelText
                 ) { _ in } onCommit: {
                     viewModel.addLabel()
                 }
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
                 .frame(width: 100)
+            
+            Toggle(isOn: $viewModel.globalLabel) {
+                Text("Global label")
+            }
+            
             Button { viewModel.addLabel() } label: {
                 Text("Add")
             }
+            
         }
-        .padding(EdgeInsets(top: 4, leading: 8, bottom: 4, trailing: 8))
-        .background(Color.white)
+        .padding()
     }
 }

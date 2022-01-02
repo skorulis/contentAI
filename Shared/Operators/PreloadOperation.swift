@@ -22,7 +22,7 @@ final class PreloadOperation: POperator {
     }
     
     func cache(value: inout ContentItem) async {
-        if value.labels.contains("missing") {
+        if value.labelNames.contains("missing") {
             return
         }
         guard let url = value.url else { return }

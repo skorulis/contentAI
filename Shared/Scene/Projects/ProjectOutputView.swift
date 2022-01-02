@@ -82,7 +82,7 @@ extension ProjectOutputView: View {
     @ViewBuilder
     private func detailContainer(content: ContentItem) -> some View {
         ZStack(alignment: .topLeading) {
-            ContentDetailView(viewModel: factory.resolve(ContentDetailViewModel.self, argument: content), onNext: viewModel.nextAsync)
+            ContentDetailView(viewModel: viewModel.detailViewModel(content))
             Button(action: {viewModel.activeContent = nil}) {
                 Text("Back")
             }

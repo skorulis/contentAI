@@ -21,7 +21,7 @@ final class TrainModelOperator: POperator {
         return value
     }
     
-    func train(content: [ContentItem]) throws -> MLJob<MLImageClassifier> {
+    /*func train(content: [ContentItem]) throws -> MLJob<MLImageClassifier> {
         var labeledFiles = [String: [URL]]()
         labeledFiles["upvote"] = []
         labeledFiles["downvote"] = []
@@ -38,7 +38,7 @@ final class TrainModelOperator: POperator {
         let job = try MLImageClassifier.train(trainingData: data)
         return job
         
-    }
+    }*/
     
     func query(inputQuery: Table) -> Table {
         return inputQuery

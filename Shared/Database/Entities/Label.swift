@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Label {
+struct Label: Equatable {
     
     public var id: Int64
     public var name: String

@@ -44,8 +44,7 @@ extension ContentSourceView: View {
     private func detailContainer(content: ContentItem) -> some View {
         ZStack(alignment: .topLeading) {
             ContentDetailView(
-                viewModel: factory.resolve(ContentDetailViewModel.self, argument: content),
-                onNext: viewModel.next
+                viewModel: factory.resolve(ContentDetailViewModel.self, argument: content)
             )
             Button(action: {viewModel.activeContent = nil}) {
                 Text("Back")

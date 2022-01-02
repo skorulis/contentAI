@@ -59,6 +59,10 @@ final class RedditSourceService: PSourceService, ObservableObject {
                     
                     labels.append(listing.data.subreddit)
                     
+                    let simpleLabels = labels.map { label in
+                        return SimplifiedContentLabel(projectID: nil, name: label, predictionScore: nil)
+                    }
+                    
                     return ContentItem(
                         id: listing.data.id,
                         title: listing.data.title,
@@ -68,7 +72,7 @@ final class RedditSourceService: PSourceService, ObservableObject {
                         viewed: false,
                         cached: false,
                         contentType: ContentType.unchecked,
-                        labels: labels
+                        labels: simpleLabels
                     )
                 }
             }
